@@ -1,0 +1,275 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-06 20:18:09.063438 UTC
+
+interface 2048Haskell-0.1.0.0-2K1SPFronEMEGQ25qIC9Rl:Game 8002
+  interface hash: 2e5985c8cf4998c401665e4f9e6bdd8a
+  ABI hash: 67d05b2187f83fe4271d004eb963509c
+  export-list hash: adf75cdd5dd62077c1a1f44688840599
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f6624f22fcdd76ed0ac6625466e2d712
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Game.setup
+  Game.start
+module dependencies:
+package dependencies: SHA-1.6.4.2@SHA-1.6.4.2-6ZuKopcglGG4yoCGsd9koJ
+                      aeson-1.1.2.0@aeson-1.1.2.0-7ssY6fy1GxZGXxTPcOtf2k
+                      array-0.5.1.1@array-0.5.1.1
+                      async-2.1.1.1@async-2.1.1.1-8yywY4inVGRLJSCg60gBXj
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE21oqFTQ
+                      base-4.9.1.0
+                      base-compat-0.9.3@base-compat-0.9.3-KeJp8zYMpcS9WibvTcxU22
+                      base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-4O9TExPPz6eI82Yj7L4SIj
+                      binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      case-insensitive-1.2.0.10@case-insensitive-1.2.0.10-1D5OUKQ7UrJ7IpOe0di4Un
+                      clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-default-0.7.1.1@data-default-0.7.1.1-Atv1ZD6t1rI1MrH9qSGaQC
+                      data-default-class-0.1.2.0@data-default-class-0.1.2.0-GsXqKN6o1X9jr0fF5qCVD
+                      data-default-instances-containers-0.0.1@data-default-instances-containers-0.0.1-bob6IQGdJq92c061H46zK
+                      data-default-instances-dlist-0.0.1@data-default-instances-dlist-0.0.1-LBT1sjxIvyd63eC0aI9yNO
+                      data-default-instances-old-locale-0.0.1@data-default-instances-old-locale-0.0.1-9zaGDEmgOixKkmLylWdN5l
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk
+                      entropy-0.3.8@entropy-0.3.8-14HIw40nRRY968j6AdY1H4
+                      exceptions-0.8.3@exceptions-0.8.3-ADEDRATtUrMK1JW4zMQ9U
+                      file-embed-0.0.10@file-embed-0.0.10-KWMmUDaNSRP7AxWSEHlrrK
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.2@integer-logarithms-1.0.2-92lMiWV9mmYAwfMEYgfQ0D
+                      io-streams-1.4.1.0@io-streams-1.4.1.0-5IlZ6PdXqJ7CwzmuvTnV4
+                      io-streams-haproxy-1.0.0.2@io-streams-haproxy-1.0.0.2-6W2BZD8a6s5Hruy6ksJtZH
+                      lifted-base-0.2.3.11@lifted-base-0.2.3.11-Ei0JSPdt7KOCD2HIA5jFqV
+                      monad-control-1.0.2.2@monad-control-1.0.2.2-1Ci8dYJ8Tb7E3HTcTqOb8l
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      network-2.6.3.2@network-2.6.3.2-IsLM4TXcLoRI0fmmBYVyQz
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-KGBP1BSKxH5GCm0LnZP04j
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      process-1.4.3.0@process-1.4.3.0
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      readable-0.3.1@readable-0.3.1-AQCvJsNBYClHgsXK6DLpKa
+                      safe-0.3.15@safe-0.3.15-2Yd45VWFfdcKqKyispOifY
+                      scientific-0.3.5.2@scientific-0.3.5.2-FM2NdrNTcdbCDq9wuNnhIA
+                      snap-core-1.0.3.1@snap-core-1.0.3.1-Jy5vSuCfKBGJM3v0rvljLu
+                      snap-server-1.0.3.3@snap-server-1.0.3.3-JH80GN6kcY3GnfTRz4Fm8z
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt
+                      template-haskell-2.11.1.0
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+                      threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg
+                      time-1.6.0.1@time-1.6.0.1
+                      time-locale-compat-0.1.1.3@time-locale-compat-0.1.1.3-KZ1jqNx8uhlHjmuPPj6V1Y
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-base-0.4.4@transformers-base-0.4.4-GKSs0LKukAL8ymq2naFmrH
+                      unix-2.7.2.1@unix-2.7.2.1
+                      unix-compat-0.4.3.1@unix-compat-0.4.3.1-Ausmw6d7KIwA7sl52mzqxC
+                      unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC
+                      uuid-types-1.0.3@uuid-types-1.0.3-HQOuja9trySCcuflACyDTJ
+                      vault-0.3.0.7@vault-0.3.0.7-FSJCPczyPWW8DwvwP76qt4
+                      vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ
+                      websockets-0.10.0.0@websockets-0.10.0.0-VnlKayMDvyHnd2tkINzmP
+                      websockets-snap-0.10.2.3@websockets-snap-0.10.2.3-1kQeHmPx6eSFTuxFmZFLFw
+                      zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp
+                      zlib-bindings-0.1.1.5@zlib-bindings-0.1.1.5-4AFfs0NmxaYKZpHnixldSp
+orphans: attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE21oqFTQ:Data.Attoparsec.ByteString.Char8
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE21oqFTQ:Data.Attoparsec.Text.Internal
+         base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         data-default-instances-containers-0.0.1@data-default-instances-containers-0.0.1-bob6IQGdJq92c061H46zK:Data.Default.Instances.Containers
+         data-default-instances-dlist-0.0.1@data-default-instances-dlist-0.0.1-LBT1sjxIvyd63eC0aI9yNO:Data.Default.Instances.DList
+         data-default-instances-old-locale-0.0.1@data-default-instances-old-locale-0.0.1-9zaGDEmgOixKkmLylWdN5l:Data.Default.Instances.OldLocale
+         hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol:Data.Hashable.Generic
+         network-2.6.3.2@network-2.6.3.2-IsLM4TXcLoRI0fmmBYVyQz:Network.Socket
+         snap-core-1.0.3.1@snap-core-1.0.3.1-Jy5vSuCfKBGJM3v0rvljLu:Snap.Internal.Instances
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Fusion.Bundle
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE21oqFTQ:Data.Attoparsec.Internal.Types
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Compose
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         clock-0.7.2@clock-0.7.2-8dRNleB7rysIZAOReuhpZA:System.Clock
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk:Data.DList
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         monad-control-1.0.2.2@monad-control-1.0.2.2-1Ci8dYJ8Tb7E3HTcTqOb8l:Control.Monad.Trans.Control
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Data.Primitive.Array
+                         snap-core-1.0.3.1@snap-core-1.0.3.1-Jy5vSuCfKBGJM3v0rvljLu:Snap.Internal.Core
+                         tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt:Data.Tagged
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashSet
+                         uuid-types-1.0.3@uuid-types-1.0.3-HQOuja9trySCcuflACyDTJ:Data.UUID.Types.Internal
+                         uuid-types-1.0.3@uuid-types-1.0.3-HQOuja9trySCcuflACyDTJ:Data.UUID.Types.Internal.Builder
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Primitive
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Storable
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.1.0:Control.Applicative 32430a90492e727f4bd80db71c28600c
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
+import  -/  base-4.9.1.0:Data.IORef 71c87b0b25a8bca3e3f4497725f5e543
+import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg:Foreign.JavaScript.Types 3ea29cb456928e640f965e13ace3a4f3
+import  -/  threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg:Graphics.UI.Threepenny e81c5814a44b364f267b71c10b028bc1
+import  -/  threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg:Graphics.UI.Threepenny.Core 82f2000d722b98dbf9a15ae21a56f060
+import  -/  threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg:Graphics.UI.Threepenny.Elements d1c05d77e64a995bcc42a5539a7897b2
+import  -/  threepenny-gui-0.8.2.0@threepenny-gui-0.8.2.0-GBdL7eMAfovBT2ooRERDIg:Graphics.UI.Threepenny.Internal fc933ffcefeaf7e57b4503c1d3fc12de
+60f4bad9c19a85efc6f16709142041f7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Game.$trModule2 Game.$trModule1) -}
+041e577441e72aaf478d51cf307df027
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Game"#) -}
+94a30e6cf6a185cd3b1752cd28dd267a
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "2048Haskell-0.1.0.0-2K1SPFronEMEGQ25qIC9Rl"#) -}
+9663e7f195829e21f25333cec21e99c4
+  setup ::
+    Graphics.UI.Threepenny.Internal.Window
+    -> Graphics.UI.Threepenny.Internal.UI ()
+  {- Arity: 4, Strictness: <L,A>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, True)
+                (\ (w :: Graphics.UI.Threepenny.Internal.Window)
+                   (eta :: Graphics.UI.Threepenny.Internal.Window)
+                   (eta1 :: ())
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Game.setup1 eta eta1 eta2)
+                  `cast`
+                (<Graphics.UI.Threepenny.Internal.Window>_R
+                 ->_R Trans
+                          (<Graphics.UI.Threepenny.Internal.Window>_R
+                           ->_R <()>_R
+                           ->_R Sym (GHC.Types.N:IO[0] <((), (), [GHC.Types.IO ()])>_R))
+                          (Trans
+                               (Sym (Control.Monad.Trans.RWS.Lazy.N:RWST[0]
+                                         <Graphics.UI.Threepenny.Internal.Window>_R
+                                         <[GHC.Types.IO ()]>_N
+                                         <()>_N
+                                         <GHC.Types.IO>_R
+                                         <()>_N))
+                               (Sym (Graphics.UI.Threepenny.Internal.N:UI[0]) <()>_N))) -}
+6444ece05b9a0fe91d4d1e1f8f985cb4
+  setup1 ::
+    Graphics.UI.Threepenny.Internal.Window
+    -> ()
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), (), [GHC.Types.IO ()]) #)
+  {- Arity: 3,
+     Unfolding: (\ (r1 :: Graphics.UI.Threepenny.Internal.Window)
+                   (s1 :: ())
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Graphics.UI.Threepenny.Core.$wtitle
+                        Game.setup3
+                        r1
+                        s1
+                        eta2 of ds3 { (#,#) ipv2 ipv3 ->
+                 case (Game.setup_k
+                         `cast`
+                       (Trans
+                            (Graphics.UI.Threepenny.Internal.N:UI[0] <()>_N)
+                            (Control.Monad.Trans.RWS.Lazy.N:RWST[0]
+                                 <Graphics.UI.Threepenny.Internal.Window>_R
+                                 <[GHC.Types.IO ()]>_N
+                                 <()>_N
+                                 <GHC.Types.IO>_R
+                                 <()>_N))
+                         r1
+                         (case ipv3 of wild1 { (,,) a1 s' w2 -> s' }))
+                        `cast`
+                      (GHC.Types.N:IO[0] <((), (), [GHC.Types.IO ()])>_R)
+                        ipv2 of ds2 { (#,#) ipv1 ipv5 ->
+                 (# ipv1,
+                    (GHC.Tuple.(), case ipv5 of wild { (,,) b1 s'' w' -> s'' },
+                     case ipv3 of wild2 { (,,) a2 s'1 w1 ->
+                     GHC.Base.++
+                       @ (GHC.Types.IO ())
+                       w1
+                       (case ipv5 of wild1 { (,,) b1 s'' w' -> w' }) }) #) } }) -}
+5aa8c9eb5712f5cd799b95b980b8e5c2
+  setup2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "2048.css"#) -}
+a4f197165d36e1bb32e28205f877cba4
+  setup3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "2048"#) -}
+ac2e20f12f9c4706cf8e8212f7c8f9e4
+  setup_k :: Graphics.UI.Threepenny.Internal.UI ()
+  {- Unfolding: (Graphics.UI.Threepenny.Elements.$waddStyleSheet
+                   Game.setup2) -}
+b1ba58bb760f06c1473ed9285994d08e
+  start :: GHC.Types.Int -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Game.start1
+                  `cast`
+                (<GHC.Types.Int>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+63188242529703403780c0651e53c2d7
+  start1 ::
+    GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (port :: GHC.Types.Int)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 Graphics.UI.Threepenny.Internal.$wstartGUI
+                   (GHC.Base.Just @ GHC.Types.Int port)
+                   (GHC.Base.Nothing @ Data.ByteString.Internal.ByteString)
+                   (GHC.Base.Nothing @ GHC.IO.FilePath)
+                   (GHC.Base.Nothing @ GHC.IO.FilePath)
+                   Foreign.JavaScript.Types.defaultConfig1
+                     `cast`
+                   (<Data.ByteString.Internal.ByteString>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   GHC.Types.True
+                   Foreign.JavaScript.Types.FlushOften
+                   Game.setup
+                   eta) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
