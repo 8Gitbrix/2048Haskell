@@ -168,6 +168,9 @@ makeRandomTile :: Tile
 makeRandomTile = do
    let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
    if (tempNum::Int) < 10 then Just 2 else Just 4
+-- change to not equals to optimize
+
+
        
 -- makeRandomTile = do
 --    let (num, rand') = R.randomR (1,10) rand
@@ -175,6 +178,75 @@ makeRandomTile = do
 -- changeD :: IO Int -> Tile
 -- changeD 
 
+findBestMove :: Grid -> Int
+findBestMove g = do
+   let up = insertRandomTile $ transpose $ leftGrid $ transpose g
+   let down = insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+   let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
+   let left = insertRandomTile $ leftGrid g
+
+   let upScore = randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up+ randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up
+   let downScore =  randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down 
+   let rightScore = randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right
+   let leftScore =  randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left
+    -- let upScore = average $ replicate 5 $ randomlyPlayBoard up
+   -- let downScore = average $  replicate 5 $ randomlyPlayBoard down
+   -- let rightScore = average $ replicate 5 $ randomlyPlayBoard right
+   -- let leftScore = average $ replicate 5 $ randomlyPlayBoard left
+
+
+  
+
+   let maxScore = maximum [upScore,downScore,rightScore,leftScore]
+   if maxScore == upScore then 1 
+   else if maxScore == downScore then 2
+       else if maxScore == rightScore then 3
+            else if maxScore == leftScore then 4
+            else 4
+
+average :: [Int] -> Int
+average xs = (sum xs) `div` (length xs)
+
+oneBestMove :: Grid -> Grid
+oneBestMove g = do
+    case (findBestMove g) of 
+       1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
+       2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+       3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
+       4 -> insertRandomTile $ leftGrid g
+
+monteCarloPlayBoard :: Grid -> IO ()
+monteCarloPlayBoard g = do
+   if checkFull g && stuckCheck g then colorGrid g
+   else monteCarloPlayBoard $ oneBestMove g
+
+randomlyPlayBoard :: Grid -> Int
+randomlyPlayBoard g = do
+   if checkFull g && stuckCheck g then scoreGrid g 0
+   else randomlyPlayBoard $ oneMove g
+-- randomlyPlayBoard :: Grid -> IO ()   
+-- randomlyPlayBoard g = do
+--     if checkFull g && stuckCheck g then colorGrid g
+--     else randomlyPlayBoard $ oneMove g
+        
+randomlyPlayTilWin :: Int -> Grid -> Int
+randomlyPlayTilWin n g = do
+   if randomlyPlayBoard g == 2048 then n
+   else if n == 10000 then n
+        else randomlyPlayTilWin (n+1) g       
+
+        -- let randomDirection = unsafePerformIO $ getStdRandom $ random (1,4)
+        -- if (randomDirection::Int) == 1 then do
+        -- insertRandomTile $ transpose $ leftGrid $ transpose g
+
+oneMove :: Grid -> Grid
+oneMove g = do 
+    let (randomDirection) = unsafePerformIO $ getStdRandom $ randomR (1,4)
+    if (randomDirection::Int) == 1 then insertRandomTile $ transpose $ leftGrid $ transpose g
+    else if (randomDirection::Int) == 2 then insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+         else if (randomDirection::Int) == 3 then insertRandomTile $ map reverse $ leftGrid (map reverse g)
+              else if (randomDirection::Int) == 4 then insertRandomTile $ leftGrid g
+                   else g    
 
    
 -- roll :: (StdGen -> (a, StdGen)) -> IO a -> Int
@@ -205,15 +277,18 @@ primaryLoop g = do
                     "a" -> primaryLoop  $ insertRandomTile $ leftGrid g
                     _   -> return ()
 
+main :: IO ()
 main = do
-
     let g =        [[Just 2, Just 2, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
     -- print $ stuckCheck g
-    
-    primaryLoop g
+    colorGrid g
+    -- print $ randomlyPlayTilWin 0 g
+
+    monteCarloPlayBoard g
+    -- primaryLoop g
     -- primaryLoop g
  
     
