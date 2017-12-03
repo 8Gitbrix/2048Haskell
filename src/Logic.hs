@@ -4,7 +4,9 @@ import Data.Maybe
 import Data.List
 import Prelude
 
-import qualified System.Random    as R
+import System.Random
+import Control.Monad.IO.Class
+import System.IO.Unsafe
 
 
 -- import System.IO (stdin, hReady)
@@ -129,49 +131,56 @@ checkTileExists t = case t of
   Nothing -> False
   _ -> True
 
--- insertRandomTile :: R.RandomGen rand => rand -> Grid -> Grid
--- insertRandomTile rand g = case g of  
---    (x:xs) -> if checkRowExists x then x:(insertRandomTile rand xs) 
---              else do
---                 if checkFull xs then (insertRandomTileInRow rand x):xs
---                 else do
---                    let (num, rand') = R.randomR (1,10) rand
---                    if (num::Int) <= 6 then x:(insertRandomTile rand' xs)
---                    else (insertRandomTileInRow rand' x):xs
-
--- insertRandomTileInRow :: R.RandomGen rand => rand -> [Tile] -> [Tile]
--- insertRandomTileInRow rand r = case r of
---    (x:xs) -> if checkTileExists x then x:(insertRandomTileInRow rand xs)
---             else do 
---                if checkRowExists xs then (makeRandomTile rand):xs
---                else do
---                    let (num, rand') = R.randomR (1,10) rand
---                    if (num::Int) <= 6 then x:(insertRandomTileInRow rand' xs)
---                     else (makeRandomTile rand'):xs
 insertRandomTile :: Grid -> Grid
-insertRandomTile g = case g of 
+insertRandomTile  g = case g of  
    (x:xs) -> if checkRowExists x then x:(insertRandomTile xs) 
-             else (insertRandomTileInRow  x):xs
+             else do
+                if checkFull xs then (insertRandomTileInRow x):xs
+                else do
+                   let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
+                   if (tempNum::Int) <= 6 then x:(insertRandomTile xs)
+                   else (insertRandomTileInRow x):xs
 
 insertRandomTileInRow :: [Tile] -> [Tile]
-insertRandomTileInRow r = case r of
+insertRandomTileInRow  r = case r of
    (x:xs) -> if checkTileExists x then x:(insertRandomTileInRow xs)
-             else (makeRandomTile):xs
+            else do 
+               if checkRowExists xs then (makeRandomTile):xs
+               else do
+                   let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
+                   if (tempNum::Int) <= 6 then x:(insertRandomTileInRow xs)
+                    else (makeRandomTile):xs
+
+-- insertRandomTile :: Grid -> Grid
+-- insertRandomTile g = case g of 
+--    (x:xs) -> if checkRowExists x then x:(insertRandomTile xs) 
+--              else (insertRandomTileInRow  x):xs
+
+-- insertRandomTileInRow :: [Tile] -> [Tile]
+-- insertRandomTileInRow r = case r of
+--    (x:xs) -> if checkTileExists x then x:(insertRandomTileInRow xs)
+--              else (makeRandomTile):xs
               
             
 makeRandomTile :: Tile
-makeRandomTile = Just 2
+makeRandomTile = do
+   let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
+   if (tempNum::Int) < 10 then Just 2 else Just 4
+       
 -- makeRandomTile = do
 --    let (num, rand') = R.randomR (1,10) rand
 --    if (num::Int) <= 9 then Just 2 else Just 4
+-- changeD :: IO Int -> Tile
+-- changeD 
+
+
    
-
-
-
-  
+-- roll :: (StdGen -> (a, StdGen)) -> IO a -> Int
+-- roll stdg = do unsafePerformIO $ stdg $ randomR (1,10)
 
 primaryLoop :: Grid -> IO ()
 primaryLoop g = do
+    
     colorGrid g
     let num = scoreGrid g 0
     if (checkFull g) && (stuckCheck g) then do       
@@ -201,6 +210,7 @@ main = do
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
     -- print $ stuckCheck g
+    
     primaryLoop g
     -- primaryLoop g
  
