@@ -119,12 +119,12 @@ stuckCheck g = do
 checkFull :: Grid -> Bool
 checkFull g = case g of 
   [] -> True
-  (x:xs) -> checkRowExists x && checkFull xs
+  (x:xs) -> checkRowFull x && checkFull xs
 
-checkRowExists :: [Tile] -> Bool
-checkRowExists r = case r of
+checkRowFull :: [Tile] -> Bool
+checkRowFull r = case r of
   [] -> True
-  (x:xs) -> checkTileExists x && checkRowExists xs
+  (x:xs) -> checkTileExists x && checkRowFull xs
 
 checkTileExists :: Tile -> Bool
 checkTileExists t = case t of
@@ -132,20 +132,22 @@ checkTileExists t = case t of
   _ -> True
 
 insertRandomTile :: Grid -> Grid
-insertRandomTile  g = case g of  
-   (x:xs) -> if checkRowExists x then x:(insertRandomTile xs) 
+insertRandomTile g = case g of  
+   (x:xs) -> if checkFull (x:xs) then (x:xs)
              else do
-                if checkFull xs then (insertRandomTileInRow x):xs
+                if checkRowFull x then x:(insertRandomTile xs) 
                 else do
-                   let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
-                   if (tempNum::Int) <= 6 then x:(insertRandomTile xs)
-                   else (insertRandomTileInRow x):xs
+                   if checkFull xs then (insertRandomTileInRow x):xs
+                   else do
+                      let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
+                      if (tempNum::Int) <= 6 then x:(insertRandomTile xs)
+                      else (insertRandomTileInRow x):xs
 
 insertRandomTileInRow :: [Tile] -> [Tile]
 insertRandomTileInRow  r = case r of
    (x:xs) -> if checkTileExists x then x:(insertRandomTileInRow xs)
-            else do 
-               if checkRowExists xs then (makeRandomTile):xs
+             else do 
+               if checkRowFull xs then (makeRandomTile):xs
                else do
                    let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,10)
                    if (tempNum::Int) <= 6 then x:(insertRandomTileInRow xs)
@@ -153,7 +155,7 @@ insertRandomTileInRow  r = case r of
 
 -- insertRandomTile :: Grid -> Grid
 -- insertRandomTile g = case g of 
---    (x:xs) -> if checkRowExists x then x:(insertRandomTile xs) 
+--    (x:xs) -> if checkRowFull x then x:(insertRandomTile xs) 
 --              else (insertRandomTileInRow  x):xs
 
 -- insertRandomTileInRow :: [Tile] -> [Tile]
@@ -180,7 +182,7 @@ makeRandomTile = do
 
 primaryLoop :: Grid -> IO ()
 primaryLoop g = do
-    
+    putStrLn "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     colorGrid g
     let num = scoreGrid g 0
     if (checkFull g) && (stuckCheck g) then do       
@@ -195,7 +197,7 @@ primaryLoop g = do
             _ -> do
               
                -- print num
-               c <- getLine
+               c <- getLine               
                case c of
                     "w" -> primaryLoop  $ insertRandomTile $ transpose $ leftGrid $ transpose g
                     "s" -> primaryLoop  $ insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
