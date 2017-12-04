@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/bin"
-libdir     = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/2048Haskell-0.1.0.0-2K1SPFronEMEGQ25qIC9Rl"
+libdir     = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/2048Haskell-0.1.0.0"
 dynlibdir  = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2"
 datadir    = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/share/x86_64-osx-ghc-8.0.2/2048Haskell-0.1.0.0"
 libexecdir = "/Users/ashwinjeyaseelan/Documents/GitHub/2048Haskell/.stack-work/install/x86_64-osx/lts-9.12/8.0.2/libexec"

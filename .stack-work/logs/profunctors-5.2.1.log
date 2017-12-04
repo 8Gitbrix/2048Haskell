@@ -1,0 +1,27 @@
+Configuring profunctors-5.2.1...
+Building profunctors-5.2.1...
+Preprocessing library profunctors-5.2.1...
+[ 1 of 16] Compiling Data.Profunctor.Unsafe ( src/Data/Profunctor/Unsafe.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Unsafe.o )
+[ 2 of 16] Compiling Data.Profunctor.Types ( src/Data/Profunctor/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Types.o )
+[ 3 of 16] Compiling Data.Profunctor.Monad ( src/Data/Profunctor/Monad.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Monad.o )
+[ 4 of 16] Compiling Data.Profunctor.Adjunction ( src/Data/Profunctor/Adjunction.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Adjunction.o )
+[ 5 of 16] Compiling Data.Profunctor.Strong ( src/Data/Profunctor/Strong.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Strong.o )
+[ 6 of 16] Compiling Data.Profunctor.Choice ( src/Data/Profunctor/Choice.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Choice.o )
+[ 7 of 16] Compiling Data.Profunctor.Closed ( src/Data/Profunctor/Closed.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Closed.o )
+[ 8 of 16] Compiling Data.Profunctor.Traversing ( src/Data/Profunctor/Traversing.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Traversing.o )
+[ 9 of 16] Compiling Data.Profunctor.Mapping ( src/Data/Profunctor/Mapping.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Mapping.o )
+[10 of 16] Compiling Data.Profunctor  ( src/Data/Profunctor.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor.o )
+[11 of 16] Compiling Data.Profunctor.Cayley ( src/Data/Profunctor/Cayley.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Cayley.o )
+[12 of 16] Compiling Data.Profunctor.Sieve ( src/Data/Profunctor/Sieve.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Sieve.o )
+[13 of 16] Compiling Data.Profunctor.Rep ( src/Data/Profunctor/Rep.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Rep.o )
+[14 of 16] Compiling Data.Profunctor.Composition ( src/Data/Profunctor/Composition.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Composition.o )
+
+src/Data/Profunctor/Composition.hs:49:1: warning: [-Wunused-imports]
+    The import of ‘Data.Profunctor.Mapping’ is redundant
+      except perhaps to import instances from ‘Data.Profunctor.Mapping’
+    To import instances alone, use: import Data.Profunctor.Mapping()
+[15 of 16] Compiling Data.Profunctor.Ran ( src/Data/Profunctor/Ran.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Ran.o )
+[16 of 16] Compiling Data.Profunctor.Yoneda ( src/Data/Profunctor/Yoneda.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Profunctor/Yoneda.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/profunctors-5.2.1-Ga89Nyw0d7LBEIoX4AZ6gT
+Registering profunctors-5.2.1...

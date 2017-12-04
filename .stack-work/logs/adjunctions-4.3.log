@@ -1,0 +1,27 @@
+Configuring adjunctions-4.3...
+Building adjunctions-4.3...
+Preprocessing library adjunctions-4.3...
+[ 1 of 11] Compiling Data.Functor.Rep ( src/Data/Functor/Rep.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Rep.o )
+
+src/Data/Functor/Rep.hs:111:1: warning: [-Winline-rule-shadowing]
+    Rule "tabulate/index" may never fire
+      because rule "Class op index" for ‘index’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule
+[ 2 of 11] Compiling Data.Functor.Contravariant.Rep ( src/Data/Functor/Contravariant/Rep.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Contravariant/Rep.o )
+
+src/Data/Functor/Contravariant/Rep.hs:55:1: warning: [-Winline-rule-shadowing]
+    Rule "tabulate/index" may never fire
+      because rule "Class op index" for ‘index’ might fire first
+    Probable fix: add phase [n] or [~n] to the competing rule
+[ 3 of 11] Compiling Data.Functor.Contravariant.Adjunction ( src/Data/Functor/Contravariant/Adjunction.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Contravariant/Adjunction.o )
+[ 4 of 11] Compiling Data.Functor.Adjunction ( src/Data/Functor/Adjunction.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Adjunction.o )
+[ 5 of 11] Compiling Control.Monad.Trans.Conts ( src/Control/Monad/Trans/Conts.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Trans/Conts.o )
+[ 6 of 11] Compiling Control.Monad.Trans.Contravariant.Adjoint ( src/Control/Monad/Trans/Contravariant/Adjoint.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Trans/Contravariant/Adjoint.o )
+[ 7 of 11] Compiling Control.Monad.Trans.Adjoint ( src/Control/Monad/Trans/Adjoint.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Trans/Adjoint.o )
+[ 8 of 11] Compiling Control.Monad.Representable.State ( src/Control/Monad/Representable/State.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Representable/State.o )
+[ 9 of 11] Compiling Control.Monad.Representable.Reader ( src/Control/Monad/Representable/Reader.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Representable/Reader.o )
+[10 of 11] Compiling Control.Comonad.Trans.Adjoint ( src/Control/Comonad/Trans/Adjoint.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Adjoint.o )
+[11 of 11] Compiling Control.Comonad.Representable.Store ( src/Control/Comonad/Representable/Store.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Representable/Store.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp
+Registering adjunctions-4.3...

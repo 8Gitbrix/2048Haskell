@@ -1,0 +1,18 @@
+Configuring kan-extensions-5.0.2...
+Building kan-extensions-5.0.2...
+Preprocessing library kan-extensions-5.0.2...
+[ 1 of 12] Compiling Data.Functor.Kan.Ran ( src/Data/Functor/Kan/Ran.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Kan/Ran.o )
+[ 2 of 12] Compiling Data.Functor.Yoneda ( src/Data/Functor/Yoneda.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Yoneda.o )
+[ 3 of 12] Compiling Data.Functor.Kan.Lan ( src/Data/Functor/Kan/Lan.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Kan/Lan.o )
+[ 4 of 12] Compiling Data.Functor.Day ( src/Data/Functor/Day.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Day.o )
+[ 5 of 12] Compiling Data.Functor.Day.Curried ( src/Data/Functor/Day/Curried.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Day/Curried.o )
+[ 6 of 12] Compiling Data.Functor.Coyoneda ( src/Data/Functor/Coyoneda.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Coyoneda.o )
+[ 7 of 12] Compiling Data.Functor.Contravariant.Yoneda ( src/Data/Functor/Contravariant/Yoneda.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Contravariant/Yoneda.o )
+[ 8 of 12] Compiling Data.Functor.Contravariant.Day ( src/Data/Functor/Contravariant/Day.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Contravariant/Day.o )
+[ 9 of 12] Compiling Data.Functor.Contravariant.Coyoneda ( src/Data/Functor/Contravariant/Coyoneda.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Contravariant/Coyoneda.o )
+[10 of 12] Compiling Control.Monad.Codensity ( src/Control/Monad/Codensity.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Codensity.o )
+[11 of 12] Compiling Control.Comonad.Density ( src/Control/Comonad/Density.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Density.o )
+[12 of 12] Compiling Control.Monad.Co ( src/Control/Monad/Co.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Monad/Co.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX
+Registering kan-extensions-5.0.2...

@@ -1,0 +1,987 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-04 02:12:10.918154 UTC
+
+interface main@main:Game 8002
+  interface hash: f50783d11d4a87009058b9d4cce937ef
+  ABI hash: 902ab9116ccea97310e54adf5337cdb6
+  export-list hash: 22d080dca83d274f672dc52aa00ecd07
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f1e02b8e10513cd91f5d59aeb63f6e7b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Game.app
+  Game.drawGameOver
+  Game.drawGrid
+  Game.drawScore
+  Game.drawStats
+  Game.drawUI
+  Game.gameOverAttr
+  Game.handle
+  Game.handleEvent
+  Game.isGameOver
+  Game.main
+  Game.step
+  Game.theMap
+  Game.turn
+  Game.Name
+  Game.Tick{Game.Tick}
+module dependencies: Logic
+package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      base-orphans-0.6@base-orphans-0.6-AbJ3lKVXygDCG0eeQEv8Iu
+                      bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw
+                      binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
+                      brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3
+                      bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      call-stack-0.1.0@call-stack-0.1.0-FYVrCPXGP9EGAuTW32963O
+                      cereal-0.5.4.0@cereal-0.5.4.0-BsAGxfp8yAs3CiRo2E875e
+                      comonad-5.0.2@comonad-5.0.2-Fq9Xy9jdx6uIyJZn00E6Yc
+                      containers-0.5.7.1@containers-0.5.7.1
+                      contravariant-1.4@contravariant-1.4-29zF0Im431177ovfbHYCGv
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      distributive-0.5.3@distributive-0.5.3-IX4kyVcHAyoH4uFYrsjY1R
+                      dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk
+                      exceptions-0.8.3@exceptions-0.8.3-ADEDRATtUrMK1JW4zMQ9U
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      free-4.12.4@free-4.12.4-C2gBQV0m8J42HxqSLTFyVx
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.2@integer-logarithms-1.0.2-92lMiWV9mmYAwfMEYgfQ0D
+                      kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX
+                      lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW
+                      linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p
+                      microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM
+                      microlens-mtl-0.1.11.0@microlens-mtl-0.1.11.0-9MGmPSS1MMRHOvHzdJaq9s
+                      microlens-th-0.4.1.1@microlens-th-0.4.1.1-DWxGvZm1QBXHYYQf0fHp0m
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      parsec-3.1.11@parsec-3.1.11-1aqiimsgq2dCv7eoaC8WuX
+                      prelude-extras-0.4.0.3@prelude-extras-0.4.0.3-BhL9U5k7NtGJn1itwIHt2Y
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      profunctors-5.2.1@profunctors-5.2.1-Ga89Nyw0d7LBEIoX4AZ6gT
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      reflection-2.1.2@reflection-2.1.2-Bem12O1xFGSHr4C2Hyu1c4
+                      scientific-0.3.5.2@scientific-0.3.5.2-FM2NdrNTcdbCDq9wuNnhIA
+                      semigroupoids-5.2.1@semigroupoids-5.2.1-Db8txM8kTsI6Y49CY6g5Jn
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt
+                      template-haskell-2.11.1.0
+                      terminfo-0.4.1.0@terminfo-0.4.1.0-FNScbjwxa2Y3p4e5RvG3l
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+                      th-abstraction-0.2.6.0@th-abstraction-0.2.6.0-HRFJgpoqs5HJ5LgHnjmMhQ
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-compat-0.5.1.4@transformers-compat-0.5.1.4-IuFogs8HAVUJBWVNMhtssu
+                      unix-2.7.2.1@unix-2.7.2.1
+                      unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC
+                      utf8-string-1.0.1.1@utf8-string-1.0.1.1-1DpjxLeTvGg7ttZZojxJR5
+                      vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ
+                      vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         base-orphans-0.6@base-orphans-0.6-AbJ3lKVXygDCG0eeQEv8Iu:Data.Orphans
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol:Data.Hashable.Generic
+         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.Instances
+         reflection-2.1.2@reflection-2.1.2-Bem12O1xFGSHr4C2Hyu1c4:Data.Reflection
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Fusion.Bundle
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+family instance modules: adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp:Data.Functor.Rep
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Compose
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Biff
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Clown
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Fix
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Flip
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Join
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Joker
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Product
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Sum
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Tannen
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Wrapped
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.Get
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.Signed
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.VarInt
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk:Data.DList
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX:Data.Functor.Day
+                         kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX:Data.Functor.Yoneda
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.At
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Internal.Indexed
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Reified
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Tuple
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Wrapped
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Zoom
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V1
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2
+                         microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro.Internal
+                         microlens-mtl-0.1.11.0@microlens-mtl-0.1.11.0-9MGmPSS1MMRHOvHzdJaq9s:Lens.Micro.Mtl.Internal
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Data.Primitive.Array
+                         profunctors-5.2.1@profunctors-5.2.1-Ga89Nyw0d7LBEIoX4AZ6gT:Data.Profunctor.Rep
+                         tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt:Data.Tagged
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+                         th-abstraction-0.2.6.0@th-abstraction-0.2.6.0-HRFJgpoqs5HJ5LgHnjmMhQ:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashSet
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Primitive
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Storable
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed.Base
+                         vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Image.Internal
+                         vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Input.Events
+import  -/  base-4.9.1.0:Control.Concurrent 2ee6a0a58489520b9a96d8fef10380fa
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Control.Monad.IO.Class 1a4384f66ee999caf5366398edb6ca7b
+import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Conc.IO def2d34849634fa07308965605821da6
+import  -/  base-4.9.1.0:GHC.Conc.Sync 8d0a228e5fc4d8c110495066f4d52ea1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick e2a3fb09c74a952e5abacbc620ec0b00
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.AttrMap b09be9515be6f6b2e62d4e8f766d8e83
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.BChan 87ea65aaf0d42481dc99bd669150c58b
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Main d0d9d5e5942ff9efa2fbd0787bd03cd7
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types 5650510519c2681f9a04cee798296505
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types.Internal 8114ee83adccb2849ccde566e37363d3
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Util 68dcfbfa78970336e5e7c2114aedbfec
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border a0f69eada82d2170e87954912f42b1ba
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border.Style c0e1d5581c0fbadb737040de9c33e315
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Center 6d8547033b34549a1b43dfa188c8c741
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Core 23b4767a9d80fef5513700535a0d852b
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b534e87988fc642948
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
+import  -/  Logic ac79f01fbfad6cd1dfa62e899e11a7ca
+  exports: 5c7f7ffe4fbcc6c45591ede4e0b21031
+  Direction 8d4b988266ab87805c94d9bc03d5ebc3
+  Down 7f1b5028744622dd5319c82e55949f9b
+  Game 9bd153c3e447e74120b0e8464025a628
+  Game e51b0a5c383660d10cd2dc927661fa01
+  Grid 0042228100c73fede17ca0216502ec67
+  Left 1756cac20a58324b58ed217cf9c144ff
+  Right 34e823e1a88dba5b5848bf97653a420d
+  Up ce074310c1241fadaba7fd85bf9c23cc
+  _dead d79f3ffb3f9f8802832d309ec5fb1e15
+  _grid adb69687317781d1c9020b6808a7f2d8
+  _score 3b56748fb5e93632604649aa3176a9ac
+  checkFull d964473dc4d99ec6d05d51a2bb1a826f
+  dead bd85958ff9a07ad6799db3f93ed2ea47
+  grid 026587772db2c2f830ddeeffe112371f
+  initGame 250391b0bfe7e9a8379c4aeef74a2f33
+  insertRandomTile 6b6075d773b28b6f210964b096c886eb
+  leftGrid 3734304773ada79feddf8dc8ba2281b4
+  printTile 92b53b8cbc6589736a7027ac037e64d0
+  score ad6eddc0f3ad73da3a85c0f413ee8ff2
+  scoreGrid 7b61f6e894d197317893065fabb1cab0
+  stuckCheck ba27a4dfa6e644b687c49a6bd2e0fe9b
+import  -/  microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro 17ccad91e2fea7d0a9e5062fed73ea61
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty d09911cf98d07946a5d45e866f2393bc
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Attributes 437178cb2333066a294761bf01f46efb
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Attributes.Color 33726c96480264143c3f5c4b2b9c1bcb
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Config df9722e311759b0528a283358d7d0ca7
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Input.Events 4cbcbfe8872c6971e73fa7b5f773beda
+48b1c68d7f13fcb6153052cb18d21789
+  $tc'Tick :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1401348520306857302##
+                   11540895409956208137##
+                   Game.$trModule
+                   Game.$tc'Tick1) -}
+b91aa0c52fa6747514ee36f76fb50bff
+  $tc'Tick1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Tick"#) -}
+9e4db68e29ee7fbfb63b923c10e2037a
+  $tcTick :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13028844077959262943##
+                   12128501707899652696##
+                   Game.$trModule
+                   Game.$tcTick1) -}
+2cf2679b2e86b13d1fe5c4d4f8a0ff2b
+  $tcTick1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Tick"#) -}
+e83626f96954699c59f8808db22ac95a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Game.$trModule2 Game.$trModule1) -}
+605e50c590694519b5cfcc57ee0a0d21
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Game"#) -}
+bfddda3a7f73c81040d44c90c2e0e17b
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+e329e203ee3d40ab07ba59dbd5169dbe
+  $wdrawGrid ::
+    Logic.Game
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM
+            Game.Name (Brick.Types.Internal.Result Game.Name) #)
+  {- Arity: 1, Strictness: <L,1*U(1*U,A,A)>, Inline: [0],
+     Unfolding: (\ (w :: Logic.Game) ->
+                 let {
+                   w1 :: Brick.Types.Widget Game.Name
+                   = case Brick.Widgets.Border.$wborder_
+                            @ Game.Name
+                            Game.drawGrid1
+                            (case w of wild { Logic.Game x x1 x2 ->
+                             case Game.drawGrid_go x of wild1 {
+                               [] -> Brick.Widgets.Core.emptyWidget @ Game.Name
+                               : ipv ipv1
+                               -> case Brick.Widgets.Core.$wrenderBox
+                                         @ Game.Name
+                                         (Brick.Widgets.Core.vBoxRenderer @ Game.Name)
+                                         wild1 of ww { (#,,#) ww1 ww2 ww3 ->
+                                  Brick.Types.Widget
+                                    @ Game.Name
+                                    ww1
+                                    ww2
+                                    ww3 } } }) of ww { (#,,#) ww1 ww2 ww3 ->
+                     Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }
+                 } in
+                 (# Brick.Types.hSize @ Game.Name w1,
+                    Brick.Types.vSize @ Game.Name w1,
+                    (\ (x :: Brick.Types.Internal.Context) ->
+                     case w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                     ds3
+                       `cast`
+                     (Control.Monad.Trans.Reader.N:ReaderT[0]
+                          <*>_N
+                          <Brick.Types.Internal.Context>_R
+                          <Control.Monad.Trans.State.Lazy.State
+                             (Brick.Types.Internal.RenderState Game.Name)>_R
+                          <Brick.Types.Internal.Result Game.Name>_N)
+                       (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                        Brick.Types.Internal.Context
+                          x1
+                          x2
+                          x3
+                          Brick.Widgets.Border.Style.unicodeBold
+                          x5 }) })
+                      `cast`
+                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                              <*>_N
+                              <Brick.Types.Internal.Context>_R
+                              <Control.Monad.Trans.State.Lazy.State
+                                 (Brick.Types.Internal.RenderState Game.Name)>_R
+                              <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
+d1696545313c04ae55ff306d0cf027de
+  $wdrawScore ::
+    GHC.Types.Int
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM
+            Game.Name (Brick.Types.Internal.Result Game.Name) #)
+  {- Arity: 1, Strictness: <L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Types.Int) ->
+                 let {
+                   w1 :: Brick.Types.Widget Game.Name
+                   = case Brick.Widgets.Border.$wborder_
+                            @ Game.Name
+                            Game.drawStats11
+                            (case Brick.Widgets.Center.$whCenterWith
+                                    @ Game.Name
+                                    (GHC.Base.Nothing @ GHC.Types.Char)
+                                    (case Brick.Widgets.Core.$wpadAll
+                                            @ Game.Name
+                                            Game.drawStats10
+                                            (case Brick.Widgets.Core.$wstr
+                                                    @ Game.Name
+                                                    (GHC.Show.$fShowInt_$cshow
+                                                       w) of ww { (#,,#) ww1 ww2 ww3 ->
+                                             Brick.Types.Widget
+                                               @ Game.Name
+                                               ww1
+                                               ww2
+                                               ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                     Brick.Types.Widget
+                                       @ Game.Name
+                                       ww1
+                                       ww2
+                                       ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                             Brick.Types.Widget
+                               @ Game.Name
+                               ww1
+                               ww2
+                               ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                     Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }
+                 } in
+                 (# Brick.Types.hSize @ Game.Name w1,
+                    Brick.Types.vSize @ Game.Name w1,
+                    (\ (x :: Brick.Types.Internal.Context) ->
+                     case w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                     ds3
+                       `cast`
+                     (Control.Monad.Trans.Reader.N:ReaderT[0]
+                          <*>_N
+                          <Brick.Types.Internal.Context>_R
+                          <Control.Monad.Trans.State.Lazy.State
+                             (Brick.Types.Internal.RenderState Game.Name)>_R
+                          <Brick.Types.Internal.Result Game.Name>_N)
+                       (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                        Brick.Types.Internal.Context
+                          x1
+                          x2
+                          x3
+                          Brick.Widgets.Border.Style.unicodeBold
+                          x5 }) })
+                      `cast`
+                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                              <*>_N
+                              <Brick.Types.Internal.Context>_R
+                              <Control.Monad.Trans.State.Lazy.State
+                                 (Brick.Types.Internal.RenderState Game.Name)>_R
+                              <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
+2316504dcd8f7983aca244558e767bd9
+  $wdrawStats ::
+    Logic.Game
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM
+            Game.Name (Brick.Types.Internal.Result Game.Name) #)
+  {- Arity: 1, Strictness: <L,U(A,1*U(U),1*U)>, Inline: [0],
+     Unfolding: (\ (w :: Logic.Game) ->
+                 let {
+                   w1 :: Brick.Types.Widget Game.Name
+                   = case Brick.Widgets.Core.$wrenderBox
+                            @ Game.Name
+                            (Brick.Widgets.Core.vBoxRenderer @ Game.Name)
+                            (GHC.Types.:
+                               @ (Brick.Types.Widget Game.Name)
+                               (case Game.$wdrawScore
+                                       (case w of wild { Logic.Game x x1 x2 ->
+                                        x1 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
+                               (GHC.Types.:
+                                  @ (Brick.Types.Widget Game.Name)
+                                  (case Brick.Widgets.Core.$wpadTop
+                                          @ Game.Name
+                                          Game.drawStats8
+                                          (case w of wild { Logic.Game x x1 x2 ->
+                                           case x2 of wild1 {
+                                             GHC.Types.False
+                                             -> Brick.Widgets.Core.emptyWidget @ Game.Name
+                                             GHC.Types.True
+                                             -> Game.drawStats2 } }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                   Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
+                                  (GHC.Types.[]
+                                     @ (Brick.Types.Widget
+                                          Game.Name)))) of ww { (#,,#) ww1 ww2 ww3 ->
+                     Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }
+                 } in
+                 (# Brick.Types.Fixed, Brick.Types.vSize @ Game.Name w1,
+                    let {
+                      f1 :: Brick.Types.Internal.Context
+                            -> Control.Monad.Trans.State.Lazy.State
+                                 (Brick.Types.Internal.RenderState Game.Name)
+                                 (Brick.Types.Internal.Result Game.Name)
+                      = case Brick.Widgets.Internal.$wcropToContext
+                               @ Game.Name
+                               w1 of ww { (#,,#) ww1 ww2 ww3 ->
+                        ww3
+                          `cast`
+                        (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <*>_N
+                             <Brick.Types.Internal.Context>_R
+                             <Control.Monad.Trans.State.Lazy.State
+                                (Brick.Types.Internal.RenderState Game.Name)>_R
+                             <Brick.Types.Internal.Result Game.Name>_N) }
+                    } in
+                    (\ (x :: Brick.Types.Internal.Context) ->
+                     f1
+                       (case x of wild { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                        Brick.Types.Internal.Context x1 Game.drawStats1 x3 x4 x5 }))
+                      `cast`
+                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                              <*>_N
+                              <Brick.Types.Internal.Context>_R
+                              <Control.Monad.Trans.State.Lazy.State
+                                 (Brick.Types.Internal.RenderState Game.Name)>_R
+                              <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
+738402ae2a617424d0946950dcca005d
+  $wdrawUI ::
+    Logic.Game
+    -> (# Brick.Types.Widget Game.Name,
+          [Brick.Types.Widget Game.Name] #)
+  {- Arity: 1, Strictness: <L,U(1*U,U(U),U)>, Inline: [0],
+     Unfolding: (\ (w :: Logic.Game) ->
+                 (# case Brick.Widgets.Center.$wvCenterWith
+                           @ Game.Name
+                           (GHC.Base.Nothing @ GHC.Types.Char)
+                           (case Brick.Widgets.Center.$whCenterWith
+                                   @ Game.Name
+                                   (GHC.Base.Nothing @ GHC.Types.Char)
+                                   (case Brick.Widgets.Core.$wrenderBox
+                                           @ Game.Name
+                                           (Brick.Widgets.Core.hBoxRenderer @ Game.Name)
+                                           (GHC.Types.:
+                                              @ (Brick.Types.Widget Game.Name)
+                                              (case Brick.Widgets.Core.$wpadRight
+                                                      @ Game.Name
+                                                      Game.drawStats8
+                                                      (Game.drawStats
+                                                         w) of ww { (#,,#) ww1 ww2 ww3 ->
+                                               Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
+                                              (GHC.Types.:
+                                                 @ (Brick.Types.Widget Game.Name)
+                                                 (Game.drawGrid w)
+                                                 (GHC.Types.[]
+                                                    @ (Brick.Types.Widget
+                                                         Game.Name)))) of ww { (#,,#) ww1 ww2 ww3 ->
+                                    Brick.Types.Widget
+                                      @ Game.Name
+                                      ww1
+                                      ww2
+                                      ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                            Brick.Types.Widget
+                              @ Game.Name
+                              ww1
+                              ww2
+                              ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                    Brick.Types.Widget @ Game.Name ww1 ww2 ww3 },
+                    GHC.Types.[] @ (Brick.Types.Widget Game.Name) #)) -}
+f987aa65b478f0e825b5a9618d3b105f
+  $whandle ::
+    Logic.Direction -> Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Logic.Direction) (w1 :: Logic.Grid) ->
+                 case w of wild {
+                   Logic.Up
+                   -> Logic.$winsertRandomTile
+                        (Data.OldList.transpose
+                           @ Logic.Tile
+                           (GHC.Base.map
+                              @ [Logic.Tile]
+                              @ [Logic.Tile]
+                              Logic.leftRow
+                              (Data.OldList.transpose @ Logic.Tile w1)))
+                   Logic.Down
+                   -> Logic.$winsertRandomTile
+                        (Data.OldList.transpose
+                           @ Logic.Tile
+                           (GHC.Base.map
+                              @ [Logic.Tile]
+                              @ [Logic.Tile]
+                              Game.handle1
+                              (Data.OldList.transpose @ Logic.Tile w1)))
+                   Logic.Left -> Logic.$winsertRandomTile (Logic.leftGrid w1)
+                   Logic.Right
+                   -> Logic.$winsertRandomTile
+                        (GHC.Base.map @ [Logic.Tile] @ [Logic.Tile] Game.handle1 w1) }) -}
+3380ae2258d49ef576bb145b5fcaf762
+  $wturn ::
+    Logic.Direction
+    -> Logic.Game -> (# Logic.Grid, GHC.Types.Int, GHC.Types.Bool #)
+  {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>, Inline: [0],
+     Unfolding: (\ (w :: Logic.Direction) (w1 :: Logic.Game) ->
+                 let {
+                   newGrid :: Logic.Grid
+                   = case w1 of wild { Logic.Game x x1 x2 ->
+                     case Game.$whandle w x of ww { (#,#) ww1 ww2 ->
+                     GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
+                 } in
+                 (# newGrid,
+                    case Logic.$wscoreGrid newGrid 0# of ww2 { DEFAULT ->
+                    GHC.Types.I# ww2 },
+                    case Logic.checkFull newGrid of wild {
+                      GHC.Types.False -> GHC.Types.False
+                      GHC.Types.True -> Logic.stuckCheck newGrid } #)) -}
+f59ec08ae74e1440387ed63a30339c22
+  type Name = ()
+b77f50c9f64ede09a22acf18beef752b
+  data Tick = Tick
+4cc943cffbf4fb8fb7db9b606788e189
+  app :: Brick.Main.App Logic.Game Game.Tick Game.Name
+  {- Strictness: m,
+     Unfolding: (Brick.Main.App
+                   @ Logic.Game
+                   @ Game.Tick
+                   @ Game.Name
+                   Game.drawUI
+                   (Brick.Main.neverShowCursor @ Logic.Game @ Game.Name)
+                   Game.handleEvent
+                   (Brick.Types.$fApplicativeEventM4 @ Logic.Game @ ())
+                     `cast`
+                   (<Logic.Game>_R
+                    ->_R Trans
+                             (<Brick.Types.Internal.EventRO ()>_R
+                              ->_R Trans
+                                       (<Brick.Types.Internal.EventState ()>_R
+                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                      <(Logic.Game,
+                                                        Brick.Types.Internal.EventState ())>_R))
+                                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                 <Brick.Types.Internal.EventState ()>_N
+                                                 <GHC.Types.IO>_R
+                                                 <Logic.Game>_N)))
+                             (Trans
+                                  (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                            <*>_N
+                                            <Brick.Types.Internal.EventRO ()>_R
+                                            <Control.Monad.Trans.State.Lazy.StateT
+                                               (Brick.Types.Internal.EventState ()) GHC.Types.IO>_R
+                                            <Logic.Game>_N))
+                                  (Sym (Brick.Types.N:EventM[0] <()>_N) <Logic.Game>_N)))
+                   Game.app1) -}
+66a70ac96bdf43e5e4dd52b3d2e47a5b
+  app1 :: Logic.Game -> Brick.AttrMap.AttrMap
+  {- Arity: 1, Strictness: <L,A>m1,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Logic.Game) -> Game.theMap) -}
+edf49bfb16cbab08c37edf4aa2d2faf2
+  drawGameOver :: GHC.Types.Bool -> Brick.Types.Widget Game.Name
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (dead :: GHC.Types.Bool) ->
+                 case dead of wild {
+                   GHC.Types.False -> Brick.Widgets.Core.emptyWidget @ Game.Name
+                   GHC.Types.True -> Game.drawStats2 }) -}
+8e06e53db9f3f3517ea015be9d62ab08
+  drawGrid :: Logic.Game -> Brick.Types.Widget Game.Name
+  {- Arity: 1, Strictness: <L,1*U(1*U,A,A)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Logic.Game) ->
+                 case Game.$wdrawGrid w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+ff7f972bb3e2091b17aafd5e82225675
+  drawGrid1 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
+  {- Unfolding: (GHC.Base.Just
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawGrid2) -}
+aaed8bcce121404798ab237e47c8a6ec
+  drawGrid2 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ Game.Name
+                        Game.drawGrid3 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+2d862e2dca406754f1c5ac8b4af7a3be
+  drawGrid3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "2048"#) -}
+8036c793e0a7fecceb21cc1ee28d4034
+  drawGrid_go :: [[Logic.Tile]] -> [Brick.Types.Widget Game.Name]
+  {- Arity: 1, Strictness: <S,1*U> -}
+079f6e0f177921991eeddc5764926322
+  drawScore :: GHC.Types.Int -> Brick.Types.Widget Game.Name
+  {- Arity: 1, Strictness: <L,1*U(U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case Game.$wdrawScore w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+0f6d8e41c6a4cd5588ca4d2b4ccc254e
+  drawStats :: Logic.Game -> Brick.Types.Widget Game.Name
+  {- Arity: 1, Strictness: <L,U(A,1*U(U),1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Logic.Game) ->
+                 case Game.$wdrawStats w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+730a5d99507272063fd7530268715117
+  drawStats1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+8ab27e1bc07d560115686426c6e20380
+  drawStats10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+f1da2c39b1950c735bca1fe44ecc3349
+  drawStats11 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
+  {- Unfolding: (GHC.Base.Just
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawStats12) -}
+447dce2cdf49a7d4e1d7b10bbd22f1f5
+  drawStats12 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ Game.Name
+                        Game.drawStats13 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+adc5ddba8c14c17b4733c0ebaf073d8d
+  drawStats13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Score"#) -}
+b9619a2d4ae95caf19d606dc423d0d61
+  drawStats2 :: Brick.Types.Widget Game.Name
+  {- Strictness: m,
+     Unfolding: (Brick.Types.Widget
+                   @ Game.Name
+                   Game.drawStats7
+                   Game.drawStats6
+                   Game.drawStats3
+                     `cast`
+                   (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <*>_N
+                             <Brick.Types.Internal.Context>_R
+                             <Control.Monad.Trans.State.Lazy.State
+                                (Brick.Types.Internal.RenderState Game.Name)>_R
+                             <Brick.Types.Internal.Result Game.Name>_N))) -}
+aaf9248f5adc659d1930385e262bc343
+  drawStats3 ::
+    Brick.Types.Internal.Context
+    -> Control.Monad.Trans.State.Lazy.State
+         (Brick.Types.Internal.RenderState Game.Name)
+         (Brick.Types.Internal.Result Game.Name)
+  {- Arity: 1, Strictness: <L,1*U(A,U,U,U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Brick.Types.Internal.Context) ->
+                 case Game.drawStats_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds3
+                   `cast`
+                 (Control.Monad.Trans.Reader.N:ReaderT[0]
+                      <*>_N
+                      <Brick.Types.Internal.Context>_R
+                      <Control.Monad.Trans.State.Lazy.State
+                         (Brick.Types.Internal.RenderState Game.Name)>_R
+                      <Brick.Types.Internal.Result Game.Name>_N)
+                   (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                    Brick.Types.Internal.Context Game.gameOverAttr x2 x3 x4 x5 }) }) -}
+53c4a5aca8b1ad0f2000b355e1d931b7
+  drawStats4 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ Game.Name
+                        Game.drawStats5 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+77911991f04683dc7bb4523638cf313f
+  drawStats5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "GAME OVER"#) -}
+76f2cf8c61392ac0bf81d32e281e9e1c
+  drawStats6 :: Brick.Types.Size
+  {- Unfolding: (case Game.drawStats_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds2 }) -}
+94d886d7bf303b14e209ec7526ec23f5
+  drawStats7 :: Brick.Types.Size
+  {- Unfolding: (case Game.drawStats_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds1 }) -}
+191f317054dd9a730a2b40e728fa17e6
+  drawStats8 :: Brick.Types.Padding
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Brick.Types.Pad Game.drawStats9) -}
+aba80fd1ee938caf5b3b63e2f5fa0a7d
+  drawStats9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+19a550f1601abdd2a89e314cd68b2d69
+  drawStats_w1 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Center.$whCenterWith
+                        @ Game.Name
+                        (GHC.Base.Nothing @ GHC.Types.Char)
+                        Game.drawStats4 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+0b2a0be0fb7b87d3fa003cf7738ab640
+  drawUI :: Logic.Game -> [Brick.Types.Widget Game.Name]
+  {- Arity: 1, Strictness: <L,U(1*U,U(U),U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Logic.Game) ->
+                 case Game.$wdrawUI w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ (Brick.Types.Widget Game.Name) ww1 ww2 }) -}
+39263b6df381a19025a132ef86818f2d
+  gameOverAttr :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.gameOverAttr1) -}
+33d33ef5e004d6a22829e99129cf8dd3
+  gameOverAttr1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.gameOverAttr2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+c59157ff487d7c39325dc2db1ff68679
+  gameOverAttr2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "gameOver"#) -}
+8a9a7d0ac1e2feffe1d575559fc584f2
+  handle :: Logic.Direction -> Logic.Grid -> Logic.Grid
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Logic.Direction) (w1 :: Logic.Grid) ->
+                 case Game.$whandle w w1 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ [Logic.Tile] ww1 ww2 }) -}
+2b04cdf891f1a21bcb1099c87a2e099a
+  handle1 :: [Logic.Tile] -> [Logic.Tile]
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ (x :: [Logic.Tile]) ->
+                 GHC.List.reverse1
+                   @ Logic.Tile
+                   (Logic.leftRow (GHC.List.reverse @ Logic.Tile x))
+                   (GHC.Types.[] @ Logic.Tile)) -}
+3df688ebeebdf790f984200371eca471
+  handleEvent ::
+    Logic.Game
+    -> Brick.Types.Internal.BrickEvent Game.Name Game.Tick
+    -> Brick.Types.EventM
+         Game.Name (Brick.Types.Internal.Next Logic.Game)
+  {- Arity: 2, Strictness: <L,U(U,U,U)><S,1*U> -}
+ccce149d32743eca19db8f7c8a59a220
+  isGameOver :: Logic.Game -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S(SLL),1*U(U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (g :: Logic.Game) ->
+                 case g of wild { Logic.Game x x1 x2 ->
+                 case Logic.checkFull x of wild1 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True -> Logic.stuckCheck x } }) -}
+d3305c1ea6be4bd9671650f98529c364
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Game.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+f3b922961c623da5ecc8681264cc3e5a
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.atomically#
+                        @ (Brick.BChan.BChan Game.Tick)
+                        Game.main3
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.Prim.fork#
+                        @ (GHC.Types.IO ())
+                        (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                         GHC.Prim.catch#
+                           @ ()
+                           @ GHC.Exception.SomeException
+                           (\ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                            letrec {
+                              a' :: GHC.Prim.State# GHC.Prim.RealWorld
+                                    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                                {- Arity: 1, Strictness: <S,U> -}
+                              = \ (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                case ipv1 of wild { Brick.BChan.BChan q ->
+                                case GHC.Prim.atomically#
+                                       @ ()
+                                       (\ (w2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                        case q of ww { Control.Concurrent.STM.TBQueue.TBQueue ww1 ww2 ww3 ww4 ->
+                                        Control.Concurrent.STM.TBQueue.$wwriteTBQueue
+                                          @ Game.Tick
+                                          ww1
+                                          ww2
+                                          ww3
+                                          ww4
+                                          Game.Tick
+                                          w2 })
+                                       s1 of ds2 { (#,#) ipv2 ipv3 ->
+                                case {__pkg_ccall base-4.9.1.0 rtsSupportsBoundThreads GHC.Prim.State#
+                                                                                         GHC.Prim.RealWorld
+                                                                                       -> (# GHC.Prim.State#
+                                                                                               GHC.Prim.RealWorld,
+                                                                                             GHC.Prim.Int# #)}
+                                       GHC.Prim.realWorld# of wild1 { (#,#) ds ds3 ->
+                                case ds3 of wild2 {
+                                  DEFAULT
+                                  -> case GHC.Event.Thread.$wthreadDelay
+                                            100000#
+                                            ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                                     a' ipv4 }
+                                  0#
+                                  -> case GHC.Prim.delay#
+                                            @ GHC.Prim.RealWorld
+                                            100000#
+                                            ipv2 of s' { DEFAULT ->
+                                     a' s' } } } } }
+                            } in
+                            a' eta1)
+                           GHC.Conc.Sync.childHandler1
+                           eta)
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <()>_R))
+                        ipv of ds { (#,#) ipv2 ipv3 ->
+                 case Brick.Main.$wcustomMain
+                        @ Game.Name
+                        @ Game.Tick
+                        @ Logic.Game
+                        GHC.Classes.$fOrd()
+                        Game.main2 `cast` (Sym (GHC.Types.N:IO[0] <Graphics.Vty.Vty>_R))
+                        (GHC.Base.Just @ (Brick.BChan.BChan Game.Tick) ipv1)
+                        Game.drawUI
+                        (Brick.Main.neverShowCursor @ Logic.Game @ Game.Name)
+                        Game.handleEvent
+                        (Brick.Types.$fApplicativeEventM4 @ Logic.Game @ ())
+                          `cast`
+                        (<Logic.Game>_R
+                         ->_R Trans
+                                  (<Brick.Types.Internal.EventRO ()>_R
+                                   ->_R Trans
+                                            (<Brick.Types.Internal.EventState ()>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Logic.Game,
+                                                             Brick.Types.Internal.EventState
+                                                               ())>_R))
+                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                      <Brick.Types.Internal.EventState ()>_N
+                                                      <GHC.Types.IO>_R
+                                                      <Logic.Game>_N)))
+                                  (Trans
+                                       (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                 <*>_N
+                                                 <Brick.Types.Internal.EventRO ()>_R
+                                                 <Control.Monad.Trans.State.Lazy.StateT
+                                                    (Brick.Types.Internal.EventState ())
+                                                    GHC.Types.IO>_R
+                                                 <Logic.Game>_N))
+                                       (Sym (Brick.Types.N:EventM[0] <()>_N) <Logic.Game>_N)))
+                        Game.app1
+                        Logic.initGame2
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 (# ipv4, GHC.Tuple.() #) } } }) -}
+c50415cbeada536d179a01519bd5cef5
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Graphics.Vty.Vty #)
+  {- Arity: 1,
+     Unfolding: (Graphics.Vty.mkVty1
+                   Graphics.Vty.Config.defaultConfig) -}
+b968c33013b35a8c0deaa58578a4e60b
+  main3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Brick.BChan.BChan Game.Tick #)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ (eta1 :: GHC.Prim.State#
+                              GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newTVar#
+                        @ [Game.Tick]
+                        @ GHC.Prim.RealWorld
+                        (GHC.Types.[] @ Game.Tick)
+                        eta1 of ds { (#,#) ipv ipv1 ->
+                 case GHC.Prim.newTVar#
+                        @ [Game.Tick]
+                        @ GHC.Prim.RealWorld
+                        (GHC.Types.[] @ Game.Tick)
+                        ipv of ds1 { (#,#) ipv2 ipv3 ->
+                 case GHC.Prim.newTVar#
+                        @ GHC.Types.Int
+                        @ GHC.Prim.RealWorld
+                        Control.Concurrent.STM.TBQueue.newTBQueue2
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 case GHC.Prim.newTVar#
+                        @ GHC.Types.Int
+                        @ GHC.Prim.RealWorld
+                        Game.main4
+                        ipv4 of ds3 { (#,#) ipv6 ipv7 ->
+                 (# ipv6,
+                    Brick.BChan.BChan
+                      @ Game.Tick
+                      (Control.Concurrent.STM.TBQueue.TBQueue
+                         @ Game.Tick
+                         ipv5
+                         ipv1
+                         ipv7
+                         ipv3) #) } } } }) -}
+0f4582c181b6307f8109540b2387e02d
+  main4 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
+b4e8be67646f516c63b014c327b0c178
+  step :: Logic.Game -> Logic.Game
+  {- Arity: 1, Strictness: <S(SLL),1*U(U,U,U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Logic.Game) ->
+                 case w of ww { Logic.Game ww1 ww2 ww3 ->
+                 case Logic.checkFull ww1 of wild {
+                   GHC.Types.False -> Logic.Game ww1 ww2 ww3
+                   GHC.Types.True
+                   -> case Logic.stuckCheck ww1 of wild1 {
+                        GHC.Types.False -> Logic.Game ww1 ww2 ww3
+                        GHC.Types.True -> Logic.Game ww1 ww2 GHC.Types.True } } }) -}
+40622b2445e0f1422cb6f2b6cabc8008
+  theMap :: Brick.AttrMap.AttrMap
+  {- Strictness: m1,
+     Unfolding: (Brick.AttrMap.AttrMap
+                   Graphics.Vty.Attributes.defAttr
+                   Game.theMap1) -}
+188b025462530540e79d599207dfb8d9
+  theMap1 ::
+    Data.Map.Base.Map
+      Brick.AttrMap.AttrName Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Brick.AttrMap.$sfromList
+                   @ Graphics.Vty.Attributes.Attr
+                   Game.theMap2) -}
+b95d302a8ef88384683d485c3b8fd993
+  theMap2 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap3
+                   (GHC.Types.[]
+                      @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr))) -}
+921c2f67495eea03c01618ed37a6e24b
+  theMap3 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.gameOverAttr, Game.theMap4)) -}
+9f2736aa9ae12f1ed2b7ad4e041eaf14
+  theMap4 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   Game.theMap6
+                   Game.theMap5
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+09de66f146eefed62e08c8530f05ddc5
+  theMap5 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.red) -}
+f9326411d824da53e8ce93bea88b6312
+  theMap6 :: Graphics.Vty.Attributes.MaybeDefault GHC.Word.Word8
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ GHC.Word.Word8
+                   GHC.Word.$fEqWord8
+                   GHC.Word.$fShowWord8
+                   GHC.Word.$fReadWord8
+                   Game.theMap7) -}
+396a2cf60daa9ba089ca92970f8e8c03
+  theMap7 :: GHC.Word.Word8
+  {- HasNoCafRefs, Unfolding: (GHC.Word.W8# 32##) -}
+1fc7defcf18627a8308e88a4f8d01782
+  turn :: Logic.Direction -> Logic.Game -> Logic.Game
+  {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Logic.Direction) (w1 :: Logic.Game) ->
+                 case Game.$wturn w w1 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Logic.Game ww1 ww2 ww3 }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

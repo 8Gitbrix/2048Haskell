@@ -14,12 +14,54 @@
   (major1) == 4 && (major2) <  9 || \
   (major1) == 4 && (major2) == 9 && (minor) <= 1)
 
-/* package threepenny-gui-0.8.2.0 */
-#define VERSION_threepenny_gui "0.8.2.0"
-#define MIN_VERSION_threepenny_gui(major1,major2,minor) (\
+/* package brick-0.18 */
+#define VERSION_brick "0.18"
+#define MIN_VERSION_brick(major1,major2,minor) (\
   (major1) <  0 || \
-  (major1) == 0 && (major2) <  8 || \
-  (major1) == 0 && (major2) == 8 && (minor) <= 2)
+  (major1) == 0 && (major2) <  18 || \
+  (major1) == 0 && (major2) == 18 && (minor) <= 0)
+
+/* package containers-0.5.7.1 */
+#define VERSION_containers "0.5.7.1"
+#define MIN_VERSION_containers(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  5 || \
+  (major1) == 0 && (major2) == 5 && (minor) <= 7)
+
+/* package linear-1.20.7 */
+#define VERSION_linear "1.20.7"
+#define MIN_VERSION_linear(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  20 || \
+  (major1) == 1 && (major2) == 20 && (minor) <= 7)
+
+/* package microlens-0.4.8.1 */
+#define VERSION_microlens "0.4.8.1"
+#define MIN_VERSION_microlens(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  4 || \
+  (major1) == 0 && (major2) == 4 && (minor) <= 8)
+
+/* package microlens-th-0.4.1.1 */
+#define VERSION_microlens_th "0.4.1.1"
+#define MIN_VERSION_microlens_th(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  4 || \
+  (major1) == 0 && (major2) == 4 && (minor) <= 1)
+
+/* package random-1.1 */
+#define VERSION_random "1.1"
+#define MIN_VERSION_random(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  1 || \
+  (major1) == 1 && (major2) == 1 && (minor) <= 0)
+
+/* package vty-5.16 */
+#define VERSION_vty "5.16"
+#define MIN_VERSION_vty(major1,major2,minor) (\
+  (major1) <  5 || \
+  (major1) == 5 && (major2) <  16 || \
+  (major1) == 5 && (major2) == 16 && (minor) <= 0)
 
 /* tool alex-3.2.1 */
 #define TOOL_VERSION_alex "3.2.1"
@@ -91,7 +133,7 @@
   (major1) == 0 && (major2) <  28 || \
   (major1) == 0 && (major2) == 28 && (minor) <= 0)
 
-#define CURRENT_COMPONENT_ID "2048Haskell-0.1.0.0-2K1SPFronEMEGQ25qIC9Rl"
+#define CURRENT_COMPONENT_ID "2048Haskell-0.1.0.0"
 
-#define CURRENT_PACKAGE_KEY "2048Haskell-0.1.0.0-2K1SPFronEMEGQ25qIC9Rl"
+#define CURRENT_PACKAGE_KEY "2048Haskell-0.1.0.0"
 

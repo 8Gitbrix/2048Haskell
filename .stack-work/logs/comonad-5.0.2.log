@@ -1,0 +1,24 @@
+[1 of 2] Compiling Main             ( /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/comonad-5.0.2/Setup.lhs, /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/comonad-5.0.2/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /Users/ashwinjeyaseelan/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/comonad-5.0.2/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/StackSetupShim.o )
+Linking /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/comonad-5.0.2/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/setup ...
+Configuring comonad-5.0.2...
+Building comonad-5.0.2...
+Preprocessing library comonad-5.0.2...
+[ 1 of 15] Compiling Data.Functor.Composition ( src/Data/Functor/Composition.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Functor/Composition.o )
+[ 2 of 15] Compiling Control.Comonad.Trans.Identity ( src/Control/Comonad/Trans/Identity.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Identity.o )
+[ 3 of 15] Compiling Control.Comonad  ( src/Control/Comonad.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad.o )
+[ 4 of 15] Compiling Control.Comonad.Hoist.Class ( src/Control/Comonad/Hoist/Class.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Hoist/Class.o )
+[ 5 of 15] Compiling Control.Comonad.Identity ( src/Control/Comonad/Identity.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Identity.o )
+[ 6 of 15] Compiling Control.Comonad.Trans.Class ( src/Control/Comonad/Trans/Class.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Class.o )
+[ 7 of 15] Compiling Control.Comonad.Trans.Env ( src/Control/Comonad/Trans/Env.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Env.o )
+[ 8 of 15] Compiling Control.Comonad.Trans.Store ( src/Control/Comonad/Trans/Store.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Store.o )
+[ 9 of 15] Compiling Control.Comonad.Trans.Traced ( src/Control/Comonad/Trans/Traced.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Trans/Traced.o )
+[10 of 15] Compiling Control.Comonad.Env.Class ( src/Control/Comonad/Env/Class.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Env/Class.o )
+[11 of 15] Compiling Control.Comonad.Env ( src/Control/Comonad/Env.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Env.o )
+[12 of 15] Compiling Control.Comonad.Store.Class ( src/Control/Comonad/Store/Class.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Store/Class.o )
+[13 of 15] Compiling Control.Comonad.Store ( src/Control/Comonad/Store.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Store.o )
+[14 of 15] Compiling Control.Comonad.Traced.Class ( src/Control/Comonad/Traced/Class.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Traced/Class.o )
+[15 of 15] Compiling Control.Comonad.Traced ( src/Control/Comonad/Traced.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Control/Comonad/Traced.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/comonad-5.0.2-Fq9Xy9jdx6uIyJZn00E6Yc
+Registering comonad-5.0.2...

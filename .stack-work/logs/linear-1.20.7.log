@@ -1,0 +1,31 @@
+[1 of 2] Compiling Main             ( /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/linear-1.20.7/Setup.lhs, /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/linear-1.20.7/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /Users/ashwinjeyaseelan/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/linear-1.20.7/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/StackSetupShim.o )
+Linking /private/var/folders/4h/hc3vqbf546x9_4tvltznfblr0000gn/T/stack8330/linear-1.20.7/.stack-work/dist/x86_64-osx/Cabal-1.24.2.0/setup/setup ...
+Configuring linear-1.20.7...
+Building linear-1.20.7...
+Preprocessing library linear-1.20.7...
+[ 1 of 22] Compiling Linear.Instances ( src/Linear/Instances.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Instances.o )
+[ 2 of 22] Compiling Linear.Vector    ( src/Linear/Vector.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Vector.o )
+[ 3 of 22] Compiling Linear.Epsilon   ( src/Linear/Epsilon.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Epsilon.o )
+[ 4 of 22] Compiling Linear.Metric    ( src/Linear/Metric.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Metric.o )
+[ 5 of 22] Compiling Linear.V         ( src/Linear/V.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V.o )
+[ 6 of 22] Compiling Linear.V0        ( src/Linear/V0.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V0.o )
+[ 7 of 22] Compiling Linear.V1        ( src/Linear/V1.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V1.o )
+[ 8 of 22] Compiling Linear.V2        ( src/Linear/V2.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V2.o )
+[ 9 of 22] Compiling Linear.V3        ( src/Linear/V3.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V3.o )
+[10 of 22] Compiling Linear.V4        ( src/Linear/V4.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/V4.o )
+[11 of 22] Compiling Linear.Plucker   ( src/Linear/Plucker.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Plucker.o )
+[12 of 22] Compiling Linear.Plucker.Coincides ( src/Linear/Plucker/Coincides.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Plucker/Coincides.o )
+[13 of 22] Compiling Linear.Conjugate ( src/Linear/Conjugate.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Conjugate.o )
+[14 of 22] Compiling Linear.Quaternion ( src/Linear/Quaternion.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Quaternion.o )
+[15 of 22] Compiling Linear.Trace     ( src/Linear/Trace.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Trace.o )
+[16 of 22] Compiling Linear.Matrix    ( src/Linear/Matrix.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Matrix.o )
+[17 of 22] Compiling Linear.Projection ( src/Linear/Projection.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Projection.o )
+[18 of 22] Compiling Linear.Binary    ( src/Linear/Binary.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Binary.o )
+[19 of 22] Compiling Linear.Algebra   ( src/Linear/Algebra.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Algebra.o )
+[20 of 22] Compiling Linear.Covector  ( src/Linear/Covector.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Covector.o )
+[21 of 22] Compiling Linear.Affine    ( src/Linear/Affine.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear/Affine.o )
+[22 of 22] Compiling Linear           ( src/Linear.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Linear.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p
+Registering linear-1.20.7...

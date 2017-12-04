@@ -1,0 +1,18 @@
+Configuring text-zipper-0.10.1...
+Building text-zipper-0.10.1...
+Preprocessing library text-zipper-0.10.1...
+[1 of 4] Compiling Data.Text.Zipper.Vector ( src/Data/Text/Zipper/Vector.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Text/Zipper/Vector.o )
+[2 of 4] Compiling Data.Text.Zipper ( src/Data/Text/Zipper.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Text/Zipper.o )
+
+src/Data/Text/Zipper.hs:74:10: warning: [-Wunused-top-binds]
+    Defined but not used: ‘lines_’
+[3 of 4] Compiling Data.Text.Zipper.Generic ( src/Data/Text/Zipper/Generic.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Text/Zipper/Generic.o )
+
+src/Data/Text/Zipper/Generic.hs:14:1: warning: [-Wunused-imports]
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()
+[4 of 4] Compiling Data.Text.Zipper.Generic.Words ( src/Data/Text/Zipper/Generic/Words.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Text/Zipper/Generic/Words.o )
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/text-zipper-0.10.1-86gW42akPUjANoicbUlfzs
+Registering text-zipper-0.10.1...

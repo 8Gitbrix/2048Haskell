@@ -1,0 +1,49 @@
+Configuring vty-5.16...
+Building vty-5.16...
+Preprocessing library vty-5.16...
+[ 1 of 35] Compiling Graphics.Vty.Input.Events ( src/Graphics/Vty/Input/Events.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Events.o )
+[ 2 of 35] Compiling Graphics.Vty.Input.Terminfo.ANSIVT ( src/Graphics/Vty/Input/Terminfo/ANSIVT.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Terminfo/ANSIVT.o )
+[ 3 of 35] Compiling Graphics.Vty.Input.Terminfo ( src/Graphics/Vty/Input/Terminfo.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Terminfo.o )
+[ 4 of 35] Compiling Graphics.Vty.Input.Classify.Types ( src/Graphics/Vty/Input/Classify/Types.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Classify/Types.o )
+[ 5 of 35] Compiling Graphics.Vty.Input.Paste ( src/Graphics/Vty/Input/Paste.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Paste.o )
+[ 6 of 35] Compiling Graphics.Vty.Input.Classify.Parse ( src/Graphics/Vty/Input/Classify/Parse.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Classify/Parse.o )
+[ 7 of 35] Compiling Graphics.Vty.Input.Mouse ( src/Graphics/Vty/Input/Mouse.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Mouse.o )
+[ 8 of 35] Compiling Graphics.Vty.Input.Classify ( src/Graphics/Vty/Input/Classify.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Classify.o )
+[ 9 of 35] Compiling Graphics.Vty.Error ( src/Graphics/Vty/Error.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Error.o )
+[10 of 35] Compiling Graphics.Vty.Config ( src/Graphics/Vty/Config.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Config.o )
+[11 of 35] Compiling Graphics.Vty.Input.Loop ( src/Graphics/Vty/Input/Loop.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input/Loop.o )
+[12 of 35] Compiling Graphics.Vty.Input ( src/Graphics/Vty/Input.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Input.o )
+[13 of 35] Compiling Graphics.Vty.Attributes.Color ( src/Graphics/Vty/Attributes/Color.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Attributes/Color.o )
+[14 of 35] Compiling Graphics.Vty.Attributes.Color240 ( src/Graphics/Vty/Attributes/Color240.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Attributes/Color240.o )
+[15 of 35] Compiling Graphics.Vty.Attributes ( src/Graphics/Vty/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Attributes.o )
+[16 of 35] Compiling Graphics.Vty.DisplayAttributes ( src/Graphics/Vty/DisplayAttributes.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/DisplayAttributes.o )
+[17 of 35] Compiling Graphics.Text.Width ( src/Graphics/Text/Width.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Text/Width.o )
+[18 of 35] Compiling Graphics.Vty.Image.Internal ( src/Graphics/Vty/Image/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Image/Internal.o )
+[19 of 35] Compiling Graphics.Vty.Image ( src/Graphics/Vty/Image.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Image.o )
+[20 of 35] Compiling Graphics.Vty.Debug.Image ( src/Graphics/Vty/Debug/Image.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Debug/Image.o )
+[21 of 35] Compiling Graphics.Vty.Picture ( src/Graphics/Vty/Picture.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Picture.o )
+[22 of 35] Compiling Graphics.Vty.Span ( src/Graphics/Vty/Span.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Span.o )
+[23 of 35] Compiling Graphics.Vty.Debug ( src/Graphics/Vty/Debug.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Debug.o )
+[24 of 35] Compiling Graphics.Vty.PictureToSpans ( src/Graphics/Vty/PictureToSpans.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/PictureToSpans.o )
+[25 of 35] Compiling Graphics.Vty.Output.Interface ( src/Graphics/Vty/Output/Interface.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Output/Interface.o )
+[26 of 35] Compiling Graphics.Vty.Output.Mock ( src/Graphics/Vty/Output/Mock.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Output/Mock.o )
+[27 of 35] Compiling Data.Terminfo.Parse ( src/Data/Terminfo/Parse.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Terminfo/Parse.o )
+[28 of 35] Compiling Data.Terminfo.Eval ( src/Data/Terminfo/Eval.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Data/Terminfo/Eval.o )
+[29 of 35] Compiling Graphics.Vty.Output.TerminfoBased ( src/Graphics/Vty/Output/TerminfoBased.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Output/TerminfoBased.o )
+[30 of 35] Compiling Graphics.Vty.Output.XTermColor ( src/Graphics/Vty/Output/XTermColor.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Output/XTermColor.o )
+[31 of 35] Compiling Graphics.Vty.Output ( src/Graphics/Vty/Output.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Output.o )
+[32 of 35] Compiling Graphics.Vty     ( src/Graphics/Vty.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty.o )
+[33 of 35] Compiling Graphics.Vty.Inline.Unsafe ( src/Graphics/Vty/Inline/Unsafe.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Inline/Unsafe.o )
+[34 of 35] Compiling Graphics.Vty.Inline ( src/Graphics/Vty/Inline.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Graphics/Vty/Inline.o )
+[35 of 35] Compiling Codec.Binary.UTF8.Debug ( src/Codec/Binary/UTF8/Debug.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/Codec/Binary/UTF8/Debug.o )
+Preprocessing executable 'vty-mode-demo' for vty-5.16...
+[1 of 1] Compiling Main             ( demos/ModeDemo.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/vty-mode-demo/vty-mode-demo-tmp/Main.o )
+Linking .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/vty-mode-demo/vty-mode-demo ...
+Preprocessing executable 'vty-demo' for vty-5.16...
+[1 of 1] Compiling Main             ( demos/Demo.hs, .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/vty-demo/vty-demo-tmp/Main.o )
+Linking .stack-work/dist/x86_64-osx/Cabal-1.24.2.0/build/vty-demo/vty-demo ...
+Installing library in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/lib/x86_64-osx-ghc-8.0.2/vty-5.16-GzR0fw55Xlq9AKUx6PSwHv
+Installing executable(s) in
+/Users/ashwinjeyaseelan/.stack/snapshots/x86_64-osx/lts-9.12/8.0.2/bin
+Registering vty-5.16...
