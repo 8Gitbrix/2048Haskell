@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 01:34:30.161699 UTC
+2017-12-04 19:22:05.827634 UTC
 
 interface main@main:Main 8002
-  interface hash: ca811b91a7f3cb7285f970d241b602f7
-  ABI hash: d951b12b7da938d38122cd0bb8bb5793
+  interface hash: 2a7d54eb98fe57800f15b2c1bdffe638
+  ABI hash: 8d17b4cb72faa85c7c4406042b82e408
   export-list hash: f6403b79105d3000351cb0005268eb8f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 61e10ee8e4665cf8a8f983c666d4729f
@@ -149,9 +149,9 @@ family instance modules: adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp:
                          vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Image.Internal
                          vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Input.Events
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
-import  -/  Game 902ab9116ccea97310e54adf5337cdb6
-  exports: 22d080dca83d274f672dc52aa00ecd07
-  main d3305c1ea6be4bd9671650f98529c364
+import  -/  Game dacd98b7dac6d9a5a29bfaa52c06dc4d
+  exports: b99689c8d0b3dfc94464d6030a7cf8e5
+  main 5f7d404e450f46ecfb46eb24d72da45e
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -164,7 +164,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-d52882760506e8dc04bf1774008c8369
+e73b47fa14ffd6b0bc19a67aef32fbaf
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

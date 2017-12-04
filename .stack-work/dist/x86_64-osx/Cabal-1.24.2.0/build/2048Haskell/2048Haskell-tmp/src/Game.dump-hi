@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 02:12:10.918154 UTC
+2017-12-04 19:22:05.153758 UTC
 
 interface main@main:Game 8002
-  interface hash: f50783d11d4a87009058b9d4cce937ef
-  ABI hash: 902ab9116ccea97310e54adf5337cdb6
-  export-list hash: 22d080dca83d274f672dc52aa00ecd07
+  interface hash: 7acf4a3876c49c39ec635b57a10c7ab8
+  ABI hash: dacd98b7dac6d9a5a29bfaa52c06dc4d
+  export-list hash: b99689c8d0b3dfc94464d6030a7cf8e5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f1e02b8e10513cd91f5d59aeb63f6e7b
   sig of: Nothing
@@ -13,19 +13,32 @@ interface main@main:Game 8002
   where
 exports:
   Game.app
+  Game.bcyanBg
+  Game.bgreenBg
+  Game.blueBg
+  Game.bmagBg
+  Game.brblBg
+  Game.byellowBg
+  Game.colorTile
+  Game.cyanBg
   Game.drawGameOver
   Game.drawGrid
+  Game.drawInfo
   Game.drawScore
   Game.drawStats
   Game.drawUI
   Game.gameOverAttr
+  Game.greenBg
   Game.handle
   Game.handleEvent
   Game.isGameOver
+  Game.magBg
   Game.main
   Game.step
   Game.theMap
   Game.turn
+  Game.whiteBg
+  Game.yellowBg
   Game.Name
   Game.Tick{Game.Tick}
 module dependencies: Logic
@@ -170,6 +183,7 @@ import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
 import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
 import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
 import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.Conc.IO def2d34849634fa07308965605821da6
 import  -/  base-4.9.1.0:GHC.Conc.Sync 8d0a228e5fc4d8c110495066f4d52ea1
@@ -191,7 +205,7 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b5
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
-import  -/  Logic ac79f01fbfad6cd1dfa62e899e11a7ca
+import  -/  Logic 7be84532db5ac0abd9037e06d0df50b9
   exports: 5c7f7ffe4fbcc6c45591ede4e0b21031
   Direction 8d4b988266ab87805c94d9bc03d5ebc3
   Down 7f1b5028744622dd5319c82e55949f9b
@@ -210,7 +224,7 @@ import  -/  Logic ac79f01fbfad6cd1dfa62e899e11a7ca
   initGame 250391b0bfe7e9a8379c4aeef74a2f33
   insertRandomTile 6b6075d773b28b6f210964b096c886eb
   leftGrid 3734304773ada79feddf8dc8ba2281b4
-  printTile 92b53b8cbc6589736a7027ac037e64d0
+  printTile 71e75dfb3012d2685417b2b7b6d73c4f
   score ad6eddc0f3ad73da3a85c0f413ee8ff2
   scoreGrid 7b61f6e894d197317893065fabb1cab0
   stuckCheck ba27a4dfa6e644b687c49a6bd2e0fe9b
@@ -256,6 +270,70 @@ bfddda3a7f73c81040d44c90c2e0e17b
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
+d33fa8a27ec7774d8a3773d60410c971
+  $wc ::
+    (GHC.Base.String, GHC.Base.String)
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM
+            Game.Name (Brick.Types.Internal.Result Game.Name) #)
+  {- Arity: 1, Strictness: <L,U(1*U,1*U)>, Inline: [0],
+     Unfolding: (\ (w :: (GHC.Base.String, GHC.Base.String)) ->
+                 Brick.Widgets.Core.$wrenderBox
+                   @ Game.Name
+                   (Brick.Widgets.Core.hBoxRenderer @ Game.Name)
+                   (GHC.Types.:
+                      @ (Brick.Types.Widget Game.Name)
+                      (case Brick.Widgets.Core.$wpadRight
+                              @ Game.Name
+                              Brick.Types.Max
+                              (case Brick.Widgets.Core.$wpadLeft
+                                      @ Game.Name
+                                      Game.drawInfo12
+                                      (case Brick.Widgets.Core.$wstr
+                                              @ Game.Name
+                                              (case w of wild { (,) x ds ->
+                                               x }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                       Brick.Types.Widget
+                                         @ Game.Name
+                                         ww1
+                                         ww2
+                                         ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                               Brick.Types.Widget
+                                 @ Game.Name
+                                 ww1
+                                 ww2
+                                 ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                       Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
+                      (GHC.Types.:
+                         @ (Brick.Types.Widget Game.Name)
+                         (case Brick.Widgets.Core.$wpadLeft
+                                 @ Game.Name
+                                 Brick.Types.Max
+                                 (case Brick.Widgets.Core.$wpadRight
+                                         @ Game.Name
+                                         Game.drawInfo12
+                                         (case Brick.Widgets.Core.$wstr
+                                                 @ Game.Name
+                                                 (case w of wild { (,) ds y ->
+                                                  y }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                          Brick.Types.Widget
+                                            @ Game.Name
+                                            ww1
+                                            ww2
+                                            ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                  Brick.Types.Widget
+                                    @ Game.Name
+                                    ww1
+                                    ww2
+                                    ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                          Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
+                         (GHC.Types.[] @ (Brick.Types.Widget Game.Name))))) -}
+619a23d83bebc2722e25533c31ac1dea
+  $wcolorTile ::
+    [GHC.Types.Char]
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM n (Brick.Types.Internal.Result n) #)
+  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
 e329e203ee3d40ab07ba59dbd5169dbe
   $wdrawGrid ::
     Logic.Game
@@ -310,7 +388,7 @@ e329e203ee3d40ab07ba59dbd5169dbe
                               <Control.Monad.Trans.State.Lazy.State
                                  (Brick.Types.Internal.RenderState Game.Name)>_R
                               <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
-d1696545313c04ae55ff306d0cf027de
+1d8447287eedbb39b5503053fbcf8977
   $wdrawScore ::
     GHC.Types.Int
     -> (# Brick.Types.Size, Brick.Types.Size,
@@ -322,13 +400,13 @@ d1696545313c04ae55ff306d0cf027de
                    w1 :: Brick.Types.Widget Game.Name
                    = case Brick.Widgets.Border.$wborder_
                             @ Game.Name
-                            Game.drawStats11
+                            Game.drawStats10
                             (case Brick.Widgets.Center.$whCenterWith
                                     @ Game.Name
                                     (GHC.Base.Nothing @ GHC.Types.Char)
                                     (case Brick.Widgets.Core.$wpadAll
                                             @ Game.Name
-                                            Game.drawStats10
+                                            Game.drawInfo13
                                             (case Brick.Widgets.Core.$wstr
                                                     @ Game.Name
                                                     (GHC.Show.$fShowInt_$cshow
@@ -364,7 +442,7 @@ d1696545313c04ae55ff306d0cf027de
                           <Brick.Types.Internal.Result Game.Name>_N)
                        (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
                         Brick.Types.Internal.Context
-                          x1
+                          Game.gameOverAttr
                           x2
                           x3
                           Brick.Widgets.Border.Style.unicodeBold
@@ -376,7 +454,7 @@ d1696545313c04ae55ff306d0cf027de
                               <Control.Monad.Trans.State.Lazy.State
                                  (Brick.Types.Internal.RenderState Game.Name)>_R
                               <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
-2316504dcd8f7983aca244558e767bd9
+9adc88172912b04f8b733acd9011fbb1
   $wdrawStats ::
     Logic.Game
     -> (# Brick.Types.Size, Brick.Types.Size,
@@ -441,7 +519,7 @@ d1696545313c04ae55ff306d0cf027de
                               <Control.Monad.Trans.State.Lazy.State
                                  (Brick.Types.Internal.RenderState Game.Name)>_R
                               <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
-738402ae2a617424d0946950dcca005d
+156f6222ddf56414f0028a6bc4759619
   $wdrawUI ::
     Logic.Game
     -> (# Brick.Types.Widget Game.Name,
@@ -459,18 +537,29 @@ d1696545313c04ae55ff306d0cf027de
                                            (Brick.Widgets.Core.hBoxRenderer @ Game.Name)
                                            (GHC.Types.:
                                               @ (Brick.Types.Widget Game.Name)
-                                              (case Brick.Widgets.Core.$wpadRight
+                                              (case Brick.Widgets.Core.$wrenderBox
                                                       @ Game.Name
-                                                      Game.drawStats8
-                                                      (Game.drawStats
-                                                         w) of ww { (#,,#) ww1 ww2 ww3 ->
+                                                      (Brick.Widgets.Core.hBoxRenderer @ Game.Name)
+                                                      (GHC.Types.:
+                                                         @ (Brick.Types.Widget Game.Name)
+                                                         (case Brick.Widgets.Core.$wpadRight
+                                                                 @ Game.Name
+                                                                 Game.drawUI3
+                                                                 (Game.drawStats
+                                                                    w) of ww { (#,,#) ww1 ww2 ww3 ->
+                                                          Brick.Types.Widget
+                                                            @ Game.Name
+                                                            ww1
+                                                            ww2
+                                                            ww3 })
+                                                         (GHC.Types.:
+                                                            @ (Brick.Types.Widget Game.Name)
+                                                            (Game.drawGrid w)
+                                                            (GHC.Types.[]
+                                                               @ (Brick.Types.Widget
+                                                                    Game.Name)))) of ww { (#,,#) ww1 ww2 ww3 ->
                                                Brick.Types.Widget @ Game.Name ww1 ww2 ww3 })
-                                              (GHC.Types.:
-                                                 @ (Brick.Types.Widget Game.Name)
-                                                 (Game.drawGrid w)
-                                                 (GHC.Types.[]
-                                                    @ (Brick.Types.Widget
-                                                         Game.Name)))) of ww { (#,,#) ww1 ww2 ww3 ->
+                                              Game.drawUI1) of ww { (#,,#) ww1 ww2 ww3 ->
                                     Brick.Types.Widget
                                       @ Game.Name
                                       ww1
@@ -483,35 +572,7 @@ d1696545313c04ae55ff306d0cf027de
                               ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
                     Brick.Types.Widget @ Game.Name ww1 ww2 ww3 },
                     GHC.Types.[] @ (Brick.Types.Widget Game.Name) #)) -}
-f987aa65b478f0e825b5a9618d3b105f
-  $whandle ::
-    Logic.Direction -> Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
-  {- Arity: 2, Strictness: <S,1*U><S,1*U>, Inline: [0],
-     Unfolding: (\ (w :: Logic.Direction) (w1 :: Logic.Grid) ->
-                 case w of wild {
-                   Logic.Up
-                   -> Logic.$winsertRandomTile
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Logic.leftRow
-                              (Data.OldList.transpose @ Logic.Tile w1)))
-                   Logic.Down
-                   -> Logic.$winsertRandomTile
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Game.handle1
-                              (Data.OldList.transpose @ Logic.Tile w1)))
-                   Logic.Left -> Logic.$winsertRandomTile (Logic.leftGrid w1)
-                   Logic.Right
-                   -> Logic.$winsertRandomTile
-                        (GHC.Base.map @ [Logic.Tile] @ [Logic.Tile] Game.handle1 w1) }) -}
-3380ae2258d49ef576bb145b5fcaf762
+c3c05024c04feb1f6ccb5aa0be812458
   $wturn ::
     Logic.Direction
     -> Logic.Game -> (# Logic.Grid, GHC.Types.Int, GHC.Types.Bool #)
@@ -520,7 +581,8 @@ f987aa65b478f0e825b5a9618d3b105f
                  let {
                    newGrid :: Logic.Grid
                    = case w1 of wild { Logic.Game x x1 x2 ->
-                     case Game.$whandle w x of ww { (#,#) ww1 ww2 ->
+                     case Logic.$winsertRandomTile
+                            (Game.handle w x) of ww { (#,#) ww1 ww2 ->
                      GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
                  } in
                  (# newGrid,
@@ -533,7 +595,7 @@ f59ec08ae74e1440387ed63a30339c22
   type Name = ()
 b77f50c9f64ede09a22acf18beef752b
   data Tick = Tick
-4cc943cffbf4fb8fb7db9b606788e189
+c563b53c1c250df577cb472c47a112d5
   app :: Brick.Main.App Logic.Game Game.Tick Game.Name
   {- Strictness: m,
      Unfolding: (Brick.Main.App
@@ -566,11 +628,116 @@ b77f50c9f64ede09a22acf18beef752b
                                             <Logic.Game>_N))
                                   (Sym (Brick.Types.N:EventM[0] <()>_N) <Logic.Game>_N)))
                    Game.app1) -}
-66a70ac96bdf43e5e4dd52b3d2e47a5b
+04fe5e5c5a700c676673a6497be7ea3e
   app1 :: Logic.Game -> Brick.AttrMap.AttrMap
   {- Arity: 1, Strictness: <L,A>m1,
      Unfolding: InlineRule (1, True, True)
                 (\ (ds :: Logic.Game) -> Game.theMap) -}
+79a4470ae8187aa5723e1e54831cf153
+  bcyanBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.bcyanBg1) -}
+cd5c98cbf2ca3adbf3d8977a4ba11780
+  bcyanBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.bcyanBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+28085518fcbd3a966b33569542b83a97
+  bcyanBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "bcyanBg"#) -}
+fa9657a1fa8181d048ee1d218676a789
+  bgreenBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.bgreenBg1) -}
+6fcbb387276c3d0a1d07075a306575ba
+  bgreenBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.bgreenBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+f488c37a6f2b896eb936c0d9d7fe23fa
+  bgreenBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "bgreenBg"#) -}
+fe989bd9d015ef77e9fce7e12fc36036
+  blueBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.blueBg1) -}
+e1da4f606a06bad598e1ffdbb07a779b
+  blueBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.blueBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+cb6764750d347bb1dfb8049b969fa2a9
+  blueBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "blueBg"#) -}
+66dceadb05f88364b7d3d12c9d12204b
+  bmagBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.bmagBg1) -}
+83d7e2c2c147da736c0d6c778ada5b03
+  bmagBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.bmagBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+767f3bfa761af4fd4846054b27220c53
+  bmagBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "bmagBg"#) -}
+f73b06ae8412a3d86124103d62a6f220
+  brblBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.brblBg1) -}
+57554197b3c3e7ee918b196f21194d0b
+  brblBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.brblBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+0101398603a61cf581703d4d86567d5e
+  brblBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "brblBg"#) -}
+3de902ab43e8cca662373807ffd70075
+  byellowBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.byellowBg1) -}
+8b7902de10be7b722bbeda57aaa6fe03
+  byellowBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.byellowBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+4ff4d61101ee6599888b4f9c0e7d56f3
+  byellowBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "byellowBg"#) -}
+3d87fc043acee6939852bdecc6e3eb87
+  colorTile :: [GHC.Types.Char] -> Brick.Types.Widget n
+  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ n (w :: [GHC.Types.Char]) ->
+                 case Game.$wcolorTile @ n w of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ n ww1 ww2 ww3 }) -}
+4091a1b82ec3d318966d2792f6707126
+  cyanBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.cyanBg1) -}
+473b047a329ca1a95a0b1405ed740a3d
+  cyanBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.cyanBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+48d4a619502230afc74818cc3cb579f2
+  cyanBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "cyanBg"#) -}
 edf49bfb16cbab08c37edf4aa2d2faf2
   drawGameOver :: GHC.Types.Bool -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <S,1*U>m,
@@ -603,14 +770,208 @@ aaed8bcce121404798ab237e47c8a6ec
 8036c793e0a7fecceb21cc1ee28d4034
   drawGrid_go :: [[Logic.Tile]] -> [Brick.Types.Widget Game.Name]
   {- Arity: 1, Strictness: <S,1*U> -}
-079f6e0f177921991eeddc5764926322
+39d5ad006909d001239271a68577ef61
+  drawInfo :: Brick.Types.Widget Game.Name
+  {- Strictness: m,
+     Unfolding: (Brick.Types.Widget
+                   @ Game.Name
+                   Brick.Types.Fixed
+                   Game.drawInfo33
+                   Game.drawInfo1
+                     `cast`
+                   (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <*>_N
+                             <Brick.Types.Internal.Context>_R
+                             <Control.Monad.Trans.State.Lazy.State
+                                (Brick.Types.Internal.RenderState Game.Name)>_R
+                             <Brick.Types.Internal.Result Game.Name>_N))) -}
+0d713321ee3b8d79bbabacad5deae3c7
+  drawInfo1 ::
+    Brick.Types.Internal.Context
+    -> Control.Monad.Trans.State.Lazy.State
+         (Brick.Types.Internal.RenderState Game.Name)
+         (Brick.Types.Internal.Result Game.Name)
+  {- Arity: 1, Strictness: <L,1*U(U,A,U,A,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Brick.Types.Internal.Context) ->
+                 Game.drawInfo_f1
+                   (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                    Brick.Types.Internal.Context
+                      x1
+                      Game.drawInfo_w
+                      x3
+                      Brick.Widgets.Border.Style.unicodeBold
+                      x5 })) -}
+be58ddfb769298aa60fa35504ec0f47b
+  drawInfo10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "q"#) -}
+b425041a26fdcf15324e73dc4cf45c60
+  drawInfo11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Quit"#) -}
+b4e59c9403bac97bda1bdb7d9b20163d
+  drawInfo12 :: Brick.Types.Padding
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Brick.Types.Pad Game.drawInfo13) -}
+4ec7918c511abf9634b0a0ac3a33fdf9
+  drawInfo13 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+550774581f2acd06c07ae0b2995f05e5
+  drawInfo14 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Game.$wc
+                        Game.drawInfo15 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+720756ab6fd8981d59d219b030f0a037
+  drawInfo15 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Game.drawInfo17, Game.drawInfo16)) -}
+c25ebe537b742b06b98359d88ee1c836
+  drawInfo16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "r"#) -}
+471c61721401b529ed1014fab36f384c
+  drawInfo17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Restart"#) -}
+62c733eaae5057b77b5abafa556864b7
+  drawInfo18 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Game.$wc
+                        Game.drawInfo19 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+e2e3a18f87844b0b2386a47cf75e94e4
+  drawInfo19 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Game.drawInfo21, Game.drawInfo20)) -}
+42d5968784ae4b32eab7b2095e7a726f
+  drawInfo2 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wrenderBox
+                        @ Game.Name
+                        (Brick.Widgets.Core.vBoxRenderer @ Game.Name)
+                        Game.drawInfo3 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+d9bc0c6d74c5a578f7ae0e59489f4b5d
+  drawInfo20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8#
+                   "\\226\\134\\147"#) -}
+adaa4cce5a45764050db9b47e9e12543
+  drawInfo21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Down"#) -}
+3079b20a307191938126a07f7789f926
+  drawInfo22 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Game.$wc
+                        Game.drawInfo23 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+141f0198189cbd77383b73424b37e7d9
+  drawInfo23 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Game.drawInfo25, Game.drawInfo24)) -}
+489f4be5d2e04a21397a273c4ddbf257
+  drawInfo24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8#
+                   "\\226\\134\\146"#) -}
+3f8a241b2f54bc6b583e88d1ad572e36
+  drawInfo25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Right"#) -}
+03a9a4a0501ebf0dc84b4aa831a91192
+  drawInfo26 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Game.$wc
+                        Game.drawInfo27 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+0201a114eb450ae41c999937f87a3c20
+  drawInfo27 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Game.drawInfo29, Game.drawInfo28)) -}
+52492ab4d02977000bfb48819253d2fe
+  drawInfo28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8#
+                   "\\226\\134\\144"#) -}
+8bf94b5b5966d3cc954bbcd837f18fd2
+  drawInfo29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Left"#) -}
+35da839fce72d70752b313c801d5afb4
+  drawInfo3 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo26
+                   Game.drawInfo4) -}
+140dabd0f63c1de8daf834fa2a8e0091
+  drawInfo30 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
+  {- Unfolding: (GHC.Base.Just
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo31) -}
+52844f134bafdcb89714cdca0fe4d00a
+  drawInfo31 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ Game.Name
+                        Game.drawInfo32 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+1fe5c882029b4ca49ef8bfb4aa2a6ad4
+  drawInfo32 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Commands"#) -}
+da7563ee86fcbb0865ddb61043555115
+  drawInfo33 :: Brick.Types.Size
+  {- Unfolding: (case Game.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds2 }) -}
+d520a72e07a1886e27c7d8f2684a90af
+  drawInfo4 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo22
+                   Game.drawInfo5) -}
+6f4bf1f5dc787d44abee2c44d61fec20
+  drawInfo5 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo18
+                   Game.drawInfo6) -}
+c2752e49a16ffd6eb72e63d75b78ae37
+  drawInfo6 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo14
+                   Game.drawInfo7) -}
+3ae8fa02fcb083eba02a794b95ad0092
+  drawInfo7 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawInfo8
+                   (GHC.Types.[] @ (Brick.Types.Widget Game.Name))) -}
+d6a23f653b9932671da2ce2ccefecf49
+  drawInfo8 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Game.$wc
+                        Game.drawInfo9 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+dc6642c2349bf517a54fab01e32bc06f
+  drawInfo9 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Game.drawInfo11, Game.drawInfo10)) -}
+36ac70ccdaf516b86506e6a41bcb4dd6
+  drawInfo_f1 ::
+    Brick.Types.Internal.Context
+    -> Control.Monad.Trans.State.Lazy.State
+         (Brick.Types.Internal.RenderState Game.Name)
+         (Brick.Types.Internal.Result Game.Name)
+  {- Unfolding: (case Brick.Widgets.Internal.$wcropToContext
+                        @ Game.Name
+                        Game.drawInfo_w1 of ww { (#,,#) ww1 ww2 ww3 ->
+                 ww3
+                   `cast`
+                 (Control.Monad.Trans.Reader.N:ReaderT[0]
+                      <*>_N
+                      <Brick.Types.Internal.Context>_R
+                      <Control.Monad.Trans.State.Lazy.State
+                         (Brick.Types.Internal.RenderState Game.Name)>_R
+                      <Brick.Types.Internal.Result Game.Name>_N) }) -}
+91ea001dd011413b57c43bf6ae57fa69
+  drawInfo_w :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 20#) -}
+4059a33217721ecbebb2d0bb65717f1b
+  drawInfo_w1 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Border.$wborder_
+                        @ Game.Name
+                        Game.drawInfo30
+                        Game.drawInfo2 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+d3e7407546e44ec28557a1e612e1ef14
   drawScore :: GHC.Types.Int -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <L,1*U(U)>m, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: GHC.Types.Int) ->
                  case Game.$wdrawScore w of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-0f6d8e41c6a4cd5588ca4d2b4ccc254e
+6c1ef02ccb05525ad13e2498394644be
   drawStats :: Logic.Game -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <L,U(A,1*U(U),1*U)>m, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -620,22 +981,19 @@ aaed8bcce121404798ab237e47c8a6ec
 730a5d99507272063fd7530268715117
   drawStats1 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
-8ab27e1bc07d560115686426c6e20380
-  drawStats10 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
-f1da2c39b1950c735bca1fe44ecc3349
-  drawStats11 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
+2935a63e6b3056278562f861b56ab5f9
+  drawStats10 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
   {- Unfolding: (GHC.Base.Just
                    @ (Brick.Types.Widget Game.Name)
-                   Game.drawStats12) -}
-447dce2cdf49a7d4e1d7b10bbd22f1f5
-  drawStats12 :: Brick.Types.Widget Game.Name
+                   Game.drawStats11) -}
+889802afae9038ab1705c2c48e981b93
+  drawStats11 :: Brick.Types.Widget Game.Name
   {- Unfolding: (case Brick.Widgets.Core.$wstr
                         @ Game.Name
-                        Game.drawStats13 of ww { (#,,#) ww1 ww2 ww3 ->
+                        Game.drawStats12 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-adc5ddba8c14c17b4733c0ebaf073d8d
-  drawStats13 :: [GHC.Types.Char]
+511d0a0872c28b1699880632a81ad385
+  drawStats12 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Score"#) -}
 b9619a2d4ae95caf19d606dc423d0d61
   drawStats2 :: Brick.Types.Widget Game.Name
@@ -703,13 +1061,33 @@ aba80fd1ee938caf5b3b63e2f5fa0a7d
                         (GHC.Base.Nothing @ GHC.Types.Char)
                         Game.drawStats4 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-0b2a0be0fb7b87d3fa003cf7738ab640
+59165ed85329047ca84b8cec07b00c39
   drawUI :: Logic.Game -> [Brick.Types.Widget Game.Name]
   {- Arity: 1, Strictness: <L,U(1*U,U(U),U)>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: Logic.Game) ->
                  case Game.$wdrawUI w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ (Brick.Types.Widget Game.Name) ww1 ww2 }) -}
+1c53d9d3e3dfc700daa2163c9b46d7a9
+  drawUI1 :: [Brick.Types.Widget Game.Name]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget Game.Name)
+                   Game.drawUI2
+                   (GHC.Types.[] @ (Brick.Types.Widget Game.Name))) -}
+71a3a4b3d483ed6de4e946de78da738d
+  drawUI2 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wpadLeft
+                        @ Game.Name
+                        Game.drawUI3
+                        Game.drawInfo of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+c5062e2da13189409fbeadd0e4cb1c97
+  drawUI3 :: Brick.Types.Padding
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Brick.Types.Pad Game.drawUI4) -}
+4c476c88643644b05ebb5232133b3b58
+  drawUI4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
 39263b6df381a19025a132ef86818f2d
   gameOverAttr :: Brick.AttrMap.AttrName
   {- Strictness: m,
@@ -724,13 +1102,44 @@ aba80fd1ee938caf5b3b63e2f5fa0a7d
 c59157ff487d7c39325dc2db1ff68679
   gameOverAttr2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "gameOver"#) -}
-8a9a7d0ac1e2feffe1d575559fc584f2
+558b09b5b4b3336264802c847ebb4c41
+  greenBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.greenBg1) -}
+24e8f5e5fd63d0741923fb1d1a4fb392
+  greenBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.greenBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+47b8687263a781500b70eca7679e1561
+  greenBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "greenBg"#) -}
+0ce4de5b1d3991fd6479cc877b89e966
   handle :: Logic.Direction -> Logic.Grid -> Logic.Grid
-  {- Arity: 2, Strictness: <S,1*U><S,1*U>m2, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Direction) (w1 :: Logic.Grid) ->
-                 case Game.$whandle w w1 of ww { (#,#) ww1 ww2 ->
-                 GHC.Types.: @ [Logic.Tile] ww1 ww2 }) -}
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (d :: Logic.Direction) (g :: Logic.Grid) ->
+                 case d of wild {
+                   Logic.Up
+                   -> Data.OldList.transpose
+                        @ Logic.Tile
+                        (GHC.Base.map
+                           @ [Logic.Tile]
+                           @ [Logic.Tile]
+                           Logic.leftRow
+                           (Data.OldList.transpose @ Logic.Tile g))
+                   Logic.Down
+                   -> Data.OldList.transpose
+                        @ Logic.Tile
+                        (GHC.Base.map
+                           @ [Logic.Tile]
+                           @ [Logic.Tile]
+                           Game.handle1
+                           (Data.OldList.transpose @ Logic.Tile g))
+                   Logic.Left -> Logic.leftGrid g
+                   Logic.Right
+                   -> GHC.Base.map @ [Logic.Tile] @ [Logic.Tile] Game.handle1 g }) -}
 2b04cdf891f1a21bcb1099c87a2e099a
   handle1 :: [Logic.Tile] -> [Logic.Tile]
   {- Arity: 1, HasNoCafRefs,
@@ -739,13 +1148,686 @@ c59157ff487d7c39325dc2db1ff68679
                    @ Logic.Tile
                    (Logic.leftRow (GHC.List.reverse @ Logic.Tile x))
                    (GHC.Types.[] @ Logic.Tile)) -}
-3df688ebeebdf790f984200371eca471
+4ca00077fd7f13aa000ce6ad279bf59f
   handleEvent ::
     Logic.Game
     -> Brick.Types.Internal.BrickEvent Game.Name Game.Tick
     -> Brick.Types.EventM
          Game.Name (Brick.Types.Internal.Next Logic.Game)
-  {- Arity: 2, Strictness: <L,U(U,U,U)><S,1*U> -}
+  {- Arity: 2, Strictness: <L,U(U,U,U)><S,1*U>,
+     Unfolding: (\ (g :: Logic.Game)
+                   (ds :: Brick.Types.Internal.BrickEvent Game.Name Game.Tick) ->
+                 case ds of wild {
+                   DEFAULT
+                   -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                        `cast`
+                      (Trans
+                           (<Brick.Types.Internal.EventRO Game.Name>_R
+                            ->_R Trans
+                                     (<Brick.Types.Internal.EventState Game.Name>_R
+                                      ->_R Sym (GHC.Types.N:IO[0]
+                                                    <(Brick.Types.Internal.Next Logic.Game,
+                                                      Brick.Types.Internal.EventState
+                                                        Game.Name)>_R))
+                                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                               <Brick.Types.Internal.EventState Game.Name>_N
+                                               <GHC.Types.IO>_R
+                                               <Brick.Types.Internal.Next Logic.Game>_N)))
+                           (Trans
+                                (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                          <*>_N
+                                          <Brick.Types.Internal.EventRO Game.Name>_R
+                                          <Control.Monad.Trans.State.Lazy.StateT
+                                             (Brick.Types.Internal.EventState Game.Name)
+                                             GHC.Types.IO>_R
+                                          <Brick.Types.Internal.Next Logic.Game>_N))
+                                (Sym (Brick.Types.N:EventM[0]
+                                          <Game.Name>_N) <Brick.Types.Internal.Next Logic.Game>_N)))
+                   Brick.Types.Internal.VtyEvent ds1
+                   -> case ds1 of wild1 {
+                        DEFAULT
+                        -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                             `cast`
+                           (Trans
+                                (<Brick.Types.Internal.EventRO Game.Name>_R
+                                 ->_R Trans
+                                          (<Brick.Types.Internal.EventState Game.Name>_R
+                                           ->_R Sym (GHC.Types.N:IO[0]
+                                                         <(Brick.Types.Internal.Next Logic.Game,
+                                                           Brick.Types.Internal.EventState
+                                                             Game.Name)>_R))
+                                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                    <Brick.Types.Internal.EventState Game.Name>_N
+                                                    <GHC.Types.IO>_R
+                                                    <Brick.Types.Internal.Next Logic.Game>_N)))
+                                (Trans
+                                     (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                               <*>_N
+                                               <Brick.Types.Internal.EventRO Game.Name>_R
+                                               <Control.Monad.Trans.State.Lazy.StateT
+                                                  (Brick.Types.Internal.EventState Game.Name)
+                                                  GHC.Types.IO>_R
+                                               <Brick.Types.Internal.Next Logic.Game>_N))
+                                     (Sym (Brick.Types.N:EventM[0]
+                                               <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                        Graphics.Vty.Input.Events.EvKey ds2 ds3
+                        -> case ds2 of wild2 {
+                             DEFAULT
+                             -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                  `cast`
+                                (Trans
+                                     (<Brick.Types.Internal.EventRO Game.Name>_R
+                                      ->_R Trans
+                                               (<Brick.Types.Internal.EventState Game.Name>_R
+                                                ->_R Sym (GHC.Types.N:IO[0]
+                                                              <(Brick.Types.Internal.Next
+                                                                  Logic.Game,
+                                                                Brick.Types.Internal.EventState
+                                                                  Game.Name)>_R))
+                                               (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                         <Brick.Types.Internal.EventState
+                                                            Game.Name>_N
+                                                         <GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N)))
+                                     (Trans
+                                          (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                    <*>_N
+                                                    <Brick.Types.Internal.EventRO Game.Name>_R
+                                                    <Control.Monad.Trans.State.Lazy.StateT
+                                                       (Brick.Types.Internal.EventState Game.Name)
+                                                       GHC.Types.IO>_R
+                                                    <Brick.Types.Internal.Next Logic.Game>_N))
+                                          (Sym (Brick.Types.N:EventM[0]
+                                                    <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                      Logic.Game>_N)))
+                             Graphics.Vty.Input.Events.KEsc
+                             -> case ds3 of wild3 {
+                                  []
+                                  -> (Brick.Main.halt1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N))) }
+                             Graphics.Vty.Input.Events.KChar ds4
+                             -> case ds4 of wild3 { GHC.Types.C# ds5 ->
+                                case ds5 of ds6 {
+                                  DEFAULT
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  'q'#
+                                  -> case ds3 of wild4 {
+                                       []
+                                       -> (Brick.Main.halt1 @ Logic.Game @ Game.Name g)
+                                            `cast`
+                                          (Trans
+                                               (<Brick.Types.Internal.EventRO Game.Name>_R
+                                                ->_R Trans
+                                                         (<Brick.Types.Internal.EventState
+                                                             Game.Name>_R
+                                                          ->_R Sym (GHC.Types.N:IO[0]
+                                                                        <(Brick.Types.Internal.Next
+                                                                            Logic.Game,
+                                                                          Brick.Types.Internal.EventState
+                                                                            Game.Name)>_R))
+                                                         (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Brick.Types.Internal.EventState
+                                                                      Game.Name>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <Brick.Types.Internal.Next
+                                                                      Logic.Game>_N)))
+                                               (Trans
+                                                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                              <*>_N
+                                                              <Brick.Types.Internal.EventRO
+                                                                 Game.Name>_R
+                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                 (Brick.Types.Internal.EventState
+                                                                    Game.Name)
+                                                                 GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N))
+                                                    (Sym (Brick.Types.N:EventM[0]
+                                                              <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                                Logic.Game>_N)))
+                                       : ipv ipv1
+                                       -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                            `cast`
+                                          (Trans
+                                               (<Brick.Types.Internal.EventRO Game.Name>_R
+                                                ->_R Trans
+                                                         (<Brick.Types.Internal.EventState
+                                                             Game.Name>_R
+                                                          ->_R Sym (GHC.Types.N:IO[0]
+                                                                        <(Brick.Types.Internal.Next
+                                                                            Logic.Game,
+                                                                          Brick.Types.Internal.EventState
+                                                                            Game.Name)>_R))
+                                                         (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Brick.Types.Internal.EventState
+                                                                      Game.Name>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <Brick.Types.Internal.Next
+                                                                      Logic.Game>_N)))
+                                               (Trans
+                                                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                              <*>_N
+                                                              <Brick.Types.Internal.EventRO
+                                                                 Game.Name>_R
+                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                 (Brick.Types.Internal.EventState
+                                                                    Game.Name)
+                                                                 GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N))
+                                                    (Sym (Brick.Types.N:EventM[0]
+                                                              <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                                Logic.Game>_N))) }
+                                  'r'#
+                                  -> case ds3 of wild4 {
+                                       []
+                                       -> Game.handleEvent1
+                                            `cast`
+                                          (Trans
+                                               (<Brick.Types.Internal.EventRO ()>_R
+                                                ->_R Trans
+                                                         (<Brick.Types.Internal.EventState ()>_R
+                                                          ->_R Sym (GHC.Types.N:IO[0]
+                                                                        <(Brick.Types.Internal.Next
+                                                                            Logic.Game,
+                                                                          Brick.Types.Internal.EventState
+                                                                            ())>_R))
+                                                         (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Brick.Types.Internal.EventState
+                                                                      ()>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <Brick.Types.Internal.Next
+                                                                      Logic.Game>_N)))
+                                               (Trans
+                                                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                              <*>_N
+                                                              <Brick.Types.Internal.EventRO ()>_R
+                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                 (Brick.Types.Internal.EventState
+                                                                    ())
+                                                                 GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N))
+                                                    (Sym (Brick.Types.N:EventM[0]
+                                                              <()>_N) <Brick.Types.Internal.Next
+                                                                         Logic.Game>_N)))
+                                       : ipv ipv1
+                                       -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                            `cast`
+                                          (Trans
+                                               (<Brick.Types.Internal.EventRO Game.Name>_R
+                                                ->_R Trans
+                                                         (<Brick.Types.Internal.EventState
+                                                             Game.Name>_R
+                                                          ->_R Sym (GHC.Types.N:IO[0]
+                                                                        <(Brick.Types.Internal.Next
+                                                                            Logic.Game,
+                                                                          Brick.Types.Internal.EventState
+                                                                            Game.Name)>_R))
+                                                         (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Brick.Types.Internal.EventState
+                                                                      Game.Name>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <Brick.Types.Internal.Next
+                                                                      Logic.Game>_N)))
+                                               (Trans
+                                                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                              <*>_N
+                                                              <Brick.Types.Internal.EventRO
+                                                                 Game.Name>_R
+                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                 (Brick.Types.Internal.EventState
+                                                                    Game.Name)
+                                                                 GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N))
+                                                    (Sym (Brick.Types.N:EventM[0]
+                                                              <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                                Logic.Game>_N))) } } }
+                             Graphics.Vty.Input.Events.KLeft
+                             -> case ds3 of wild3 {
+                                  []
+                                  -> let {
+                                       x :: Logic.Game
+                                       = case Game.$wturn Logic.Left g of ww { (#,,#) ww1 ww2 ww3 ->
+                                         Logic.Game ww1 ww2 ww3 }
+                                     } in
+                                     let {
+                                       lvl9 :: Brick.Types.Internal.Next Logic.Game
+                                       = Brick.Types.Internal.Continue @ Logic.Game x
+                                     } in
+                                     (\ (eta :: Brick.Types.Internal.EventRO Game.Name)
+                                        (eta1 :: Brick.Types.Internal.EventState Game.Name)
+                                        (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                      (# eta2, (lvl9, eta1) #))
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N))) }
+                             Graphics.Vty.Input.Events.KRight
+                             -> case ds3 of wild3 {
+                                  []
+                                  -> let {
+                                       x :: Logic.Game
+                                       = case Game.$wturn
+                                                Logic.Right
+                                                g of ww { (#,,#) ww1 ww2 ww3 ->
+                                         Logic.Game ww1 ww2 ww3 }
+                                     } in
+                                     let {
+                                       lvl9 :: Brick.Types.Internal.Next Logic.Game
+                                       = Brick.Types.Internal.Continue @ Logic.Game x
+                                     } in
+                                     (\ (eta :: Brick.Types.Internal.EventRO Game.Name)
+                                        (eta1 :: Brick.Types.Internal.EventState Game.Name)
+                                        (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                      (# eta2, (lvl9, eta1) #))
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N))) }
+                             Graphics.Vty.Input.Events.KUp
+                             -> case ds3 of wild3 {
+                                  []
+                                  -> let {
+                                       x :: Logic.Game
+                                       = case Game.$wturn Logic.Up g of ww { (#,,#) ww1 ww2 ww3 ->
+                                         Logic.Game ww1 ww2 ww3 }
+                                     } in
+                                     let {
+                                       lvl9 :: Brick.Types.Internal.Next Logic.Game
+                                       = Brick.Types.Internal.Continue @ Logic.Game x
+                                     } in
+                                     (\ (eta :: Brick.Types.Internal.EventRO Game.Name)
+                                        (eta1 :: Brick.Types.Internal.EventState Game.Name)
+                                        (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                      (# eta2, (lvl9, eta1) #))
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N))) }
+                             Graphics.Vty.Input.Events.KDown
+                             -> case ds3 of wild3 {
+                                  []
+                                  -> let {
+                                       x :: Logic.Game
+                                       = case Game.$wturn Logic.Down g of ww { (#,,#) ww1 ww2 ww3 ->
+                                         Logic.Game ww1 ww2 ww3 }
+                                     } in
+                                     let {
+                                       lvl9 :: Brick.Types.Internal.Next Logic.Game
+                                       = Brick.Types.Internal.Continue @ Logic.Game x
+                                     } in
+                                     (\ (eta :: Brick.Types.Internal.EventRO Game.Name)
+                                        (eta1 :: Brick.Types.Internal.EventState Game.Name)
+                                        (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                      (# eta2, (lvl9, eta1) #))
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N)))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Logic.Game @ Game.Name g)
+                                       `cast`
+                                     (Trans
+                                          (<Brick.Types.Internal.EventRO Game.Name>_R
+                                           ->_R Trans
+                                                    (<Brick.Types.Internal.EventState Game.Name>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <(Brick.Types.Internal.Next
+                                                                       Logic.Game,
+                                                                     Brick.Types.Internal.EventState
+                                                                       Game.Name)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Brick.Types.Internal.EventState
+                                                                 Game.Name>_N
+                                                              <GHC.Types.IO>_R
+                                                              <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N)))
+                                          (Trans
+                                               (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                         <*>_N
+                                                         <Brick.Types.Internal.EventRO Game.Name>_R
+                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                            (Brick.Types.Internal.EventState
+                                                               Game.Name)
+                                                            GHC.Types.IO>_R
+                                                         <Brick.Types.Internal.Next Logic.Game>_N))
+                                               (Sym (Brick.Types.N:EventM[0]
+                                                         <Game.Name>_N) <Brick.Types.Internal.Next
+                                                                           Logic.Game>_N))) } } }
+                   Brick.Types.Internal.AppEvent ds1
+                   -> case ds1 of wild1 { Game.Tick ->
+                      let {
+                        x :: Logic.Game
+                        = case g of wild2 { Logic.Game x1 x2 x3 ->
+                          case Logic.checkFull x1 of wild3 {
+                            GHC.Types.False -> wild2
+                            GHC.Types.True
+                            -> case Logic.stuckCheck x1 of wild4 {
+                                 GHC.Types.False -> wild2
+                                 GHC.Types.True -> Logic.Game x1 x2 GHC.Types.True } } }
+                      } in
+                      let {
+                        lvl9 :: Brick.Types.Internal.Next Logic.Game
+                        = Brick.Types.Internal.Continue @ Logic.Game x
+                      } in
+                      (\ (eta :: Brick.Types.Internal.EventRO Game.Name)
+                         (eta1 :: Brick.Types.Internal.EventState Game.Name)
+                         (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                       (# eta2, (lvl9, eta1) #))
+                        `cast`
+                      (Trans
+                           (<Brick.Types.Internal.EventRO Game.Name>_R
+                            ->_R Trans
+                                     (<Brick.Types.Internal.EventState Game.Name>_R
+                                      ->_R Sym (GHC.Types.N:IO[0]
+                                                    <(Brick.Types.Internal.Next Logic.Game,
+                                                      Brick.Types.Internal.EventState
+                                                        Game.Name)>_R))
+                                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                               <Brick.Types.Internal.EventState Game.Name>_N
+                                               <GHC.Types.IO>_R
+                                               <Brick.Types.Internal.Next Logic.Game>_N)))
+                           (Trans
+                                (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                          <*>_N
+                                          <Brick.Types.Internal.EventRO Game.Name>_R
+                                          <Control.Monad.Trans.State.Lazy.StateT
+                                             (Brick.Types.Internal.EventState Game.Name)
+                                             GHC.Types.IO>_R
+                                          <Brick.Types.Internal.Next Logic.Game>_N))
+                                (Sym (Brick.Types.N:EventM[0]
+                                          <Game.Name>_N) <Brick.Types.Internal.Next
+                                                            Logic.Game>_N))) } }) -}
+0af4f9ee906df6e3bee0ca3e66a8f595
+  handleEvent1 ::
+    Brick.Types.Internal.EventRO ()
+    -> Brick.Types.Internal.EventState ()
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Brick.Types.Internal.Next Logic.Game,
+           Brick.Types.Internal.EventState Game.Name) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,A><L,U><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (r1 :: Brick.Types.Internal.EventRO ())
+                   (eta :: Brick.Types.Internal.EventState ())
+                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# eta1,
+                    (Brick.Types.Internal.Continue @ Logic.Game Logic.initGame2,
+                     eta) #)) -}
 ccce149d32743eca19db8f7c8a59a220
   isGameOver :: Logic.Game -> GHC.Types.Bool
   {- Arity: 1, Strictness: <S(SLL),1*U(U,A,A)>,
@@ -755,12 +1837,26 @@ ccce149d32743eca19db8f7c8a59a220
                  case Logic.checkFull x of wild1 {
                    GHC.Types.False -> GHC.Types.False
                    GHC.Types.True -> Logic.stuckCheck x } }) -}
-d3305c1ea6be4bd9671650f98529c364
+b90e4426b1ebc3e7b36910c99b485661
+  magBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.magBg1) -}
+54bff9f1596e83c0633e2d4fddaecf62
+  magBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.magBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+c6e8bbcd0004767666d3d848d15de9d4
+  magBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "magBg"#) -}
+5f7d404e450f46ecfb46eb24d72da45e
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Game.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-f3b922961c623da5ecc8681264cc3e5a
+dd26f542b32c02a67c3636ac5b7a86f8
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -918,38 +2014,298 @@ b4e8be67646f516c63b014c327b0c178
                    -> case Logic.stuckCheck ww1 of wild1 {
                         GHC.Types.False -> Logic.Game ww1 ww2 ww3
                         GHC.Types.True -> Logic.Game ww1 ww2 GHC.Types.True } } }) -}
-40622b2445e0f1422cb6f2b6cabc8008
+7f3245af27f08e388e596a898565c0cf
   theMap :: Brick.AttrMap.AttrMap
   {- Strictness: m1,
      Unfolding: (Brick.AttrMap.AttrMap
                    Graphics.Vty.Attributes.defAttr
                    Game.theMap1) -}
-188b025462530540e79d599207dfb8d9
+9a31a276aa6a2db5472fb09dc1ba83de
   theMap1 ::
     Data.Map.Base.Map
       Brick.AttrMap.AttrName Graphics.Vty.Attributes.Attr
   {- Unfolding: (Brick.AttrMap.$sfromList
                    @ Graphics.Vty.Attributes.Attr
                    Game.theMap2) -}
-b95d302a8ef88384683d485c3b8fd993
+3ae0c71fea3e2535f980e73aa1fe12b9
+  theMap10 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap23
+                   Game.theMap11) -}
+df12c3cdf674469c96562bf9ac86704d
+  theMap11 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap20
+                   Game.theMap12) -}
+632a8c12a940525f6fe955f57f764f5d
+  theMap12 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap17
+                   Game.theMap13) -}
+1fa7d90b013202133a6627df1fc5435e
+  theMap13 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap14
+                   (GHC.Types.[]
+                      @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr))) -}
+ea4c1eaa31c8ae73e1f24236873ee81f
+  theMap14 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.whiteBg, Game.theMap15)) -}
+a8ea75a6149967d8275ae7736649c15f
+  theMap15 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)
+                   Game.theMap16) -}
+4f1872af95227cccbe91c47173fc33b4
+  theMap16 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.white) -}
+2972ca991ed7f385322847bc00c7f02d
+  theMap17 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.bgreenBg, Game.theMap18)) -}
+0536ce7273199e1944d8c8e6f4e62060
+  theMap18 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap19
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+eb702de0c945b9dd506827135cb8bf86
+  theMap19 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightGreen) -}
+ed12d0488c375d12ac46e5329590a7ee
   theMap2 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
-                   Game.theMap3
-                   (GHC.Types.[]
-                      @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr))) -}
-921c2f67495eea03c01618ed37a6e24b
-  theMap3 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
-  {- Unfolding: ((Game.gameOverAttr, Game.theMap4)) -}
-9f2736aa9ae12f1ed2b7ad4e041eaf14
-  theMap4 :: Graphics.Vty.Attributes.Attr
+                   Game.theMap47
+                   Game.theMap3) -}
+27aecc800d318f2720db75aee40c82b8
+  theMap20 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.greenBg, Game.theMap21)) -}
+f0d49eaac1d4b9e1ab9aac9d766912ef
+  theMap21 :: Graphics.Vty.Attributes.Attr
   {- Unfolding: (Graphics.Vty.Attributes.Attr
-                   Game.theMap6
-                   Game.theMap5
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap22
                    (Graphics.Vty.Attributes.Default
                       @ Graphics.Vty.Attributes.Color.Color)) -}
-09de66f146eefed62e08c8530f05ddc5
-  theMap5 ::
+a0ecd5d75b786ee6fc1fde92db2b383d
+  theMap22 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.green) -}
+b697e860ce07ec4054bca8bb5e0df7d9
+  theMap23 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.bmagBg, Game.theMap24)) -}
+1012e86ee7b6c5aaf5b05ce8fbc0874f
+  theMap24 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap25
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+3b2990b29d551041d52465f6f22d30cd
+  theMap25 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightMagenta) -}
+f82b7ce6855125ab771e0fab3fabee20
+  theMap26 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.magBg, Game.theMap27)) -}
+0fc6dfd6dfab2c8abf4158ee1334821a
+  theMap27 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap28
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+e842f742ac2e3f1d34c59f8d1a013c75
+  theMap28 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.magenta) -}
+74859c1322c3375ca270daa9b39a5afd
+  theMap29 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.byellowBg, Game.theMap30)) -}
+703dc4fe73572d05fa7a9713b7b0aab5
+  theMap3 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap44
+                   Game.theMap4) -}
+0d8ceb302f592b60c2c388b9325472b0
+  theMap30 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap31
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+b87d0425fa0070eb2dcb204557f05b70
+  theMap31 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightYellow) -}
+2958cdbd39b27d2f4f4c88a6ab67fc7d
+  theMap32 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.yellowBg, Game.theMap33)) -}
+b92cd2dd19b8a6577e6808309b7a9998
+  theMap33 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap34
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+926234cb543f67ee92e10ce3c3eaf8aa
+  theMap34 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.yellow) -}
+69774a1c0a12f816cb4fc04ae14c7600
+  theMap35 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.bcyanBg, Game.theMap36)) -}
+6450587d273dd449b36603eaaedbc809
+  theMap36 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap37
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+0000da051549306046a99d4ce0a2dce6
+  theMap37 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightCyan) -}
+19cf34a212ef9ed392261df3e0d375cd
+  theMap38 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.cyanBg, Game.theMap39)) -}
+815ef73fe5fe3c672ac43b45ea991989
+  theMap39 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap40
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+05cd30fa9dddc54b102b2741eb376630
+  theMap4 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap41
+                   Game.theMap5) -}
+2852c3ba52ecc4b7e2de2a14ff50103b
+  theMap40 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.cyan) -}
+ffbb6f02ab680d6a3ee047f3a1ef8992
+  theMap41 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.brblBg, Game.theMap42)) -}
+a5bc713c3efe72768444586dc48c2cd4
+  theMap42 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap43
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+6848c8a4b2108924b2139e4e9e4d2978
+  theMap43 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightBlue) -}
+2ca3ff6d46fdf7de8868ed94c2439137
+  theMap44 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.blueBg, Game.theMap45)) -}
+4eef581f8ad773978213b8fd6800070a
+  theMap45 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Game.theMap46
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+c1d638a3776e39eabdc3e8a8e2578e15
+  theMap46 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.blue) -}
+dbcad8824d32aa53e9d058f2dca33361
+  theMap47 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Unfolding: ((Game.gameOverAttr, Game.theMap48)) -}
+eb445d6d8ef1073c86c10f5a9b5dda0a
+  theMap48 :: Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Graphics.Vty.Attributes.Attr
+                   Game.theMap50
+                   Game.theMap49
+                   (Graphics.Vty.Attributes.Default
+                      @ Graphics.Vty.Attributes.Color.Color)) -}
+a8c1e9a4624aa4ced10ca81af931e09c
+  theMap49 ::
     Graphics.Vty.Attributes.MaybeDefault
       Graphics.Vty.Attributes.Color.Color
   {- Unfolding: (Graphics.Vty.Attributes.SetTo
@@ -958,18 +2314,48 @@ b95d302a8ef88384683d485c3b8fd993
                    Graphics.Vty.Attributes.Color.$fShowColor
                    Graphics.Vty.Attributes.Color.$fReadColor
                    Graphics.Vty.Attributes.Color.red) -}
-f9326411d824da53e8ce93bea88b6312
-  theMap6 :: Graphics.Vty.Attributes.MaybeDefault GHC.Word.Word8
+43b084eb94e810d9737fc14aeba38e97
+  theMap5 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap38
+                   Game.theMap6) -}
+f4e231fadb63e22bbf7b80083c5a3da8
+  theMap50 :: Graphics.Vty.Attributes.MaybeDefault GHC.Word.Word8
   {- Unfolding: (Graphics.Vty.Attributes.SetTo
                    @ GHC.Word.Word8
                    GHC.Word.$fEqWord8
                    GHC.Word.$fShowWord8
                    GHC.Word.$fReadWord8
-                   Game.theMap7) -}
-396a2cf60daa9ba089ca92970f8e8c03
-  theMap7 :: GHC.Word.Word8
+                   Game.theMap51) -}
+c863e8921af7320f33dfd38b740950e3
+  theMap51 :: GHC.Word.Word8
   {- HasNoCafRefs, Unfolding: (GHC.Word.W8# 32##) -}
-1fc7defcf18627a8308e88a4f8d01782
+72c8b82627d2cd627e8b4875341ac1df
+  theMap6 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap35
+                   Game.theMap7) -}
+37a9be78cf15064f64eb4534fb8a62ac
+  theMap7 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap32
+                   Game.theMap8) -}
+c6bc09d7e00f0b872f92d93482897a58
+  theMap8 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap29
+                   Game.theMap9) -}
+bec4d7916d90015baa784c602ef0d2c7
+  theMap9 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Game.theMap26
+                   Game.theMap10) -}
+f3d84119776a802cb33cf019c4ccc9f5
   turn :: Logic.Direction -> Logic.Game -> Logic.Game
   {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>m,
      Inline: INLINE[0],
@@ -977,6 +2363,34 @@ f9326411d824da53e8ce93bea88b6312
                 (\ (w :: Logic.Direction) (w1 :: Logic.Game) ->
                  case Game.$wturn w w1 of ww { (#,,#) ww1 ww2 ww3 ->
                  Logic.Game ww1 ww2 ww3 }) -}
+49a3420c001d13fc246496d1b32ab396
+  whiteBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.whiteBg1) -}
+c23280df229cbb0e1aee51bf09421324
+  whiteBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.whiteBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+697b063d70300f17a8fa5d796aba8c89
+  whiteBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "whiteBg"#) -}
+21e2c6bd28b21fd5045a34e6c4a49203
+  yellowBg :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Game.yellowBg1) -}
+bcfb19709a950ad4d68b93f267945c18
+  yellowBg1 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Game.yellowBg2
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+82e7c95a9acff78b6a9dedec31e091e2
+  yellowBg2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "yellowBg"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

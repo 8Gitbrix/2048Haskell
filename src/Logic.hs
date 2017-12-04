@@ -43,12 +43,12 @@ leftGrid g = map leftRow g
 
 printTile :: Tile -> String
 printTile t = case t of
- Just n -> show n ++ "  "
+ Just n -> show n
  Nothing -> " "
 
 colorRow :: [Tile] -> IO ()
 colorRow [] = putStrLn ""
-colorRow (x:xs) = do putStr $ (printTile x) ++ "   "
+colorRow (x:xs) = do putStr $ (printTile x)
 -- colorRow (x:xs) = do putStr $ "\x1b[32m" ++ (printTile x) ++ " | "
                      colorRow xs
 

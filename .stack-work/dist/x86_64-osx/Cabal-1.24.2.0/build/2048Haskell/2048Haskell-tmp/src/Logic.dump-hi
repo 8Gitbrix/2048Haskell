@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 01:57:55.624649 UTC
+2017-12-04 18:07:33.078161 UTC
 
 interface main@main:Logic 8002
-  interface hash: 6d87b72cf563b046bdcd04495721b1ba
-  ABI hash: ac79f01fbfad6cd1dfa62e899e11a7ca
+  interface hash: 333f46de8f78290cb07d87fe802dd864
+  ABI hash: 7be84532db5ac0abd9037e06d0df50b9
   export-list hash: 5c7f7ffe4fbcc6c45591ede4e0b21031
   orphan hash: ac392d5135e0319712967bbdf6e36d3e
   flag hash: db8b3dba68660d93bea9bec96c028028
@@ -1093,27 +1093,16 @@ d601a9b78dea61e52396d25cb980508e
 2da10947461cda1cd3fe0414c81b919b
   oneMove_w1 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (4) -}
-92b53b8cbc6589736a7027ac037e64d0
+71e75dfb3012d2685417b2b7b6d73c4f
   printTile :: Logic.Tile -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (t :: Logic.Tile) ->
+     Unfolding: InlineRule (1, True, False)
+                (\ (t :: Logic.Tile) ->
                  case t of wild {
-                   GHC.Base.Nothing -> Logic.printTile2
-                   GHC.Base.Just n
-                   -> case n of ww2 { GHC.Types.I# ww3 ->
-                      case GHC.Show.$wshowSignedInt
-                             0#
-                             ww3
-                             (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
-                      GHC.Base.++
-                        @ GHC.Types.Char
-                        (GHC.Types.: @ GHC.Types.Char ww5 ww6)
-                        Logic.printTile1 } } }) -}
-da1120ad4319e084c55741d61dfda0ed
+                   GHC.Base.Nothing -> Logic.printTile1
+                   GHC.Base.Just n -> GHC.Show.$fShowInt_$cshow n }) -}
+17e36ac47eecbe220e8ee61793bda53a
   printTile1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "  "#) -}
-9f17d7fd249382ac997da9e952d78ae1
-  printTile2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# " "#) -}
 092210df5277d37350dfc1ee144e000e
   randomlyPlayBoard :: Logic.Grid -> GHC.Types.Int
