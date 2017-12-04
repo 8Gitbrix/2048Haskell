@@ -154,6 +154,74 @@ makeRandomTile = do
    if (tempNum::Int) < 10 then Just 2 else Just 4
 -- change to not equals to optimize
 
+-- findBestMove :: Grid -> Int
+-- findBestMove g = do
+--    let up = insertRandomTile $ transpose $ leftGrid $ transpose g
+--    let down = insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+--    let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
+--    let left = insertRandomTile $ leftGrid g
+
+--    let upScore = randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up+ randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up
+--    let downScore =  randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down
+--    let rightScore = randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right
+--    let leftScore =  randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left
+
+--    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
+--    if maxScore == upScore then 1
+--    else if maxScore == downScore then 2
+--        else if maxScore == rightScore then 3
+--             else if maxScore == leftScore then 4
+--             else 4
+
+-- average :: [Int] -> Int
+-- average xs = (sum xs) `div` (length xs)
+
+-- oneBestMove :: Grid -> Grid
+-- oneBestMove g = do
+--     case (findBestMove g) of
+--        1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
+--        2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+--        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
+--        4 -> insertRandomTile $ leftGrid g
+
+-- monteCarloPlayBoard :: Grid -> IO ()
+-- monteCarloPlayBoard g = do
+--    if checkFull g && stuckCheck g then colorGrid g
+--    else monteCarloPlayBoard $ oneBestMove g
+
+-- randomlyPlayBoard :: Grid -> Int
+-- randomlyPlayBoard g = do
+--    if checkFull g && stuckCheck g then scoreGrid g 0
+--    else randomlyPlayBoard $ oneMove g
+
+-- randomlyPlayTilWin :: Int -> Grid -> Int
+-- randomlyPlayTilWin n g = do
+--    if randomlyPlayBoard g == 2048 then n
+--    else if n == 10000 then n
+--         else randomlyPlayTilWin (n+1) g
+
+-- oneMove :: Grid -> Grid
+-- oneMove g = do
+--     let (randomDirection) = unsafePerformIO $ getStdRandom $ randomR (1,4)
+--     if (randomDirection::Int) == 1 then insertRandomTile $ transpose $ leftGrid $ transpose g
+--     else if (randomDirection::Int) == 2 then insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+--          else if (randomDirection::Int) == 3 then insertRandomTile $ map reverse $ leftGrid (map reverse g)
+--               else if (randomDirection::Int) == 4 then insertRandomTile $ leftGrid g
+--                    else g
+directionStuckHeuristic :: Int -> Grid -> Int
+directionStuckHeuristic n g = case n of
+    1 -> if g == (transpose $ leftGrid $ transpose g) then 0 else 1
+    2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then 0 else 1
+    3 -> if g == (map reverse $ leftGrid (map reverse g)) then 0 else 1
+    4 -> if g == (leftGrid g) then 0 else 1
+
+directionStuckCheck :: Int -> Grid -> Bool
+directionStuckCheck n g = case n of
+    1 -> if g == (transpose $ leftGrid $ transpose g) then True else False
+    2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then True else False
+    3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
+    4 -> if g == (leftGrid g) then True else False  
+
 findBestMove :: Grid -> Int
 findBestMove g = do
    let up = insertRandomTile $ transpose $ leftGrid $ transpose g
@@ -161,53 +229,211 @@ findBestMove g = do
    let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
    let left = insertRandomTile $ leftGrid g
 
-   let upScore = randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up+ randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up
-   let downScore =  randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down
-   let rightScore = randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right
-   let leftScore =  randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left
+   -- if (up == g) then
+      -- let upScore = -9999
+   -- else
+   let upScore = (largeEdgeNumberHeuristic up) + (directionStuckHeuristic 1 g) * 100000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))
+   -- if down == g then
+   --    let downScore = -9999
+   -- else
+   let downScore = (largeEdgeNumberHeuristic down) + (directionStuckHeuristic 2 g) * 100000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))
+   -- if right == g then
+   -- 	  let rightScore = -9999
+   -- else
+   let rightScore = (largeEdgeNumberHeuristic right) + (directionStuckHeuristic 3 g) * 100000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))
+   -- if left == g then
+   --    let leftScore = -9999
+   -- else
+   let leftScore = (largeEdgeNumberHeuristic left) + (directionStuckHeuristic 4 g) *100000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))
+
+   
+   -- let upScore = runRandomN up 50
+   -- let downScore = runRandomN down 50
+   -- let rightScore = runRandomN right 50
+   -- let leftScore = runRandomN left 50
 
    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then 1
+   if maxScore == upScore then 1 
    else if maxScore == downScore then 2
        else if maxScore == rightScore then 3
             else if maxScore == leftScore then 4
             else 4
 
-average :: [Int] -> Int
-average xs = (sum xs) `div` (length xs)
+findBestMove2 :: Grid -> (Int, Int, Int, Int, Int)
+findBestMove2 g = do
+   let up = insertRandomTile $ transpose $ leftGrid $ transpose g
+   let down = insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+   let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
+   let left = insertRandomTile $ leftGrid g
+
+   let upScore = 1000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))*3
+   let downScore = 1000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))*3
+   let rightScore = 1000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))*3
+   let leftScore = 1000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))*3
+
+
+   -- let upScore = runRandomN up 50
+   -- let downScore = runRandomN down 50
+   -- let rightScore = runRandomN right 50
+   -- let leftScore = runRandomN left 50
+
+   let maxScore = maximum [upScore,downScore,rightScore,leftScore]
+   if maxScore == upScore then (1, upScore, downScore, rightScore, leftScore) 
+   else if maxScore == downScore then (2, upScore, downScore, rightScore, leftScore)
+       else if maxScore == rightScore then (3, upScore, downScore, rightScore, leftScore)
+            else if maxScore == leftScore then (4, upScore, downScore, rightScore, leftScore)
+            else (4, upScore, downScore, rightScore, leftScore)
+
+   -- let upScore = randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up+ randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up
+   -- let downScore =  randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down 
+   -- let rightScore = randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right
+   -- let leftScore =  randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left
+    -- let upScore = average $ replicate 5 $ randomlyPlayBoard up
+   -- let downScore = average $  replicate 5 $ randomlyPlayBoard down
+   -- let rightScore = average $ replicate 5 $ randomlyPlayBoard right
+   -- let leftScore = average $ replicate 5 $ randomlyPlayBoard left
+
+runRandomN :: Grid -> Int -> Int
+runRandomN g n = do
+    if n == 0 then randomlyPlayBoard g
+    else randomlyPlayBoard g + runRandomN g (n-1) 
+
+largeEdgeNumberHeuristic :: Grid -> Int
+largeEdgeNumberHeuristic g = do
+    if (a /= Nothing && tempScore == (fromJust a)) || (b /= Nothing && tempScore == (fromJust b)) || (c /= Nothing && tempScore == (fromJust c)) || (d /= Nothing && tempScore == (fromJust d)) || (e /= Nothing && tempScore == (fromJust e)) || (f /= Nothing && tempScore == (fromJust f)) || (gg /= Nothing && tempScore == (fromJust gg)) || (h /= Nothing && tempScore == (fromJust h)) || (i /= Nothing && tempScore == (fromJust i)) || (j /= Nothing && tempScore == (fromJust j)) || (k /= Nothing && tempScore == (fromJust k)) || (l /= Nothing && tempScore == (fromJust l)) then tempScore else 0
+       where
+         [[a,b,c,d],[e,_,_,f],[gg,_,_,h],[i,j,k,l]] = g
+         tempScore  = scoreGrid g 0
+
+-- randomlyPlayBoard g = do
+--    if checkFull g && stuckCheck g then scoreGrid g 0
+--    else randomlyPlayBoard $ oneMove g
+
+-- generateRandomBoard :: Grid
+-- generateRandomBoard = do
+--     let a = generateRandomRow
+--     let b = generateRandomRow
+--     let c = generateRandomRow
+--     let d = generateRandomRow
+--     [a,b,c,d]
+
+-- generateRandomRow :: [Tile]
+-- generateRandomRow = do
+--     let a = generateRandomTile
+--     let b = generateRandomTile
+--     let c = generateRandomTile
+--     let d = generateRandomTile
+--     [a,b,c,d]
+
+-- generateRandomTile :: Tile
+-- generateRandomTile = do
+--     let (tempNum) = unsafePerformIO $ getStdRandom $ randomR (1,6)
+--     if (tempNum::Int) == 1 then Just 2
+--     else if (tempNum::Int) == 2 then Just 4
+--         else if (tempNum::Int) == 3 then Just 8
+--              else if (tempNum::Int) == 4 then Just 16
+--                    else if (tempNum::Int) == 5 then Just 32
+--                         else if (tempNum::Int) == 6 then Just 64
+--                             else Just 2
+
+
+
+mergesHeuristic :: Grid -> Int
+mergesHeuristic g = case g of 
+    [] -> 0
+    (x:xs) -> (countMergesInRow $ removeNothings x) + (mergesHeuristic xs)
+
+-- rowMerges :: [Tile] -> Int
+-- rowMerges g = case g of 
+--     [a,b,c,d] -> 
+
+countMergesInRow :: [Tile] -> Int
+countMergesInRow r = case r of
+    [] -> 0
+    (x:[]) -> 0
+    (x:xs) -> if x == (head xs) then 1 + (countMergesInRow xs)
+              else (countMergesInRow xs)
+
+removeNothings :: [Tile] -> [Tile]
+removeNothings r = case r of 
+    [] -> []
+    (x:xs) -> do 
+        case x of
+            Nothing -> removeNothings xs
+            (Just a) -> (Just a):(removeNothings xs)
+
+monotonicityHeuristic :: Grid -> Int
+monotonicityHeuristic g = case g of 
+    [] -> 0
+    (x:xs) -> (checkRowMonotonicity $ removeNothings x) + (monotonicityHeuristic xs)
+
+checkRowMonotonicity :: [Tile] -> Int
+checkRowMonotonicity r = case r of 
+    [] -> 0
+    (x:[]) -> 0
+    (x:xs) -> if x == (head xs) then checkRowMonotonicity xs
+              else if x > (head xs) then (fromJust x) - (fromJust $ head xs) + (checkRowMonotonicity xs)
+                   else (fromJust $ head xs) - (fromJust x)  + (checkRowMonotonicity xs)
+  
+openSquareHeuristic :: Grid -> Int
+openSquareHeuristic g = case g of
+    [] -> 0
+    (x:xs) -> countNothingInRow x + openSquareHeuristic xs
+
+countNothingInRow :: [Tile] -> Int
+countNothingInRow r = case r of 
+    [] -> 0
+    (Nothing:xs) -> 1 + countNothingInRow xs
+    (_:xs) -> countNothingInRow xs
+   
+
+-- average :: [Int] -> Int
+-- average xs = (sum xs) `div` (length xs)
 
 oneBestMove :: Grid -> Grid
 oneBestMove g = do
-    case (findBestMove g) of
+    case (findBestMove g) of 
        1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
        2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
        4 -> insertRandomTile $ leftGrid g
 
-monteCarloPlayBoard :: Grid -> IO ()
-monteCarloPlayBoard g = do
-   if checkFull g && stuckCheck g then colorGrid g
-   else monteCarloPlayBoard $ oneBestMove g
+monteCarloPlayBoard :: Grid -> Int -> (Int, Int)
+monteCarloPlayBoard g n = do
+   if (checkFull g && stuckCheck g) then (scoreGrid g 0, n)
+   else monteCarloPlayBoard (oneBestMove g) (n+1)
 
 randomlyPlayBoard :: Grid -> Int
 randomlyPlayBoard g = do
    if checkFull g && stuckCheck g then scoreGrid g 0
    else randomlyPlayBoard $ oneMove g
-
+-- randomlyPlayBoard :: Grid -> IO ()   
+-- randomlyPlayBoard g = do
+--     if checkFull g && stuckCheck g then colorGrid g
+--     else randomlyPlayBoard $ oneMove g
+        
 randomlyPlayTilWin :: Int -> Grid -> Int
 randomlyPlayTilWin n g = do
    if randomlyPlayBoard g == 2048 then n
    else if n == 10000 then n
-        else randomlyPlayTilWin (n+1) g
+        else randomlyPlayTilWin (n+1) g       
+
+        -- let randomDirection = unsafePerformIO $ getStdRandom $ random (1,4)
+        -- if (randomDirection::Int) == 1 then do
+        -- insertRandomTile $ transpose $ leftGrid $ transpose g
 
 oneMove :: Grid -> Grid
-oneMove g = do
+oneMove g = do 
     let (randomDirection) = unsafePerformIO $ getStdRandom $ randomR (1,4)
     if (randomDirection::Int) == 1 then insertRandomTile $ transpose $ leftGrid $ transpose g
     else if (randomDirection::Int) == 2 then insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
          else if (randomDirection::Int) == 3 then insertRandomTile $ map reverse $ leftGrid (map reverse g)
               else if (randomDirection::Int) == 4 then insertRandomTile $ leftGrid g
-                   else g
+                   else g    
+
+
+
+
 
 
 --- Game definitions: --
@@ -245,39 +471,48 @@ primaryLoop g = do
     putStrLn "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     colorGrid g
     let num = scoreGrid g 0
-    if (checkFull g) && (stuckCheck g) then do
+    if (checkFull g) && (stuckCheck g) then do       
         putStrLn "Stuck. Your score is: "
         print num
-        return ()
+        return ()     
     else do
-        case num of
+        case num of 
             2048 -> do
                putStrLn "YOU WIN"
                return ()
             _ -> do
-
+              
                -- print num
-               c <- getLine
+               c <- getLine               
                case c of
-                    "w" -> primaryLoop  $ insertRandomTile $ transpose $ leftGrid $ transpose g
-                    "s" -> primaryLoop  $ insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
-                    "d" -> primaryLoop  $ insertRandomTile $ map reverse $ leftGrid (map reverse g)
-                    "a" -> primaryLoop  $ insertRandomTile $ leftGrid g
+                    "w" -> if (directionStuckCheck 1 g) then primaryLoop g else primaryLoop $ insertRandomTile $ transpose $ leftGrid $ transpose g
+                    "s" -> if (directionStuckCheck 2 g) then primaryLoop g else primaryLoop  $ insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+                    "d" -> if (directionStuckCheck 3 g) then primaryLoop g else primaryLoop  $ insertRandomTile $ map reverse $ leftGrid (map reverse g)
+                    "a" -> if (directionStuckCheck 4 g) then primaryLoop g else primaryLoop  $ insertRandomTile $ leftGrid g
                     _   -> return ()
 
--}
-{-
-main :: IO ()
+solverIteration :: Grid -> IO ()
+solverIteration g = do
+   if checkFull g && stuckCheck g then colorGrid g
+   else colorGrid (oneBestMove g)
+
+main ::IO ()
 main = do
     let g =        [[Just 2, Just 2, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
+    -- let (x,y) = monteCarloPlayBoard g 0
     -- print $ stuckCheck g
-    colorGrid g
-    -- print $ randomlyPlayTilWin 0 g
+    -- colorGrid g
 
-    --monteCarloPlayBoard g
+    -- colorGrid generateRandomBoard
+
+    -- if x /= 1024 then main else print (x,y)
+    -- print (x,y)
+    -- print $ randomlyPlayTilWin 0 g
+    -- solverIteration g
+    -- print $ findBestMove2 g
     primaryLoop g
     -- primaryLoop g
 
