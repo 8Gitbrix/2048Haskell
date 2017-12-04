@@ -232,19 +232,19 @@ findBestMove g = do
    -- if (up == g) then
       -- let upScore = -9999
    -- else
-   let upScore = (largeEdgeNumberHeuristic up) + (directionStuckHeuristic 1 g) * 100000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))
+   let upScore = (directionStuckHeuristic 1 g) * ((largeEdgeNumberHeuristic up) - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(1000* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))))
    -- if down == g then
    --    let downScore = -9999
    -- else
-   let downScore = (largeEdgeNumberHeuristic down) + (directionStuckHeuristic 2 g) * 100000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))
+   let downScore = (directionStuckHeuristic 2 g) * ((largeEdgeNumberHeuristic down)  - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(1000* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))))
    -- if right == g then
    -- 	  let rightScore = -9999
    -- else
-   let rightScore = (largeEdgeNumberHeuristic right) + (directionStuckHeuristic 3 g) * 100000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))
+   let rightScore =  (directionStuckHeuristic 3 g) * ((largeEdgeNumberHeuristic right) - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(1000* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))))
    -- if left == g then
    --    let leftScore = -9999
    -- else
-   let leftScore = (largeEdgeNumberHeuristic left) + (directionStuckHeuristic 4 g) *100000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))
+   let leftScore = (directionStuckHeuristic 4 g) *((largeEdgeNumberHeuristic left)- (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (1000*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))))
 
    
    -- let upScore = runRandomN up 50
@@ -266,10 +266,36 @@ findBestMove2 g = do
    let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
    let left = insertRandomTile $ leftGrid g
 
-   let upScore = 1000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))*3
-   let downScore = 1000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))*3
-   let rightScore = 1000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))*3
-   let leftScore = 1000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))*3
+   -- let upScore = 1000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))*3
+   -- let downScore = 1000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))*3
+   -- let rightScore = 1000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))*3
+   -- let leftScore = 1000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))*3
+   -- let upScore = (largeEdgeNumberHeuristic up) + (directionStuckHeuristic 1 g) * 100000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(10* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up)))
+   -- -- if down == g then
+   -- --    let downScore = -9999
+   -- -- else
+   -- let downScore = (largeEdgeNumberHeuristic down) + (directionStuckHeuristic 2 g) * 100000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(10* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down)))
+   -- -- if right == g then
+   -- --     let rightScore = -9999
+   -- -- else
+   -- let rightScore = (largeEdgeNumberHeuristic right) + (directionStuckHeuristic 3 g) * 100000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(10* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right)))
+   -- -- if left == g then
+   -- --    let leftScore = -9999
+   -- -- else
+   -- let leftScore = (largeEdgeNumberHeuristic left) + (directionStuckHeuristic 4 g) *100000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (10*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left)))
+   let upScore = 1000+ (directionStuckHeuristic 1 g) * (largeEdgeNumberHeuristic up) - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(10* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up)))
+   -- if down == g then
+   --    let downScore = -9999
+   -- else
+   let downScore = 1000+(directionStuckHeuristic 2 g) * (largeEdgeNumberHeuristic down)  - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(10* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down)))
+   -- if right == g then
+   --     let rightScore = -9999
+   -- else
+   let rightScore = 1000+ (directionStuckHeuristic 3 g) * (largeEdgeNumberHeuristic right) - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(10* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right)))
+   -- if left == g then
+   --    let leftScore = -9999
+   -- else
+   let leftScore = 1000+(directionStuckHeuristic 4 g) *(largeEdgeNumberHeuristic left)- (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (10*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left)))
 
 
    -- let upScore = runRandomN up 50
@@ -283,15 +309,6 @@ findBestMove2 g = do
        else if maxScore == rightScore then (3, upScore, downScore, rightScore, leftScore)
             else if maxScore == leftScore then (4, upScore, downScore, rightScore, leftScore)
             else (4, upScore, downScore, rightScore, leftScore)
-
-   -- let upScore = randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up+ randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up + randomlyPlayBoard up
-   -- let downScore =  randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down  + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down + randomlyPlayBoard down 
-   -- let rightScore = randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right + randomlyPlayBoard right
-   -- let leftScore =  randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left  + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left + randomlyPlayBoard left
-    -- let upScore = average $ replicate 5 $ randomlyPlayBoard up
-   -- let downScore = average $  replicate 5 $ randomlyPlayBoard down
-   -- let rightScore = average $ replicate 5 $ randomlyPlayBoard right
-   -- let leftScore = average $ replicate 5 $ randomlyPlayBoard left
 
 runRandomN :: Grid -> Int -> Int
 runRandomN g n = do
@@ -368,13 +385,25 @@ monotonicityHeuristic g = case g of
     (x:xs) -> (checkRowMonotonicity $ removeNothings x) + (monotonicityHeuristic xs)
 
 checkRowMonotonicity :: [Tile] -> Int
-checkRowMonotonicity r = case r of 
-    [] -> 0
-    (x:[]) -> 0
-    (x:xs) -> if x == (head xs) then checkRowMonotonicity xs
-              else if x > (head xs) then (fromJust x) - (fromJust $ head xs) + (checkRowMonotonicity xs)
-                   else (fromJust $ head xs) - (fromJust x)  + (checkRowMonotonicity xs)
-  
+checkRowMonotonicity r = do
+    if (checkRowIncreasing r) || (checkRowDecreasing r) then scoreRow r 0 else (-1) * (scoreRow r 0)
+    -- else if x > (head xs) then (fromJust x) - (fromJust $ head xs) + (checkRowMonotonicity xs)
+    --                else (fromJust $ head xs) - (fromJust x)  + (checkRowMonotonicity xs)
+
+checkRowIncreasing :: [Tile] -> Bool
+checkRowIncreasing r = case r of
+    [] -> True
+    (x:[]) -> True
+    (x:xs) -> if x <= (head xs) then True && (checkRowIncreasing xs)
+              else False
+
+checkRowDecreasing :: [Tile] -> Bool
+checkRowDecreasing r = case r of
+    [] -> True
+    (x:[]) -> True
+    (x:xs) -> if x >= (head xs) then True && (checkRowDecreasing xs)
+              else False
+
 openSquareHeuristic :: Grid -> Int
 openSquareHeuristic g = case g of
     [] -> 0
