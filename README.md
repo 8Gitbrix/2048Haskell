@@ -2,9 +2,9 @@
 
 ## Run:
 ```
-npm install
-stack install --local-bin-path build
-./node_modules/.bin/electron electron.js
+stack setup
+stack build
+stack exec 2048Haskell
 ```
 
 Or just enter the app directory and double click 2048Haskell-exe
@@ -12,6 +12,7 @@ Or just enter the app directory and double click 2048Haskell-exe
 ## Rules:
 
 Board made up of 16 tiles. Possible moves: Left, Right, Up, Down
+q is to quit
 
 1. At each time step a new tile that is a random multiple of 2 will be placed in the board.
 2. When you select one of the moves, all tiles will move as far as possible in that direction in the grid.
