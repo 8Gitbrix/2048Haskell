@@ -94,7 +94,7 @@ isGameOver g = (checkFull (g ^. grid)) && (stuckCheck (g ^. grid))
 
 step :: Game -> Game
 step g =
-  if isGameOver g then Game {_grid = g ^. grid, _score = g ^. score, _dead = True}
+  if isGameOver g then Game {_grid = g ^. grid, _score = g ^. score, _done = True}
   else g
 
 handle :: Direction -> Grid -> Grid
@@ -104,20 +104,20 @@ handle d g = case d of
   Logic.Left -> leftGrid g
   Logic.Right -> map reverse $ leftGrid (map reverse g)
 
-turn :: Direction -> Game -> Game
-turn dir g =
+move :: Direction -> Game -> Game
+move dir g =
   Game {  _grid = newGrid
         , _score = (scoreGrid newGrid 0)
-        , _dead = (checkFull newGrid && stuckCheck newGrid)
+        , _done = (checkFull newGrid && stuckCheck newGrid)
         }
   where newGrid = insertRandomTile $ handle dir (g ^. grid)
 
 handleEvent :: Game -> BrickEvent Name Tick -> EventM Name (Next Game)
 handleEvent g (AppEvent Tick)                       = continue $ step g
-handleEvent g (VtyEvent (V.EvKey V.KUp []))         = continue $ turn Logic.Up g
-handleEvent g (VtyEvent (V.EvKey V.KDown []))       = continue $ turn Logic.Down g
-handleEvent g (VtyEvent (V.EvKey V.KRight []))      = continue $ turn Logic.Right g
-handleEvent g (VtyEvent (V.EvKey V.KLeft []))       = continue $ turn Logic.Left g
+handleEvent g (VtyEvent (V.EvKey V.KUp []))         = continue $ move Logic.Up g
+handleEvent g (VtyEvent (V.EvKey V.KDown []))       = continue $ move Logic.Down g
+handleEvent g (VtyEvent (V.EvKey V.KRight []))      = continue $ move Logic.Right g
+handleEvent g (VtyEvent (V.EvKey V.KLeft []))       = continue $ move Logic.Left g
 handleEvent g (VtyEvent (V.EvKey (V.KChar 'r') [])) = liftIO (initGame) >>= continue
 handleEvent g (VtyEvent (V.EvKey (V.KChar 'q') [])) = halt g
 handleEvent g (VtyEvent (V.EvKey V.KEsc []))        = halt g
@@ -137,7 +137,7 @@ drawInfo = withBorderStyle BS.unicodeBold
     , ("Right", "→")
     , ("Down", "↓")
     , ("Restart", "r")
-    , ("Quit", "q")
+    , ("Quit", "q or esc")
     ]
   where
     drawKey act key = (padRight Max $ padLeft (Pad 1) $ str act)
@@ -145,9 +145,7 @@ drawInfo = withBorderStyle BS.unicodeBold
 
 drawStats :: Game -> Widget Name
 drawStats g = hLimit 11
-  $ vBox [ drawScore (g ^. score)
-         , padTop (Pad 2) $ drawGameOver (g ^. dead)
-         ]
+  $ vBox [ drawScore (g ^. score) , padTop (Pad 2) $ drawGameOver (g ^. done)]
 
 drawScore :: Int -> Widget Name
 drawScore n = withBorderStyle BS.unicodeBold
@@ -158,8 +156,8 @@ drawScore n = withBorderStyle BS.unicodeBold
   $ str $ show n
 
 drawGameOver :: Bool -> Widget Name
-drawGameOver dead =
-  if dead
+drawGameOver done =
+  if done
     then withAttr gameOverAttr $ C.hCenter $ str "GAME OVER"
     else emptyWidget
 
@@ -179,7 +177,7 @@ colorTile val = case val of
 
 drawGrid :: Game -> Widget Name
 drawGrid g = withBorderStyle BS.unicodeBold
-  $ B.borderWithLabel (str "2048")
+  $ B.borderWithLabel (withAttr magBg $ str "2048")
   $ vBox rows
   where
     rows = [hBox $ tilesInRow r | r <- (g ^. grid)]

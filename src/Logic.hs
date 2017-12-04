@@ -220,7 +220,7 @@ directionStuckCheck n g = case n of
     1 -> if g == (transpose $ leftGrid $ transpose g) then True else False
     2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then True else False
     3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
-    4 -> if g == (leftGrid g) then True else False  
+    4 -> if g == (leftGrid g) then True else False
 
 findBestMove :: Grid -> Int
 findBestMove g = do
@@ -246,14 +246,14 @@ findBestMove g = do
    -- else
    let leftScore = (directionStuckHeuristic 4 g) *((largeEdgeNumberHeuristic left)- (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (1000*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))))
 
-   
+
    -- let upScore = runRandomN up 50
    -- let downScore = runRandomN down 50
    -- let rightScore = runRandomN right 50
    -- let leftScore = runRandomN left 50
 
    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then 1 
+   if maxScore == upScore then 1
    else if maxScore == downScore then 2
        else if maxScore == rightScore then 3
             else if maxScore == leftScore then 4
@@ -304,7 +304,7 @@ findBestMove2 g = do
    -- let leftScore = runRandomN left 50
 
    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then (1, upScore, downScore, rightScore, leftScore) 
+   if maxScore == upScore then (1, upScore, downScore, rightScore, leftScore)
    else if maxScore == downScore then (2, upScore, downScore, rightScore, leftScore)
        else if maxScore == rightScore then (3, upScore, downScore, rightScore, leftScore)
             else if maxScore == leftScore then (4, upScore, downScore, rightScore, leftScore)
@@ -313,7 +313,7 @@ findBestMove2 g = do
 runRandomN :: Grid -> Int -> Int
 runRandomN g n = do
     if n == 0 then randomlyPlayBoard g
-    else randomlyPlayBoard g + runRandomN g (n-1) 
+    else randomlyPlayBoard g + runRandomN g (n-1)
 
 largeEdgeNumberHeuristic :: Grid -> Int
 largeEdgeNumberHeuristic g = do
@@ -356,13 +356,13 @@ largeEdgeNumberHeuristic g = do
 
 
 mergesHeuristic :: Grid -> Int
-mergesHeuristic g = case g of 
+mergesHeuristic g = case g of
     [] -> 0
     (x:xs) -> (countMergesInRow $ removeNothings x) + (mergesHeuristic xs)
 
 -- rowMerges :: [Tile] -> Int
--- rowMerges g = case g of 
---     [a,b,c,d] -> 
+-- rowMerges g = case g of
+--     [a,b,c,d] ->
 
 countMergesInRow :: [Tile] -> Int
 countMergesInRow r = case r of
@@ -372,15 +372,15 @@ countMergesInRow r = case r of
               else (countMergesInRow xs)
 
 removeNothings :: [Tile] -> [Tile]
-removeNothings r = case r of 
+removeNothings r = case r of
     [] -> []
-    (x:xs) -> do 
+    (x:xs) -> do
         case x of
             Nothing -> removeNothings xs
             (Just a) -> (Just a):(removeNothings xs)
 
 monotonicityHeuristic :: Grid -> Int
-monotonicityHeuristic g = case g of 
+monotonicityHeuristic g = case g of
     [] -> 0
     (x:xs) -> (checkRowMonotonicity $ removeNothings x) + (monotonicityHeuristic xs)
 
@@ -410,18 +410,18 @@ openSquareHeuristic g = case g of
     (x:xs) -> countNothingInRow x + openSquareHeuristic xs
 
 countNothingInRow :: [Tile] -> Int
-countNothingInRow r = case r of 
+countNothingInRow r = case r of
     [] -> 0
     (Nothing:xs) -> 1 + countNothingInRow xs
     (_:xs) -> countNothingInRow xs
-   
+
 
 -- average :: [Int] -> Int
 -- average xs = (sum xs) `div` (length xs)
 
 oneBestMove :: Grid -> Grid
 oneBestMove g = do
-    case (findBestMove g) of 
+    case (findBestMove g) of
        1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
        2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
@@ -436,29 +436,29 @@ randomlyPlayBoard :: Grid -> Int
 randomlyPlayBoard g = do
    if checkFull g && stuckCheck g then scoreGrid g 0
    else randomlyPlayBoard $ oneMove g
--- randomlyPlayBoard :: Grid -> IO ()   
+-- randomlyPlayBoard :: Grid -> IO ()
 -- randomlyPlayBoard g = do
 --     if checkFull g && stuckCheck g then colorGrid g
 --     else randomlyPlayBoard $ oneMove g
-        
+
 randomlyPlayTilWin :: Int -> Grid -> Int
 randomlyPlayTilWin n g = do
    if randomlyPlayBoard g == 2048 then n
    else if n == 10000 then n
-        else randomlyPlayTilWin (n+1) g       
+        else randomlyPlayTilWin (n+1) g
 
         -- let randomDirection = unsafePerformIO $ getStdRandom $ random (1,4)
         -- if (randomDirection::Int) == 1 then do
         -- insertRandomTile $ transpose $ leftGrid $ transpose g
 
 oneMove :: Grid -> Grid
-oneMove g = do 
+oneMove g = do
     let (randomDirection) = unsafePerformIO $ getStdRandom $ randomR (1,4)
     if (randomDirection::Int) == 1 then insertRandomTile $ transpose $ leftGrid $ transpose g
     else if (randomDirection::Int) == 2 then insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
          else if (randomDirection::Int) == 3 then insertRandomTile $ map reverse $ leftGrid (map reverse g)
               else if (randomDirection::Int) == 4 then insertRandomTile $ leftGrid g
-                   else g    
+                   else g
 
 
 
@@ -470,7 +470,7 @@ oneMove g = do
 data Game = Game
   { _grid  :: Grid
   , _score :: Int
-  , _dead  :: Bool
+  , _done  :: Bool
   } deriving (Eq, Show)
 
 data Direction
@@ -491,7 +491,7 @@ initGame = do
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
         , _score = 0
-        , _dead = False
+        , _done = False
         }
 
 {-
@@ -500,19 +500,19 @@ primaryLoop g = do
     putStrLn "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     colorGrid g
     let num = scoreGrid g 0
-    if (checkFull g) && (stuckCheck g) then do       
+    if (checkFull g) && (stuckCheck g) then do
         putStrLn "Stuck. Your score is: "
         print num
-        return ()     
+        return ()
     else do
-        case num of 
+        case num of
             2048 -> do
                putStrLn "YOU WIN"
                return ()
             _ -> do
-              
+
                -- print num
-               c <- getLine               
+               c <- getLine
                case c of
                     "w" -> if (directionStuckCheck 1 g) then primaryLoop g else primaryLoop $ insertRandomTile $ transpose $ leftGrid $ transpose g
                     "s" -> if (directionStuckCheck 2 g) then primaryLoop g else primaryLoop  $ insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g

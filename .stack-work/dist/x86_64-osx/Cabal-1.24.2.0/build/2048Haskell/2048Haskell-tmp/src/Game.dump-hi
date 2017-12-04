@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 19:22:05.153758 UTC
+2017-12-04 22:45:50.850256 UTC
 
 interface main@main:Game 8002
-  interface hash: 7acf4a3876c49c39ec635b57a10c7ab8
-  ABI hash: dacd98b7dac6d9a5a29bfaa52c06dc4d
-  export-list hash: b99689c8d0b3dfc94464d6030a7cf8e5
+  interface hash: f80f9927ede68bb18b186cfaccb90f06
+  ABI hash: 5f4718282dbd1cca67765c0bb736aacf
+  export-list hash: 445316c2217125c6b9218727abeb0775
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f1e02b8e10513cd91f5d59aeb63f6e7b
   sig of: Nothing
@@ -34,9 +34,9 @@ exports:
   Game.isGameOver
   Game.magBg
   Game.main
+  Game.move
   Game.step
   Game.theMap
-  Game.turn
   Game.whiteBg
   Game.yellowBg
   Game.Name
@@ -205,27 +205,27 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b5
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
-import  -/  Logic 7be84532db5ac0abd9037e06d0df50b9
-  exports: 5c7f7ffe4fbcc6c45591ede4e0b21031
+import  -/  Logic 649e0f6f397e7940c6a8eeadd4b2d33d
+  exports: f4197bae19c0657ba6cd777f66397ab8
   Direction 8d4b988266ab87805c94d9bc03d5ebc3
   Down 7f1b5028744622dd5319c82e55949f9b
-  Game 9bd153c3e447e74120b0e8464025a628
-  Game e51b0a5c383660d10cd2dc927661fa01
+  Game 981cc3ff4aa019cfda5fbd5ec868671a
+  Game f8fdb6d9549dc40d8ac3963099c4e7cc
   Grid 0042228100c73fede17ca0216502ec67
   Left 1756cac20a58324b58ed217cf9c144ff
   Right 34e823e1a88dba5b5848bf97653a420d
   Up ce074310c1241fadaba7fd85bf9c23cc
-  _dead d79f3ffb3f9f8802832d309ec5fb1e15
-  _grid adb69687317781d1c9020b6808a7f2d8
-  _score 3b56748fb5e93632604649aa3176a9ac
+  _done f094b15d85ebbe619187740131cacc4c
+  _grid fe2b3cf42dd925e656f03729bfb1ee01
+  _score 1b3a2e89fff8d270af45cc204639f487
   checkFull d964473dc4d99ec6d05d51a2bb1a826f
-  dead bd85958ff9a07ad6799db3f93ed2ea47
-  grid 026587772db2c2f830ddeeffe112371f
-  initGame 250391b0bfe7e9a8379c4aeef74a2f33
+  done 9c1c68ce7bbdfcbbfe1b1c6aeb3d76a1
+  grid d6fda91056afc97efd4307d3e5af7f5f
+  initGame 0ee2a09c993dd1a2be59fc05ab7ab589
   insertRandomTile 6b6075d773b28b6f210964b096c886eb
   leftGrid 3734304773ada79feddf8dc8ba2281b4
   printTile 71e75dfb3012d2685417b2b7b6d73c4f
-  score ad6eddc0f3ad73da3a85c0f413ee8ff2
+  score b962a82045d7fd1c1fc4c37eba5644d7
   scoreGrid 7b61f6e894d197317893065fabb1cab0
   stuckCheck ba27a4dfa6e644b687c49a6bd2e0fe9b
 import  -/  microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro 17ccad91e2fea7d0a9e5062fed73ea61
@@ -334,7 +334,7 @@ d33fa8a27ec7774d8a3773d60410c971
     -> (# Brick.Types.Size, Brick.Types.Size,
           Brick.Types.RenderM n (Brick.Types.Internal.Result n) #)
   {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-e329e203ee3d40ab07ba59dbd5169dbe
+2341fdc77743057421a644897a7fa426
   $wdrawGrid ::
     Logic.Game
     -> (# Brick.Types.Size, Brick.Types.Size,
@@ -454,7 +454,7 @@ e329e203ee3d40ab07ba59dbd5169dbe
                               <Control.Monad.Trans.State.Lazy.State
                                  (Brick.Types.Internal.RenderState Game.Name)>_R
                               <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
-9adc88172912b04f8b733acd9011fbb1
+fc32069ed5d70ab34c43da3d2c7e50c6
   $wdrawStats ::
     Logic.Game
     -> (# Brick.Types.Size, Brick.Types.Size,
@@ -519,7 +519,7 @@ e329e203ee3d40ab07ba59dbd5169dbe
                               <Control.Monad.Trans.State.Lazy.State
                                  (Brick.Types.Internal.RenderState Game.Name)>_R
                               <Brick.Types.Internal.Result Game.Name>_N)) #)) -}
-156f6222ddf56414f0028a6bc4759619
+c9d175208328dc570d2688d930d15490
   $wdrawUI ::
     Logic.Game
     -> (# Brick.Types.Widget Game.Name,
@@ -572,8 +572,8 @@ e329e203ee3d40ab07ba59dbd5169dbe
                               ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
                     Brick.Types.Widget @ Game.Name ww1 ww2 ww3 },
                     GHC.Types.[] @ (Brick.Types.Widget Game.Name) #)) -}
-c3c05024c04feb1f6ccb5aa0be812458
-  $wturn ::
+7f346aecd343d566e661cc69d51574f9
+  $wmove ::
     Logic.Direction
     -> Logic.Game -> (# Logic.Grid, GHC.Types.Int, GHC.Types.Bool #)
   {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>, Inline: [0],
@@ -595,7 +595,7 @@ f59ec08ae74e1440387ed63a30339c22
   type Name = ()
 b77f50c9f64ede09a22acf18beef752b
   data Tick = Tick
-c563b53c1c250df577cb472c47a112d5
+798b4f5444985ebefa445692c60a0eef
   app :: Brick.Main.App Logic.Game Game.Tick Game.Name
   {- Strictness: m,
      Unfolding: (Brick.Main.App
@@ -628,7 +628,7 @@ c563b53c1c250df577cb472c47a112d5
                                             <Logic.Game>_N))
                                   (Sym (Brick.Types.N:EventM[0] <()>_N) <Logic.Game>_N)))
                    Game.app1) -}
-04fe5e5c5a700c676673a6497be7ea3e
+48248486d75e149046bfb12fb9bc1089
   app1 :: Logic.Game -> Brick.AttrMap.AttrMap
   {- Arity: 1, Strictness: <L,A>m1,
      Unfolding: InlineRule (1, True, True)
@@ -738,39 +738,82 @@ f73b06ae8412a3d86124103d62a6f220
 48d4a619502230afc74818cc3cb579f2
   cyanBg2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "cyanBg"#) -}
-edf49bfb16cbab08c37edf4aa2d2faf2
+3e97175d04eab213b4eebc7039304e93
   drawGameOver :: GHC.Types.Bool -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <S,1*U>m,
      Unfolding: InlineRule (1, True, False)
-                (\ (dead :: GHC.Types.Bool) ->
-                 case dead of wild {
+                (\ (done :: GHC.Types.Bool) ->
+                 case done of wild {
                    GHC.Types.False -> Brick.Widgets.Core.emptyWidget @ Game.Name
                    GHC.Types.True -> Game.drawStats2 }) -}
-8e06e53db9f3f3517ea015be9d62ab08
+e2acacf4e558ff15a71cd660e73a4c6f
   drawGrid :: Logic.Game -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <L,1*U(1*U,A,A)>m, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: Logic.Game) ->
                  case Game.$wdrawGrid w of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-ff7f972bb3e2091b17aafd5e82225675
+7c6be951d7e3368f16d0b17f2774c501
   drawGrid1 :: GHC.Base.Maybe (Brick.Types.Widget Game.Name)
   {- Unfolding: (GHC.Base.Just
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawGrid2) -}
-aaed8bcce121404798ab237e47c8a6ec
+aa3d0be8572829aa17c19c6ffa5f872b
   drawGrid2 :: Brick.Types.Widget Game.Name
-  {- Unfolding: (case Brick.Widgets.Core.$wstr
-                        @ Game.Name
-                        Game.drawGrid3 of ww { (#,,#) ww1 ww2 ww3 ->
-                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-2d862e2dca406754f1c5ac8b4af7a3be
-  drawGrid3 :: [GHC.Types.Char]
+  {- Strictness: m,
+     Unfolding: (Brick.Types.Widget
+                   @ Game.Name
+                   Game.drawGrid6
+                   Game.drawGrid5
+                   Game.drawGrid3
+                     `cast`
+                   (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <*>_N
+                             <Brick.Types.Internal.Context>_R
+                             <Control.Monad.Trans.State.Lazy.State
+                                (Brick.Types.Internal.RenderState Game.Name)>_R
+                             <Brick.Types.Internal.Result Game.Name>_N))) -}
+95487ae1ae8f1137c013bb82a8cd61ee
+  drawGrid3 ::
+    Brick.Types.Internal.Context
+    -> Control.Monad.Trans.State.Lazy.State
+         (Brick.Types.Internal.RenderState Game.Name)
+         (Brick.Types.Internal.Result Game.Name)
+  {- Arity: 1, Strictness: <L,1*U(A,U,U,U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Brick.Types.Internal.Context) ->
+                 case Game.drawGrid_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds3
+                   `cast`
+                 (Control.Monad.Trans.Reader.N:ReaderT[0]
+                      <*>_N
+                      <Brick.Types.Internal.Context>_R
+                      <Control.Monad.Trans.State.Lazy.State
+                         (Brick.Types.Internal.RenderState Game.Name)>_R
+                      <Brick.Types.Internal.Result Game.Name>_N)
+                   (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                    Brick.Types.Internal.Context Game.magBg x2 x3 x4 x5 }) }) -}
+f463f78c1fa5bf658a59d73a06916e6b
+  drawGrid4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "2048"#) -}
+4797cf094679cbd5069320f084ed9f0f
+  drawGrid5 :: Brick.Types.Size
+  {- Unfolding: (case Game.drawGrid_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds2 }) -}
+237c65791352a0e013b55c2ea299a130
+  drawGrid6 :: Brick.Types.Size
+  {- Unfolding: (case Game.drawGrid_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds1 }) -}
 8036c793e0a7fecceb21cc1ee28d4034
   drawGrid_go :: [[Logic.Tile]] -> [Brick.Types.Widget Game.Name]
   {- Arity: 1, Strictness: <S,1*U> -}
-39d5ad006909d001239271a68577ef61
+f7730dfe508ef13ccfdddc70de56b044
+  drawGrid_w1 :: Brick.Types.Widget Game.Name
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ Game.Name
+                        Game.drawGrid4 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
+8421ba986d56451e91b9d28072248fe5
   drawInfo :: Brick.Types.Widget Game.Name
   {- Strictness: m,
      Unfolding: (Brick.Types.Widget
@@ -785,7 +828,7 @@ aaed8bcce121404798ab237e47c8a6ec
                              <Control.Monad.Trans.State.Lazy.State
                                 (Brick.Types.Internal.RenderState Game.Name)>_R
                              <Brick.Types.Internal.Result Game.Name>_N))) -}
-0d713321ee3b8d79bbabacad5deae3c7
+4d25d07c0c41ad16639c4a2f8197c3ac
   drawInfo1 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -802,9 +845,9 @@ aaed8bcce121404798ab237e47c8a6ec
                       x3
                       Brick.Widgets.Border.Style.unicodeBold
                       x5 })) -}
-be58ddfb769298aa60fa35504ec0f47b
+82a1c51ffb9bb4286b574f7e8daf7088
   drawInfo10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "q"#) -}
+  {- Unfolding: (GHC.CString.unpackCString# "q or esc"#) -}
 b425041a26fdcf15324e73dc4cf45c60
   drawInfo11 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Quit"#) -}
@@ -837,7 +880,7 @@ c25ebe537b742b06b98359d88ee1c836
 e2e3a18f87844b0b2386a47cf75e94e4
   drawInfo19 :: ([GHC.Types.Char], [GHC.Types.Char])
   {- Unfolding: ((Game.drawInfo21, Game.drawInfo20)) -}
-42d5968784ae4b32eab7b2095e7a726f
+04b0c00bd4cf07fc5267a6559ca354b9
   drawInfo2 :: Brick.Types.Widget Game.Name
   {- Unfolding: (case Brick.Widgets.Core.$wrenderBox
                         @ Game.Name
@@ -881,7 +924,7 @@ adaa4cce5a45764050db9b47e9e12543
 8bf94b5b5966d3cc954bbcd837f18fd2
   drawInfo29 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Left"#) -}
-35da839fce72d70752b313c801d5afb4
+57ce790d2071a634b10490cc589fcd5e
   drawInfo3 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
@@ -901,43 +944,43 @@ adaa4cce5a45764050db9b47e9e12543
 1fe5c882029b4ca49ef8bfb4aa2a6ad4
   drawInfo32 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Commands"#) -}
-da7563ee86fcbb0865ddb61043555115
+60963c8ebdb37217904f22c505e3a856
   drawInfo33 :: Brick.Types.Size
   {- Unfolding: (case Game.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
                  ds2 }) -}
-d520a72e07a1886e27c7d8f2684a90af
+96f9e90bf8a7d623a3b97b06e7e087a1
   drawInfo4 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawInfo22
                    Game.drawInfo5) -}
-6f4bf1f5dc787d44abee2c44d61fec20
+b78ea2be454acd25a57a50be360c6634
   drawInfo5 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawInfo18
                    Game.drawInfo6) -}
-c2752e49a16ffd6eb72e63d75b78ae37
+7c8a71a7059c6edea99533cb6663c9b1
   drawInfo6 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawInfo14
                    Game.drawInfo7) -}
-3ae8fa02fcb083eba02a794b95ad0092
+7fdea684ecd48c76cb1fc298ebb546fa
   drawInfo7 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawInfo8
                    (GHC.Types.[] @ (Brick.Types.Widget Game.Name))) -}
-d6a23f653b9932671da2ce2ccefecf49
+d29212d31cee444559028356c4f37b67
   drawInfo8 :: Brick.Types.Widget Game.Name
   {- Unfolding: (case Game.$wc
                         Game.drawInfo9 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-dc6642c2349bf517a54fab01e32bc06f
+ba88a477882e488453e67ea1712e44e8
   drawInfo9 :: ([GHC.Types.Char], [GHC.Types.Char])
   {- Unfolding: ((Game.drawInfo11, Game.drawInfo10)) -}
-36ac70ccdaf516b86506e6a41bcb4dd6
+5f23b808f231ab0a35e1700417e131a2
   drawInfo_f1 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -957,7 +1000,7 @@ dc6642c2349bf517a54fab01e32bc06f
 91ea001dd011413b57c43bf6ae57fa69
   drawInfo_w :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 20#) -}
-4059a33217721ecbebb2d0bb65717f1b
+74e834ee08d3ecd5f34f6c75438ae1ac
   drawInfo_w1 :: Brick.Types.Widget Game.Name
   {- Unfolding: (case Brick.Widgets.Border.$wborder_
                         @ Game.Name
@@ -971,7 +1014,7 @@ d3e7407546e44ec28557a1e612e1ef14
                 (\ (w :: GHC.Types.Int) ->
                  case Game.$wdrawScore w of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-6c1ef02ccb05525ad13e2498394644be
+4a05a18641a511a52e9880846c3f9dd0
   drawStats :: Logic.Game -> Brick.Types.Widget Game.Name
   {- Arity: 1, Strictness: <L,U(A,1*U(U),1*U)>m, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -1061,20 +1104,20 @@ aba80fd1ee938caf5b3b63e2f5fa0a7d
                         (GHC.Base.Nothing @ GHC.Types.Char)
                         Game.drawStats4 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ Game.Name ww1 ww2 ww3 }) -}
-59165ed85329047ca84b8cec07b00c39
+3d92de053a11fae0ab207e7f42f8e2e7
   drawUI :: Logic.Game -> [Brick.Types.Widget Game.Name]
   {- Arity: 1, Strictness: <L,U(1*U,U(U),U)>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: Logic.Game) ->
                  case Game.$wdrawUI w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ (Brick.Types.Widget Game.Name) ww1 ww2 }) -}
-1c53d9d3e3dfc700daa2163c9b46d7a9
+176d3c4dcff87f2140c813b0e55bc484
   drawUI1 :: [Brick.Types.Widget Game.Name]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget Game.Name)
                    Game.drawUI2
                    (GHC.Types.[] @ (Brick.Types.Widget Game.Name))) -}
-71a3a4b3d483ed6de4e946de78da738d
+4268221854eaaec70f1772e1a6b06d43
   drawUI2 :: Brick.Types.Widget Game.Name
   {- Unfolding: (case Brick.Widgets.Core.$wpadLeft
                         @ Game.Name
@@ -1148,7 +1191,7 @@ c59157ff487d7c39325dc2db1ff68679
                    @ Logic.Tile
                    (Logic.leftRow (GHC.List.reverse @ Logic.Tile x))
                    (GHC.Types.[] @ Logic.Tile)) -}
-4ca00077fd7f13aa000ce6ad279bf59f
+7e377ceba2a550903fd29c1077ca348f
   handleEvent ::
     Logic.Game
     -> Brick.Types.Internal.BrickEvent Game.Name Game.Tick
@@ -1475,7 +1518,7 @@ c59157ff487d7c39325dc2db1ff68679
                                   []
                                   -> let {
                                        x :: Logic.Game
-                                       = case Game.$wturn Logic.Left g of ww { (#,,#) ww1 ww2 ww3 ->
+                                       = case Game.$wmove Logic.Left g of ww { (#,,#) ww1 ww2 ww3 ->
                                          Logic.Game ww1 ww2 ww3 }
                                      } in
                                      let {
@@ -1549,7 +1592,7 @@ c59157ff487d7c39325dc2db1ff68679
                                   []
                                   -> let {
                                        x :: Logic.Game
-                                       = case Game.$wturn
+                                       = case Game.$wmove
                                                 Logic.Right
                                                 g of ww { (#,,#) ww1 ww2 ww3 ->
                                          Logic.Game ww1 ww2 ww3 }
@@ -1625,7 +1668,7 @@ c59157ff487d7c39325dc2db1ff68679
                                   []
                                   -> let {
                                        x :: Logic.Game
-                                       = case Game.$wturn Logic.Up g of ww { (#,,#) ww1 ww2 ww3 ->
+                                       = case Game.$wmove Logic.Up g of ww { (#,,#) ww1 ww2 ww3 ->
                                          Logic.Game ww1 ww2 ww3 }
                                      } in
                                      let {
@@ -1699,7 +1742,7 @@ c59157ff487d7c39325dc2db1ff68679
                                   []
                                   -> let {
                                        x :: Logic.Game
-                                       = case Game.$wturn Logic.Down g of ww { (#,,#) ww1 ww2 ww3 ->
+                                       = case Game.$wmove Logic.Down g of ww { (#,,#) ww1 ww2 ww3 ->
                                          Logic.Game ww1 ww2 ww3 }
                                      } in
                                      let {
@@ -1812,7 +1855,7 @@ c59157ff487d7c39325dc2db1ff68679
                                 (Sym (Brick.Types.N:EventM[0]
                                           <Game.Name>_N) <Brick.Types.Internal.Next
                                                             Logic.Game>_N))) } }) -}
-0af4f9ee906df6e3bee0ca3e66a8f595
+d613d3cf6e65b31b944033c9be729745
   handleEvent1 ::
     Brick.Types.Internal.EventRO ()
     -> Brick.Types.Internal.EventState ()
@@ -1828,7 +1871,7 @@ c59157ff487d7c39325dc2db1ff68679
                  (# eta1,
                     (Brick.Types.Internal.Continue @ Logic.Game Logic.initGame2,
                      eta) #)) -}
-ccce149d32743eca19db8f7c8a59a220
+1273140798392d14126693b602a11b4c
   isGameOver :: Logic.Game -> GHC.Types.Bool
   {- Arity: 1, Strictness: <S(SLL),1*U(U,A,A)>,
      Unfolding: InlineRule (1, True, False)
@@ -1851,12 +1894,12 @@ b90e4426b1ebc3e7b36910c99b485661
 c6e8bbcd0004767666d3d848d15de9d4
   magBg2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "magBg"#) -}
-5f7d404e450f46ecfb46eb24d72da45e
+ac044c1dfff2c1aa688da9184c6b9493
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Game.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-dd26f542b32c02a67c3636ac5b7a86f8
+0cf2da12dce9080b0c3941593f11e04c
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -2002,7 +2045,15 @@ b968c33013b35a8c0deaa58578a4e60b
 0f4582c181b6307f8109540b2387e02d
   main4 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
-b4e8be67646f516c63b014c327b0c178
+492ce447f76330611f17b55d66184423
+  move :: Logic.Direction -> Logic.Game -> Logic.Game
+  {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Logic.Direction) (w1 :: Logic.Game) ->
+                 case Game.$wmove w w1 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Logic.Game ww1 ww2 ww3 }) -}
+50705dd550eba9da6be60fda9d6de24f
   step :: Logic.Game -> Logic.Game
   {- Arity: 1, Strictness: <S(SLL),1*U(U,U,U)>m, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -2355,14 +2406,6 @@ bec4d7916d90015baa784c602ef0d2c7
                    @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
                    Game.theMap26
                    Game.theMap10) -}
-f3d84119776a802cb33cf019c4ccc9f5
-  turn :: Logic.Direction -> Logic.Game -> Logic.Game
-  {- Arity: 2, Strictness: <L,1*U><L,1*U(1*U,A,A)>m,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Direction) (w1 :: Logic.Game) ->
-                 case Game.$wturn w w1 of ww { (#,,#) ww1 ww2 ww3 ->
-                 Logic.Game ww1 ww2 ww3 }) -}
 49a3420c001d13fc246496d1b32ab396
   whiteBg :: Brick.AttrMap.AttrName
   {- Strictness: m,
