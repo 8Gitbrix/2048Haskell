@@ -221,7 +221,7 @@ directionStuckCheck n g = case n of
     1 -> if g == (transpose $ leftGrid $ transpose g) then True else False
     2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then True else False
     3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
-    4 -> if g == (leftGrid g) then True else False  
+    4 -> if g == (leftGrid g) then True else False
 
 optimizeWeight :: Grid -> Int -> Int -> Int -> Int -> Int
 optimizeWeight g x y z i = do
@@ -230,7 +230,7 @@ optimizeWeight g x y z i = do
   --                   [Nothing, Nothing, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing]]
   let tempScore = findAverage5Score g x y z
-  case i of 
+  case i of
     1 -> if (findAverage5Score g (x+1) y z) > (tempScore) then optimizeWeight g (x+1) y z 1
          else if (findAverage5Score g (x-1) y z) > (tempScore) then optimizeWeight g (x-1) y z 1
               else x
@@ -242,7 +242,7 @@ optimizeWeight g x y z i = do
               else z
 
 determineOptimalWeights :: Grid -> Int -> Int -> Int -> (Int, Int, Int)
-determineOptimalWeights g x y z = 
+determineOptimalWeights g x y z =
   -- let g =        [[Just 2, Just 2, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
@@ -273,14 +273,14 @@ findBestMove g (x,y,z)= do
    -- else
    let leftScore =(directionStuckHeuristic 4 g) + (((largeEdgeNumberHeuristic left)*z)+ (((monotonicityHeuristic left) + (monotonicityHeuristic $ transpose left))*y) + (x*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))))
 
-   
+
    -- let upScore = runRandomN up 50
    -- let downScore = runRandomN down 50
    -- let rightScore = runRandomN right 50
    -- let leftScore = runRandomN left 50
 
    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then 1 
+   if maxScore == upScore then 1
    else if maxScore == downScore then 2
        else if maxScore == rightScore then 3
             else if maxScore == leftScore then 4
@@ -290,14 +290,14 @@ runRandomN :: Grid -> Int -> Int
 runRandomN g n = do
     if n == 0 then randomlyPlayBoard g
     else randomlyPlayBoard g + runRandomN g (n-1)
-    
+
 largeEdgeNumberHeuristic :: Grid -> Int
 largeEdgeNumberHeuristic g = do
     if (a /= Nothing && tempScore == (fromJust a)) || (b /= Nothing && tempScore == (fromJust b)) || (c /= Nothing && tempScore == (fromJust c)) || (d /= Nothing && tempScore == (fromJust d)) || (e /= Nothing && tempScore == (fromJust e)) || (f /= Nothing && tempScore == (fromJust f)) || (gg /= Nothing && tempScore == (fromJust gg)) || (h /= Nothing && tempScore == (fromJust h)) || (i /= Nothing && tempScore == (fromJust i)) || (j /= Nothing && tempScore == (fromJust j)) || (k /= Nothing && tempScore == (fromJust k)) || (l /= Nothing && tempScore == (fromJust l)) then (myExp tempScore) else 0
        where
          [[a,b,c,d],[e,_,_,f],[gg,_,_,h],[i,j,k,l]] = g
          tempScore = scoreGrid g 0
-         
+
 
 
 -- randomlyPlayBoard g = do
@@ -397,7 +397,7 @@ countNothingInRow r = case r of
 
 oneBestMove :: Grid -> (Int, Int, Int) ->  Grid
 oneBestMove g (x,y,z) = do
-    case (findBestMove g (x,y,z)) of 
+    case (findBestMove g (x,y,z)) of
        1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
        2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
@@ -408,22 +408,22 @@ findAverage5Score g x y z = do
    let a = monteCarloPlayBoard g 0 (x,y,z)
    let b = monteCarloPlayBoard g 0 (x,y,z)
    let c = monteCarloPlayBoard g 0 (x,y,z)
-   let d = monteCarloPlayBoard g 0 (x,y,z) 
+   let d = monteCarloPlayBoard g 0 (x,y,z)
    let e = monteCarloPlayBoard g 0 (x,y,z)
    let f = monteCarloPlayBoard g 0 (x,y,z)
    let gg = monteCarloPlayBoard g 0 (x,y,z)
    let h = monteCarloPlayBoard g 0 (x,y,z)
-   let i = monteCarloPlayBoard g 0 (x,y,z) 
+   let i = monteCarloPlayBoard g 0 (x,y,z)
    let j = monteCarloPlayBoard g 0 (x,y,z)
    ((myExp a) + (myExp b) + (myExp c) + (myExp d) + (myExp e) + (myExp f) + (myExp gg) + (myExp h) + (myExp i) + (myExp j))
 
 myExp :: Int -> Int
-myExp a = 
+myExp a =
   let x = fromIntegral a
   in (floor ( logBase 2 x ))
 
 myDiv :: Int -> Int -> Int
-myDiv a b = 
+myDiv a b =
       let x = fromIntegral a
           y = fromIntegral b
       in quot a b
@@ -527,9 +527,9 @@ mainLogic = do
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
     -- let (x,y,z) = determineOptimalWeights g 4 1 8
-    -- print (x,y,z)                
-    -- let b = monteCarloPlayBoard g 0 (5,1,8)
-    -- print b
-    
-    primaryLoop g
+    -- print (x,y,z)
+    let b = monteCarloPlayBoard g 0 (5,1,8)
+    print b
+
+    --primaryLoop g
     -- primaryLoop g

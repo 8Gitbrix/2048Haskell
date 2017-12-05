@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 03:23:32.190354 UTC
+2017-12-05 03:53:29.721126 UTC
 
 interface main@main:Logic 8002
-  interface hash: 8bd22d9a9776b9a5f24222f7d390cfc7
-  ABI hash: 630f8c34facedba5d90606796d3f446f
+  interface hash: 19db47424e82d05938a8979b0bdd8390
+  ABI hash: 545c175fafda510b0a91387b10806c1d
   export-list hash: d7fcd43ac92c4a99ecfbfe9a24033644
   orphan hash: 5c6afa542ca157feb54eeb37258af508
   flag hash: db8b3dba68660d93bea9bec96c028028
@@ -148,9 +148,11 @@ import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
 import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
 import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
 import  -/  base-4.9.1.0:GHC.IO.Unsafe 1c057c642b0e201f55a24585d3d94564
 import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
 import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
 import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
@@ -522,6 +524,12 @@ b16f01439147c027a6c0c30bb76bbca8
   $winsertRandomTile ::
     Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+560c17eadf036c2bab872b3cae9860f4
+  $wmonteCarloPlayBoard ::
+    Logic.Grid
+    -> GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Int -> GHC.Prim.Int#
+  {- Arity: 4, Strictness: <S,U><L,U(U)><L,U(U)><L,U(U)>,
+     Inline: [0] -}
 e0dc0fa867d3e64f6a30feeb7f240e58
   $wscoreGrid :: Logic.Grid -> GHC.Prim.Int# -> GHC.Prim.Int#
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
@@ -707,22 +715,44 @@ e3bdedcc0ba6c8c290fd8b8f7405385d
                            (GHC.Prim.<# 0# y) of wild {
                       GHC.Types.False -> GHC.Types.[] @ (GHC.Base.Maybe GHC.Types.Int)
                       GHC.Types.True -> Logic.$wxs y } })) -}
-0b6e24987079c4d66cd9969712be390b
+8af7b1bf1101b476bd439029259415f8
   mainLogic :: GHC.Types.IO ()
-  {- Arity: 1,
+  {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Logic.mainLogic1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-3a1fa7adec73d24f73163b03568d9d36
+3e0185a0745d113bfd3648d016f4a458
   mainLogic1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Unfolding: (Logic.mainLogic2 Logic.initGame4) -}
-5b08aeb6bf7d491087d09fc874a0fb63
-  mainLogic2 ::
-    Logic.Grid
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <L,U><S,U> -}
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Logic.mainLogic2
+                   GHC.Types.True
+                   eta) -}
+b4cad6de648be3f94b94b95124a983f4
+  mainLogic2 :: GHC.Base.String
+  {- Unfolding: (case Logic.$wmonteCarloPlayBoard
+                        Logic.initGame4
+                        Logic.mainLogic5
+                        Logic.mainLogic4
+                        Logic.mainLogic3 of ww { DEFAULT ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
+1ccbee857906f77de889e234414a61ea
+  mainLogic3 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 8#) -}
+bf7bd184f815c4bbbaae1ded65cd72f7
+  mainLogic4 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+dc5f4c08b0015d799ceff4ec4f903f95
+  mainLogic5 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 5#) -}
 3025f437873ef6b6ba40f3dcb97ccb10
   mergeRow :: [Logic.Tile] -> [Logic.Tile]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
