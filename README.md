@@ -9,7 +9,7 @@ stack build
 stack exec 2048Haskell
 ```
 
-At the start of the game you can select a play (either yourself or a bot). Hit enter, and then enter the character representing the player you want.
+At the start of the game you can select a player (either yourself or a bot). Hit enter, and then enter the character representing the player you want.
 
 Or just enter the app directory and double click 2048Haskell-exe
 
