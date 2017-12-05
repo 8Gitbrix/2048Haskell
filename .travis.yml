@@ -4,5 +4,4 @@ ghc:
   - "7.8"
 
 script:
-  - stack build
-  - cd "src"
+  - stack --no-terminal --install-ghc test

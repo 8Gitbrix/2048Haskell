@@ -3,7 +3,7 @@ module Main where
 
 import Logic (mainLogic)
 import HumanGame (humanPlayer)
-import BotGame (botPlayer)
+import BotGame (botPlayer2)
 import Prelude
 
 import Brick
@@ -46,8 +46,9 @@ drawInfo = withBorderStyle BS.unicodeBold
 processLine :: String -> IO ()
 processLine s = case s of
   "h" -> humanPlayer
-  "u" -> botPlayer 1
-  "m" -> mainLogic
+  --"u" -> botPlayer 1
+  "m" -> botPlayer2 ["Up", "Down", "Right"]
+  --"m" -> mainLogic
 
 main :: IO ()
 main = do

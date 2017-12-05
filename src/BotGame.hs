@@ -45,13 +45,13 @@ app = App { appDraw = drawUI
 --processAction :: Int -> Grid
 --processAction i = case i of
   --1 ->
-  
+
 botPlayer2 :: [String] -> IO ()
 botPlayer2 list = do
   chan <- newBChan 10
   forkIO $ forever $ do
     --processAction i
-    map (writeBChan chan) list
+    mapM (writeBChan chan) list
     -- writeBChan chan "Up"
     threadDelay 100000 -- decides how fast your game moves
   g <- initGame
@@ -65,7 +65,7 @@ botEvent g (AppEvent s) = case s of
   "Right" -> continue $ move Logic.Right g
   "Left" -> continue $ move Logic.Left g
 
-  
+
 -- botPlayer :: Int -> IO ()
 -- botPlayer i = do
 --   chan <- newBChan 10

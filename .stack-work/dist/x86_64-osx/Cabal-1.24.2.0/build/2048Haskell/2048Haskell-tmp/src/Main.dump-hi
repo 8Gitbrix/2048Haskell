@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 03:53:30.530011 UTC
+2017-12-05 06:09:15.730629 UTC
 
 interface main@main:Main 8002
-  interface hash: 78f759176a9a6154a009d051f62fb724
-  ABI hash: 5c5d6128fc8d6542517369cb29dce49d
+  interface hash: cab7a7e77095833d21a2ed8a04139767
+  ABI hash: 5d1a0c072bdb8cd780728502b4a5d9b8
   export-list hash: 9f4b9e82bb672c2becbfeb959cc2fc3d
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 86d59ad8491de169841277d18f2a299e
@@ -166,15 +166,14 @@ import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Core 23b4
 import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b534e87988fc642948
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
-import  -/  BotGame 3e960eaa170f839316a259295230554d
-  exports: 8b66986944c554b19d4b1622d8f78251
-  botPlayer 894645b809d2038e509096224f9199cc
+import  -/  BotGame fd99493413e24fcb3a1eba35c3a4885d
+  exports: 7c5c0324f3847dad746020087c90a03a
+  botPlayer2 048b2d9c3fa758a1d3ebf3554315f9b6
 import  -/  HumanGame 18a6c1b3992ad414cb9f5484ce2dd646
   exports: 18f3938ba77c9bd14cafbce22eb2d9ca
   humanPlayer 83df45acf9c3347b513aaa61d1d2a787
 import  -/  Logic 545c175fafda510b0a91387b10806c1d
   exports: d7fcd43ac92c4a99ecfbfe9a24033644
-  mainLogic 8af7b1bf1101b476bd439029259415f8
 import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty d09911cf98d07946a5d45e866f2393bc
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
@@ -517,12 +516,12 @@ a8785cdcf620fa8829fa07e022ee7988
                         Main.drawInfo29
                         Main.drawInfo6 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
-f5cfd98cdd127abb282a83e613cfa221
+2f2ffcbe1c60c97c3f53b20f316b6f40
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-be9120ced8e04c6d30dbf64426173b38
+dd42089d3921f741b7573362c755a43c
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -537,7 +536,7 @@ be9120ced8e04c6d30dbf64426173b38
                           `cast`
                         (Sym (GHC.Types.N:IO[0] <Graphics.Vty.Vty>_R))
                         (GHC.Base.Nothing @ (Brick.BChan.BChan GHC.Prim.Any))
-                        Main.main3
+                        Main.main9
                         (Brick.Main.neverShowCursor @ () @ ())
                         (Brick.Main.resizeOrQuit1 @ () @ () @ GHC.Prim.Any)
                           `cast`
@@ -602,7 +601,15 @@ be9120ced8e04c6d30dbf64426173b38
                          ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  Main.main2 ipv3 ipv2 } }) -}
-04efcdbd298e9c8bcf0183eb1327fcd2
+f0c71c5560ad081c7527549712300ebd
+  main10 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+8915bb8f2efa7641a978416f9b2b32bd
   main2 ::
     GHC.Base.String
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -621,29 +628,42 @@ be9120ced8e04c6d30dbf64426173b38
                              [] -> HumanGame.humanPlayer1 eta : ipv ipv1 -> Main.$wfail eta }
                         'm'#
                         -> case ds1 of wild2 {
-                             [] -> Logic.mainLogic1 eta : ipv ipv1 -> Main.$wfail eta }
-                        'u'#
-                        -> case ds1 of wild2 {
-                             [] -> BotGame.$wbotPlayer eta
+                             [] -> BotGame.botPlayer1 Main.main3 eta
                              : ipv ipv1 -> Main.$wfail eta } } } }) -}
-1ef07e0f4ec8eb3f664b605d89670c0d
-  main3 :: () -> [Brick.Types.Widget ()]
+7ad593b42c9333f235e7ca915e076c2a
+  main3 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ GHC.Base.String Main.main8 Main.main4) -}
+40e3cd4330852871c2d42731721be975
+  main4 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ GHC.Base.String Main.main7 Main.main5) -}
+9657a5b8cd214f8c2e3e7dddf6e3b6b5
+  main5 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Main.main6
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+95661e57f89bfbf448f95bf305ac294f
+  main6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Right"#) -}
+12063938c7da6a9e586ea20aabbcb076
+  main7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Down"#) -}
+133fa333c5f23ebacbae868f64da61a8
+  main8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Up"#) -}
+f9507534262f4b4181fe066f9a3dcfb1
+  main9 :: () -> [Brick.Types.Widget ()]
   {- Arity: 1, Unfolding: (\ (ds :: ()) -> Main.main_x) -}
-15a55a5d7e21ebdd6378053b0c9aa4fd
-  main4 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1,
-     Unfolding: (GHC.TopHandler.runMainIO1
-                   @ ()
-                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
 8bec8c34fbe2e083e89ea8ccf036e38a
   main_x :: [Brick.Types.Widget ()]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget ())
                    Main.drawInfo
                    (GHC.Types.[] @ (Brick.Types.Widget ()))) -}
-dcfa0272ddcf7aef624191e34ffb97ac
+77af4f8603f1fb7fa0b317a6e1a4532a
   processLine :: GHC.Base.String -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <S,1*U><S,U>,
      Unfolding: InlineRule (0, True, True)
