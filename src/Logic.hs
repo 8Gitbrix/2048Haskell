@@ -395,9 +395,9 @@ countNothingInRow r = case r of
 -- average :: [Int] -> Int
 -- average xs = (sum xs) `div` (length xs)
 
-oneBestMove :: Grid -> Grid
-oneBestMove g = do
-    case (findBestMove g) of
+oneBestMove :: Grid -> (Int, Int, Int) ->  Grid
+oneBestMove g (x,y,z) = do
+    case (findBestMove g (x,y,z)) of 
        1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
        2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
