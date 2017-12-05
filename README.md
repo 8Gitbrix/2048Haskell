@@ -8,6 +8,11 @@ stack setup
 stack build
 stack exec 2048Haskell
 ```
+In the menu: 
+1. hit enter
+2. press h
+3. hit enter again
+4. now you can play!
 
 At the start of the game you can select a player (either yourself or a bot). Hit enter, and then enter the character representing the player you want.
 
