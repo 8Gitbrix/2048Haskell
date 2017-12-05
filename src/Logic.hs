@@ -427,8 +427,9 @@ myDiv a b =
 
 monteCarloPlayBoard :: Grid -> Int -> (Int, Int, Int) -> Int
 monteCarloPlayBoard g n (x,y,z) = do
-   if (checkFull g && stuckCheck g) then scoreGrid g 0
-   else monteCarloPlayBoard (oneBestMove g (x,y,z)) (n+1) (x,y,z)
+   if (checkFull g && stuckCheck g) then (scoreGrid g 0)
+   else monteCarloPlayBoard a (n+1) (x,y,z) 
+     where (a, _) = (oneBestMove g (x,y,z))
 
 randomlyPlayBoard :: Grid -> Int
 randomlyPlayBoard g = do
