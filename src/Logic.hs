@@ -1,5 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-}
-
 module Logic (Game(..), Direction(..), Grid, printTile, initGame,
               insertRandomTile, stuckCheck, leftGrid, checkFull, scoreGrid,
               mainLogic)

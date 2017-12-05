@@ -35,20 +35,6 @@
   (major1) == 1 && (major2) <  20 || \
   (major1) == 1 && (major2) == 20 && (minor) <= 7)
 
-/* package microlens-0.4.8.1 */
-#define VERSION_microlens "0.4.8.1"
-#define MIN_VERSION_microlens(major1,major2,minor) (\
-  (major1) <  0 || \
-  (major1) == 0 && (major2) <  4 || \
-  (major1) == 0 && (major2) == 4 && (minor) <= 8)
-
-/* package microlens-th-0.4.1.1 */
-#define VERSION_microlens_th "0.4.1.1"
-#define MIN_VERSION_microlens_th(major1,major2,minor) (\
-  (major1) <  0 || \
-  (major1) == 0 && (major2) <  4 || \
-  (major1) == 0 && (major2) == 4 && (minor) <= 1)
-
 /* package random-1.1 */
 #define VERSION_random "1.1"
 #define MIN_VERSION_random(major1,major2,minor) (\

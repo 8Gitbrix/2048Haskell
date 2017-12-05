@@ -1,13 +1,13 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 06:46:32.545636 UTC
+2017-12-05 07:14:47.501547 UTC
 
 interface main@main:Logic 8002
   interface hash: 19db47424e82d05938a8979b0bdd8390
   ABI hash: 545c175fafda510b0a91387b10806c1d
   export-list hash: d7fcd43ac92c4a99ecfbfe9a24033644
   orphan hash: 5c6afa542ca157feb54eeb37258af508
-  flag hash: db8b3dba68660d93bea9bec96c028028
+  flag hash: 35c1cdf315bdf7a4d8f27b51e89f894a
   sig of: Nothing
   used TH splices: False
   where
