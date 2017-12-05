@@ -69,7 +69,6 @@ scoreGrid (x:xs) n = do
                      if temp > n then scoreGrid xs temp
                      else scoreGrid xs n
 
-
 scoreRow :: [Tile] -> Int -> Int
 scoreRow [] n = n
 scoreRow (x:xs) n = case x of

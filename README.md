@@ -19,4 +19,3 @@ Board made up of 16 tiles. Possible moves: Left, Right, Up, Down
 2. When you select one of the moves, all tiles will move as far as possible in that direction in the grid.
 3. Tiles of the same value will combine into 1 tile with the value of their sum.
 4. The objective is to get a highest value tile you can. The highest possible value tile to win the game is 2048.
-
