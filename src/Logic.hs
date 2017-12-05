@@ -220,8 +220,8 @@ directionStuckCheck n g = case n of
     3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
     4 -> if g == (leftGrid g) then True else False
 
-optimizeWeight :: Grid -> (Int, Int, Int) -> Int -> Int
-optimizeWeight g (x,y,z) i = do
+optimizeWeight :: Grid -> Int -> Int -> Int -> Int -> Int
+optimizeWeight g x y z i = do
   -- let g =           [[Just 2, Just 2, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
@@ -239,7 +239,7 @@ optimizeWeight g (x,y,z) i = do
               else z
 
 determineOptimalWeights :: Grid -> (Int, Int, Int) -> (Int, Int, Int)
-determineOptimalWeights g x y z =
+determineOptimalWeights g (x,y,z) =
   -- let g =        [[Just 2, Just 2, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
