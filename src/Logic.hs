@@ -220,8 +220,8 @@ directionStuckCheck n g = case n of
     3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
     4 -> if g == (leftGrid g) then True else False
 
-optimizeWeight :: Grid -> Int -> Int -> Int -> Int -> Int
-optimizeWeight g x y z i = do
+optimizeWeight :: Grid -> (Int, Int, Int) -> Int -> Int
+optimizeWeight g (x,y,z) i = do
   -- let g =           [[Just 2, Just 2, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
@@ -238,7 +238,7 @@ optimizeWeight g x y z i = do
          else if (findAverage5Score g x y (z-1)) > (tempScore) then optimizeWeight g x y (z-1) 3
               else z
 
-determineOptimalWeights :: Grid -> Int -> Int -> Int -> (Int, Int, Int)
+determineOptimalWeights :: Grid -> (Int, Int, Int) -> (Int, Int, Int)
 determineOptimalWeights g x y z =
   -- let g =        [[Just 2, Just 2, Nothing, Nothing],
   --                   [Nothing, Nothing, Nothing, Nothing],
@@ -458,8 +458,25 @@ oneMove g = do
               else if (randomDirection::Int) == 4 then insertRandomTile $ leftGrid g
                    else g
 
+changeNumToDirections :: Int -> String
+changeNumToDirections n =
+  case n of
+    1 -> "Up"
+    2 -> "Down"
+    3 -> "Right"
+    4 -> "Left"
 
 
+keepTrying :: Grid -> (Int, Int, Int) -> [String]
+keepTrying g (x,y,z) = if a == 2048 then reverse $ map changeNumToDirections directionList else keepTrying g (x,y,z)
+     where
+        (a,directionList) = generateMoveList g 0 (x,y,z) []
+
+generateMoveList :: Grid -> Int -> (Int, Int, Int) -> [Int] -> (Int, [Int])
+generateMoveList g n (x,y,z) list = do
+   if (checkFull g && stuckCheck g) then ((scoreGrid g 0), list)
+   else generateMoveList a (n+1) (x,y,z) (b:list)
+     where (a, b) = (oneBestMove g (x,y,z))
 
 
 
