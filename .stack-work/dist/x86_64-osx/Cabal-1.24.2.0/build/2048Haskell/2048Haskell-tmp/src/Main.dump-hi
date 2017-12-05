@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 06:09:15.730629 UTC
+2017-12-05 06:32:58.602109 UTC
 
 interface main@main:Main 8002
-  interface hash: cab7a7e77095833d21a2ed8a04139767
-  ABI hash: 5d1a0c072bdb8cd780728502b4a5d9b8
+  interface hash: a5bc4310e723a7ddf24687a850de199c
+  ABI hash: c57008d2757a7f1ba53344b4a100edd0
   export-list hash: 9f4b9e82bb672c2becbfeb959cc2fc3d
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 86d59ad8491de169841277d18f2a299e
@@ -249,7 +249,7 @@ cbd222fd3bdfd65b0f63e2a09770165c
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <B,A>b, Inline: [0] -}
-639dc752a9e1f1e58983a1388272093c
+66b5a325c071390cac3d32a20f193d62
   drawInfo :: Brick.Types.Widget ()
   {- Strictness: m,
      Unfolding: (Brick.Types.Widget
@@ -264,7 +264,7 @@ cbd222fd3bdfd65b0f63e2a09770165c
                              <Control.Monad.Trans.State.Lazy.State
                                 (Brick.Types.Internal.RenderState ())>_R
                              <Brick.Types.Internal.Result ()>_N))) -}
-91d3c05a13dc3669e23439563dd0999e
+3ce867f76b163cb725c5613b5dcce146
   drawInfo1 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -327,7 +327,7 @@ c4ffb8bb7728cd3f51e77111c19c9ce2
 74ff53813fee8eb5500d67ab95209ad1
   drawInfo19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Random Bot"#) -}
-a05cabb47cfb5084fc4b148b5bbacb35
+dbb07e7463d96e00dcee2265ca8a920d
   drawInfo2 :: Brick.Types.Widget ()
   {- Unfolding: (Brick.Types.Widget
                    @ ()
@@ -379,7 +379,7 @@ da5b7fd7fa0aa295d961288e7fca3965
   {- Unfolding: (GHC.Base.Just
                    @ (Brick.Types.Widget ())
                    Main.drawInfo30) -}
-12c4eefbc8b0099bfceab32a840f0515
+c89158782911cee518bbb6fb5a9db4cb
   drawInfo3 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -404,15 +404,15 @@ b5141ba0069790611bdfb1b5b7bbf834
   drawInfo32 :: Brick.Types.Size
   {- Unfolding: (case Main.drawInfo_w3 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
                  ds1 }) -}
-ff9a64ca5e40c66119dfa790eddf9f43
+85b66c76e6e2c0e795b3624d0538fe8a
   drawInfo33 :: Brick.Types.Size
   {- Unfolding: (case Main.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
                  ds2 }) -}
-e89a232b64ee19b176a91924b2cfb4e3
+5ca05e29c5c3ccfe79b9a29891249ea9
   drawInfo34 :: Brick.Types.Size
   {- Unfolding: (case Main.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
                  ds1 }) -}
-aaac1cb7d63f37a457c804d4b188f5bb
+0c2ae398ab1e0b66e6d480c2c3f7ab0c
   drawInfo4 :: Brick.Types.Widget ()
   {- Unfolding: (Brick.Types.Widget
                    @ ()
@@ -426,7 +426,7 @@ aaac1cb7d63f37a457c804d4b188f5bb
                              <Control.Monad.Trans.State.Lazy.State
                                 (Brick.Types.Internal.RenderState ())>_R
                              <Brick.Types.Internal.Result ()>_N))) -}
-708e976aeb1da96f7a566289885a646c
+f4549b2a37e9f1830217ef5d138f408b
   drawInfo5 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -462,7 +462,7 @@ a8785cdcf620fa8829fa07e022ee7988
                    @ (Brick.Types.Widget ())
                    Main.drawInfo17
                    Main.drawInfo10) -}
-46c698c4fdf500e0f32c4541548109fa
+249d1fb77bc71ef933c3847adbee8e8b
   drawInfo_f1 ::
     Brick.Types.Internal.Context
     -> Control.Monad.Trans.State.Lazy.State
@@ -499,16 +499,16 @@ a8785cdcf620fa8829fa07e022ee7988
 4c41c3a41ba08659746f1982b1dcd39a
   drawInfo_w :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 80#) -}
-30580c3a89fbfc9150391c309225a1b3
+3b807b33db6bcf4b312cefb1b43937fd
   drawInfo_w1 :: Brick.Types.Widget ()
   {- Unfolding: (case Brick.Widgets.Center.$whCenterWith
                         @ ()
                         (GHC.Base.Nothing @ GHC.Types.Char)
                         Main.drawInfo2 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
-40b6bc625b5db085b35cb060d0dcf275
+acef18f1a97d15182d02817665688fbf
   drawInfo_w2 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 300#) -}
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 400#) -}
 37a8782969f4c151b177f763322249b6
   drawInfo_w3 :: Brick.Types.Widget ()
   {- Unfolding: (case Brick.Widgets.Border.$wborder_
@@ -516,12 +516,12 @@ a8785cdcf620fa8829fa07e022ee7988
                         Main.drawInfo29
                         Main.drawInfo6 of ww { (#,,#) ww1 ww2 ww3 ->
                  Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
-2f2ffcbe1c60c97c3f53b20f316b6f40
+933c1a36e0bb36602a4452d81c5ca176
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-dd42089d3921f741b7573362c755a43c
+1189e2c06a76acbc1cd1ffa591ccc444
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -601,7 +601,7 @@ dd42089d3921f741b7573362c755a43c
                          ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
                  Main.main2 ipv3 ipv2 } }) -}
-f0c71c5560ad081c7527549712300ebd
+f56a03484127efa9e639f3c6ae66e453
   main10 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -654,10 +654,10 @@ f0c71c5560ad081c7527549712300ebd
 133fa333c5f23ebacbae868f64da61a8
   main8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Up"#) -}
-f9507534262f4b4181fe066f9a3dcfb1
+a59ceeb273c5bbf711622af8192d07e3
   main9 :: () -> [Brick.Types.Widget ()]
   {- Arity: 1, Unfolding: (\ (ds :: ()) -> Main.main_x) -}
-8bec8c34fbe2e083e89ea8ccf036e38a
+66aa9597914530ccfdcb6b6009ab73a9
   main_x :: [Brick.Types.Widget ()]
   {- Unfolding: (GHC.Types.:
                    @ (Brick.Types.Widget ())

@@ -31,7 +31,7 @@ drawInfo :: Widget ()
 drawInfo = withBorderStyle BS.unicodeBold
   $ C.hCenter
   $ hLimit 80
-  $ vLimit 300
+  $ vLimit 400
   $ B.borderWithLabel (str "First hit enter. Then type which player you are.")
   $ vBox $ map (uncurry drawKey)
   $ [ ("h", "Human Player (YOU!)")
