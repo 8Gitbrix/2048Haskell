@@ -479,7 +479,22 @@ generateMoveList g n (x,y,z) list = do
    else generateMoveList a (n+1) (x,y,z) (b:list)
      where (a, b) = (oneBestMove g (x,y,z))
 
+oneBestMove2 :: Grid -> (Int, Int, Int) ->  Grid
+oneBestMove2 g (x,y,z) = do
+    case (findBestMove g (x,y,z)) of 
+       1 -> insertRandomTile $ transpose $ leftGrid $ transpose g
+       2 -> insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
+       3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
+       4 -> insertRandomTile $ leftGrid g
 
+
+
+loopColor :: Grid -> (Int, Int, Int)  -> IO ()
+loopColor g (x,y,z) = 
+  if (checkFull g && stuckCheck g) then return () else do 
+    colorGrid k
+    loopColor k (x,y,z)
+      where k = oneBestMove2 (g) (x,y,z)
 
 --- Game definitions: --
 -- Game State:
@@ -541,10 +556,16 @@ mainLogic = do
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
-    -- let (x,y,z) = determineOptimalWeights g 4 1 8
-    -- print (x,y,z)
-    let b = monteCarloPlayBoard g 0 (5,1,8)
-    print b
+   
+    loopColor g (4,4,4)
 
-    --primaryLoop g
-    -- primaryLoop g
+    -- let (x,y,z) = updateWeightsLoop g (1, 1, 1) 5
+    -- print (x,y,z)
+
+    -- let (x,y,z) = determineOptimalWeights g (2,1,3)
+    -- print (x,y,z)
+   
+--     let b = monteCarloPlayBoard g 0 (5,1,8)
+--     print b
+
+    
