@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module BotGame (botPlayer) where
+module BotGame (botPlayer2) where
 
 import Logic (Game(..), Direction(..), Grid)
 import HumanGame (Name, drawUI, theMap, initGame, move, Tick)
@@ -46,15 +46,35 @@ app = App { appDraw = drawUI
 --processAction i = case i of
   --1 ->
   
-botPlayer :: Int -> IO ()
-botPlayer i = do
+botPlayer2 :: [String] -> IO ()
+botPlayer2 list = do
   chan <- newBChan 10
   forkIO $ forever $ do
     --processAction i
-    writeBChan chan "Up"
+    map (writeBChan chan) list
+    -- writeBChan chan "Up"
     threadDelay 100000 -- decides how fast your game moves
   g <- initGame
   void $ customMain (V.mkVty V.defaultConfig) (Just chan) app g
 
+
 botEvent :: Game -> BrickEvent Name String -> EventM Name (Next Game)
-botEvent g (AppEvent s) = continue $ move Logic.Up g
+botEvent g (AppEvent s) = case s of
+  "Up" -> continue $ move Logic.Up g
+  "Down" -> continue $ move Logic.Down g
+  "Right" -> continue $ move Logic.Right g
+  "Left" -> continue $ move Logic.Left g
+
+  
+-- botPlayer :: Int -> IO ()
+-- botPlayer i = do
+--   chan <- newBChan 10
+--   forkIO $ forever $ do
+--     --processAction i
+--     writeBChan chan "Up"
+--     threadDelay 100000 -- decides how fast your game moves
+--   g <- initGame
+--   void $ customMain (V.mkVty V.defaultConfig) (Just chan) app g
+
+-- botEvent :: Game -> BrickEvent Name String -> EventM Name (Next Game)
+-- botEvent g (AppEvent s) = continue $ move Logic.Up g
