@@ -47,7 +47,7 @@ printTile t = case t of
 
 colorRow :: [Tile] -> IO ()
 colorRow [] = putStrLn ""
-colorRow (x:xs) = do putStr $ (printTile x)
+colorRow (x:xs) = do putStr $ (printTile x) ++ "   "
 -- colorRow (x:xs) = do putStr $ "\x1b[32m" ++ (printTile x) ++ " | "
                      colorRow xs
 
