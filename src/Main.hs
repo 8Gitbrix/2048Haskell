@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Logic (mainLogic)
+import Logic (mainLogic, keepTrying)
 import HumanGame (humanPlayer)
 import BotGame (botPlayer2)
 import Prelude
@@ -47,7 +47,10 @@ processLine :: String -> IO ()
 processLine s = case s of
   "h" -> humanPlayer
   --"u" -> botPlayer 1
-  "m" -> botPlayer2 ["Up", "Down", "Right"]
+  "m" -> botPlayer2 $ keepTrying [[Just 2, Just 2, Nothing, Nothing],
+                  [Nothing, Nothing, Nothing, Nothing],
+                  [Nothing, Nothing, Nothing, Nothing],
+                  [Nothing, Nothing, Nothing, Nothing]] (4,4,4)
   --"m" -> mainLogic
 
 main :: IO ()

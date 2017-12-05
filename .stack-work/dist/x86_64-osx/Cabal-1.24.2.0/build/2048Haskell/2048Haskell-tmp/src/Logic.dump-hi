@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 07:14:47.501547 UTC
+2017-12-05 07:45:03.495761 UTC
 
 interface main@main:Logic 8002
-  interface hash: 19db47424e82d05938a8979b0bdd8390
-  ABI hash: 545c175fafda510b0a91387b10806c1d
-  export-list hash: d7fcd43ac92c4a99ecfbfe9a24033644
+  interface hash: b6fed88a667389d9725e749fd7a54b9f
+  ABI hash: c6bddea06160f7f0071225f2144d492e
+  export-list hash: 9b9fcee3c463524d5661b3376290578a
   orphan hash: 5c6afa542ca157feb54eeb37258af508
   flag hash: 35c1cdf315bdf7a4d8f27b51e89f894a
   sig of: Nothing
@@ -15,6 +15,7 @@ exports:
   Logic.checkFull
   Logic.initGame
   Logic.insertRandomTile
+  Logic.keepTrying
   Logic.leftGrid
   Logic.mainLogic
   Logic.printTile
@@ -524,6 +525,15 @@ b16f01439147c027a6c0c30bb76bbca8
   $winsertRandomTile ::
     Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+5199e37a093270214ad7a02085362606
+  $wkeepTrying ::
+    Logic.Grid
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> [GHC.Base.String]
+  {- Arity: 4, Strictness: <S,U><L,U(U)><L,U(U)><L,U(U)>,
+     Inline: [0] -}
 560c17eadf036c2bab872b3cae9860f4
   $wmonteCarloPlayBoard ::
     Logic.Grid
@@ -677,6 +687,18 @@ e3bdedcc0ba6c8c290fd8b8f7405385d
                 (\ (w :: Logic.Grid) ->
                  case Logic.$winsertRandomTile w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ [Logic.Tile] ww1 ww2 }) -}
+24571dd45d4175fa8c78b79e62800b18
+  keepTrying ::
+    Logic.Grid
+    -> (GHC.Types.Int, GHC.Types.Int, GHC.Types.Int)
+    -> [GHC.Base.String]
+  {- Arity: 2, Strictness: <S,U><S,1*U(U(U),U(U),U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Logic.Grid)
+                   (w4 :: (GHC.Types.Int, GHC.Types.Int, GHC.Types.Int)) ->
+                 case w4 of ww { (,,) ww1 ww2 ww3 ->
+                 Logic.$wkeepTrying w ww1 ww2 ww3 }) -}
 3734304773ada79feddf8dc8ba2281b4
   leftGrid :: Logic.Grid -> Logic.Grid
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
@@ -715,12 +737,12 @@ e3bdedcc0ba6c8c290fd8b8f7405385d
                            (GHC.Prim.<# 0# y) of wild {
                       GHC.Types.False -> GHC.Types.[] @ (GHC.Base.Maybe GHC.Types.Int)
                       GHC.Types.True -> Logic.$wxs y } })) -}
-8af7b1bf1101b476bd439029259415f8
+ce556ae10d262c7d920ad6f614fac448
   mainLogic :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Logic.mainLogic1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-3e0185a0745d113bfd3648d016f4a458
+7c8c87a9de3a9916926c4ecdce1f6360
   mainLogic1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -732,7 +754,7 @@ e3bdedcc0ba6c8c290fd8b8f7405385d
                    Logic.mainLogic2
                    GHC.Types.True
                    eta) -}
-b4cad6de648be3f94b94b95124a983f4
+c1c98829221245311bf4217832effd09
   mainLogic2 :: GHC.Base.String
   {- Unfolding: (case Logic.$wmonteCarloPlayBoard
                         Logic.initGame4
@@ -747,9 +769,9 @@ b4cad6de648be3f94b94b95124a983f4
 1ccbee857906f77de889e234414a61ea
   mainLogic3 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 8#) -}
-bf7bd184f815c4bbbaae1ded65cd72f7
+2da2b335cdf8d5ed66da312e316fddc7
   mainLogic4 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
 dc5f4c08b0015d799ceff4ec4f903f95
   mainLogic5 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 5#) -}

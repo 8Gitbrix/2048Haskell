@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 06:43:37.6726 UTC
+2017-12-05 08:30:31.209088 UTC
 
 interface main@main:BotGame 8002
-  interface hash: b85f73ca81d3f094445b6fc7e249d02c
-  ABI hash: fd99493413e24fcb3a1eba35c3a4885d
+  interface hash: 08e7935bcbc7190cb64ba9ffb45f1b85
+  ABI hash: 90b8b4fc5ef56a1bd877bf06dfe503bb
   export-list hash: 7c5c0324f3847dad746020087c90a03a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: f1e02b8e10513cd91f5d59aeb63f6e7b
@@ -177,8 +177,8 @@ import  -/  HumanGame 18a6c1b3992ad414cb9f5484ce2dd646
   drawUI 2b05fc28c75a5cc90217e8e7734af76f
   move f5218bb463d807f981d38642f47e544c
   theMap dafc71cf78f3e56a9af2a6ef6344351e
-import  -/  Logic 545c175fafda510b0a91387b10806c1d
-  exports: d7fcd43ac92c4a99ecfbfe9a24033644
+import  -/  Logic c6bddea06160f7f0071225f2144d492e
+  exports: 9b9fcee3c463524d5661b3376290578a
   Down 46caf066d852f7dc203dc72e93ebc601
   Game f53c7afdbd9180b7afc48f24388921a0
   Left 142c6a6105c4f70e0d02fdbb7535a929
@@ -201,32 +201,23 @@ cafd5db617a4afbeb42885e2f237400e
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-86c5fb3a5bca51df1c55c9c51b547c1f
-  botEvent ::
-    Logic.Game
-    -> Brick.Types.Internal.BrickEvent HumanGame.Name GHC.Base.String
-    -> Brick.Types.EventM
-         HumanGame.Name (Brick.Types.Internal.Next Logic.Game)
-  {- Arity: 2, Strictness: <L,1*U(1*U,A,A)><S,1*U> -}
-afba49f4ef22f5db99db70fa3e098153
-  botPlayer1 ::
-    [GHC.Base.String]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
+f33c149bb1a95586a9095f181d2f274b
+  $wbotPlayer2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <L,U><S,U>,
-     Unfolding: (\ (list :: [GHC.Base.String])
-                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case GHC.Prim.atomically#
                         @ (Brick.BChan.BChan GHC.Base.String)
-                        BotGame.botPlayer5
-                        eta of ds1 { (#,#) ipv ipv1 ->
+                        BotGame.botPlayer9
+                        w of ds1 { (#,#) ipv ipv1 ->
                  case GHC.Prim.fork#
                         @ (GHC.Types.IO ())
-                        (\ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                        (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                          GHC.Prim.catch#
                            @ ()
                            @ GHC.Exception.SomeException
-                           (\ (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                           (\ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                             letrec {
                               a' :: GHC.Prim.State# GHC.Prim.RealWorld
                                     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -238,9 +229,9 @@ afba49f4ef22f5db99db70fa3e098153
                                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, [()] #)
                                     {- Arity: 2, Strictness: <S,1*U><S,U> -}
                                   = \ (ds :: [GHC.Base.String])
-                                      (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                      (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                                     case ds of wild {
-                                      [] -> (# eta3, GHC.Types.[] @ () #)
+                                      [] -> (# eta2, GHC.Types.[] @ () #)
                                       : y ys
                                       -> case ipv1 of wild1 { Brick.BChan.BChan q ->
                                          case GHC.Prim.atomically#
@@ -249,11 +240,11 @@ afba49f4ef22f5db99db70fa3e098153
                                                    @ GHC.Base.String
                                                    q
                                                    y)
-                                                eta3 of ds2 { (#,#) ipv2 ipv3 ->
+                                                eta2 of ds2 { (#,#) ipv2 ipv3 ->
                                          case go ys ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                                          (# ipv4, GHC.Types.: @ () ipv3 ipv5 #) } } } }
                                 } in
-                                case go list s of ds2 { (#,#) ipv2 ipv3 ->
+                                case go BotGame.botPlayer5 s of ds2 { (#,#) ipv2 ipv3 ->
                                 case {__pkg_ccall base-4.9.1.0 rtsSupportsBoundThreads GHC.Prim.State#
                                                                                          GHC.Prim.RealWorld
                                                                                        -> (# GHC.Prim.State#
@@ -273,9 +264,9 @@ afba49f4ef22f5db99db70fa3e098153
                                             ipv2 of s' { DEFAULT ->
                                      a' s' } } } }
                             } in
-                            a' eta2)
+                            a' eta1)
                            GHC.Conc.Sync.childHandler1
-                           eta1)
+                           eta)
                           `cast`
                         (Sym (GHC.Types.N:IO[0] <()>_R))
                         ipv of ds { (#,#) ipv2 ipv3 ->
@@ -319,9 +310,29 @@ afba49f4ef22f5db99db70fa3e098153
                         Logic.initGame2
                         ipv2 of ds2 { (#,#) ipv4 ipv5 ->
                  (# ipv4, GHC.Tuple.() #) } } }) -}
-048b2d9c3fa758a1d3ebf3554315f9b6
+86c5fb3a5bca51df1c55c9c51b547c1f
+  botEvent ::
+    Logic.Game
+    -> Brick.Types.Internal.BrickEvent HumanGame.Name GHC.Base.String
+    -> Brick.Types.EventM
+         HumanGame.Name (Brick.Types.Internal.Next Logic.Game)
+  {- Arity: 2, Strictness: <L,1*U(1*U,A,A)><S,1*U> -}
+7145fdf842a113835d0366664e0814a1
+  botPlayer1 ::
+    [GHC.Base.String]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,A><S,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ (w :: [GHC.Base.String])
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 BotGame.$wbotPlayer2 w1) -}
+61527c3145ab1c5e45d72b37d38aed9e
+  botPlayer10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+685011f363bcf5a61c28fbe7812b57ea
   botPlayer2 :: [GHC.Base.String] -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <L,U><S,U>,
+  {- Arity: 2, Strictness: <L,A><S,U>,
      Unfolding: InlineRule (0, True, True)
                 BotGame.botPlayer1
                   `cast`
@@ -338,8 +349,28 @@ be85faf17b11aad57b680a8142dcd88b
   {- Arity: 1,
      Unfolding: (Graphics.Vty.mkVty1
                    Graphics.Vty.Config.defaultConfig) -}
-9d246b16e161457d3795f84faf84299e
-  botPlayer5 ::
+57a55f25193856c9acd389d609d4bc76
+  botPlayer5 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   BotGame.botPlayer8
+                   BotGame.botPlayer6) -}
+6224db7fc496240393c5085da44cbb2a
+  botPlayer6 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   BotGame.botPlayer7
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+dd032a51152b262f61c8323b6ca35744
+  botPlayer7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Down"#) -}
+6819c0c66d9071ca867c8595381b3126
+  botPlayer8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Up"#) -}
+3229337d1cdeb3cc7b837de013dd5d51
+  botPlayer9 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           Brick.BChan.BChan GHC.Base.String #)
@@ -364,7 +395,7 @@ be85faf17b11aad57b680a8142dcd88b
                  case GHC.Prim.newTVar#
                         @ GHC.Types.Int
                         @ GHC.Prim.RealWorld
-                        BotGame.botPlayer6
+                        BotGame.botPlayer10
                         ipv4 of ds3 { (#,#) ipv6 ipv7 ->
                  (# ipv6,
                     Brick.BChan.BChan
@@ -375,9 +406,6 @@ be85faf17b11aad57b680a8142dcd88b
                          ipv1
                          ipv7
                          ipv3) #) } } } }) -}
-944cb4fea5bcd75bfcb034b7228481c1
-  botPlayer6 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

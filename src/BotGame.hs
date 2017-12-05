@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module BotGame (botPlayer2) where
 
-import Logic (Game(..), Direction(..), Grid)
+import Logic (Game(..), Direction(..), Grid, keepTrying)
 import HumanGame (Name, drawUI, theMap, initGame, move, Tick)
 import Data.Maybe
 import Data.List
@@ -47,11 +47,11 @@ app = App { appDraw = drawUI
   --1 ->
 
 botPlayer2 :: [String] -> IO ()
-botPlayer2 list = do
+botPlayer2 s = do
   chan <- newBChan 10
   forkIO $ forever $ do
     --processAction i
-    mapM (writeBChan chan) list
+    mapM (writeBChan chan) ["Up", "Down"]
     -- writeBChan chan "Up"
     threadDelay 100000 -- decides how fast your game moves
   g <- initGame

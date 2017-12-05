@@ -1,6 +1,6 @@
 module Logic (Game(..), Direction(..), Grid, printTile, initGame,
               insertRandomTile, stuckCheck, leftGrid, checkFull, scoreGrid,
-              mainLogic)
+              mainLogic, keepTrying)
         where
 
 import Data.Maybe
@@ -428,7 +428,7 @@ myDiv a b =
 monteCarloPlayBoard :: Grid -> Int -> (Int, Int, Int) -> Int
 monteCarloPlayBoard g n (x,y,z) = do
    if (checkFull g && stuckCheck g) then (scoreGrid g 0)
-   else monteCarloPlayBoard a (n+1) (x,y,z) 
+   else monteCarloPlayBoard a (n+1) (x,y,z)
      where (a, _) = (oneBestMove g (x,y,z))
 
 randomlyPlayBoard :: Grid -> Int
