@@ -1,8 +1,8 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 module Logic (Game(..), Direction(..), Grid, printTile, initGame,
-              insertRandomTile, stuckCheck, leftGrid, checkFull, scoreGrid
-              )
+              insertRandomTile, stuckCheck, leftGrid, checkFull, scoreGrid,
+              mainLogic)
         where
 
 import Data.Maybe
@@ -493,7 +493,7 @@ initGame = do
         , _done = False
         }
 
-{-
+
 primaryLoop :: Grid -> IO ()
 primaryLoop g = do
     putStrLn "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -524,8 +524,8 @@ solverIteration g = do
    if checkFull g && stuckCheck g then colorGrid g
    else colorGrid (oneBestMove g)
 
-main ::IO ()
-main = do
+mainLogic ::IO ()
+mainLogic = do
     let g =        [[Just 2, Just 2, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
@@ -543,5 +543,3 @@ main = do
     -- print $ findBestMove2 g
     primaryLoop g
     -- primaryLoop g
-
--}

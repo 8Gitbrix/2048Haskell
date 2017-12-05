@@ -1,6 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
+import Logic (mainLogic)
 import HumanGame (humanPlayer)
 import BotGame (botPlayer)
 import Prelude
@@ -29,11 +30,14 @@ import Linear.V2 (V2(..))
 drawInfo :: Widget ()
 drawInfo = withBorderStyle BS.unicodeBold
   $ C.hCenter
-  $ B.borderWithLabel (str "Type character of choice on the keyboard")
+  $ hLimit 80
+  $ vLimit 300
+  $ B.borderWithLabel (str "First hit enter. Then type which player you are.")
   $ vBox $ map (uncurry drawKey)
-  $ [ ("human", "Human Player (YOU!)")
-    , ("random", "Random Bot")
-    , ("q", "Quit")
+  $ [ ("h", "Human Player (YOU!)")
+    , ("u", "Up Bot (Always moves up)")
+    , ("r", "Random Bot")
+    , ("m", "monte carlo bot")
     ]
     where
       drawKey act key = (padRight Max $ padLeft (Pad 1) $ str act)
@@ -41,8 +45,9 @@ drawInfo = withBorderStyle BS.unicodeBold
 
 processLine :: String -> IO ()
 processLine s = case s of
-  "human" -> humanPlayer
-  "random bot" -> botPlayer 1
+  "h" -> humanPlayer
+  "u" -> botPlayer 1
+  "m" -> mainLogic
 
 main :: IO ()
 main = do

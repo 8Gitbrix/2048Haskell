@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 02:58:15.591277 UTC
+2017-12-05 03:22:51.514048 UTC
 
 interface main@main:BotGame 8002
-  interface hash: 1bcdac7f51bbf03b7646dffa3241874f
+  interface hash: 8e56aefc15d132c2a393138b278f06ca
   ABI hash: 3e960eaa170f839316a259295230554d
   export-list hash: 8b66986944c554b19d4b1622d8f78251
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -176,8 +176,8 @@ import  -/  HumanGame 18a6c1b3992ad414cb9f5484ce2dd646
   drawUI 2b05fc28c75a5cc90217e8e7734af76f
   move f5218bb463d807f981d38642f47e544c
   theMap dafc71cf78f3e56a9af2a6ef6344351e
-import  -/  Logic e13c92c9a90b0eec340e4badfcd1609f
-  exports: e11d42f43d6dc810c654525157e10c4d
+import  -/  Logic 630f8c34facedba5d90606796d3f446f
+  exports: d7fcd43ac92c4a99ecfbfe9a24033644
   Game f53c7afdbd9180b7afc48f24388921a0
   Up 5159f944a11a100d737c8cc4409d1321
   initGame 022d7755d273b161bf4138a1129d576d

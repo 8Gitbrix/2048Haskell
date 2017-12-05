@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-05 02:32:45.101574 UTC
+2017-12-05 03:22:51.115398 UTC
 
 interface main@main:HumanGame 8002
-  interface hash: 67d6949ee86bed0a1673e61c00678544
+  interface hash: c3a03d3ba6db3ae889f746d9706ecc9c
   ABI hash: 18a6c1b3992ad414cb9f5484ce2dd646
   export-list hash: 18f3938ba77c9bd14cafbce22eb2d9ca
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -183,8 +183,8 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b5
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
-import  -/  Logic e13c92c9a90b0eec340e4badfcd1609f
-  exports: e11d42f43d6dc810c654525157e10c4d
+import  -/  Logic 630f8c34facedba5d90606796d3f446f
+  exports: d7fcd43ac92c4a99ecfbfe9a24033644
   Direction 6756fcb55eb22a13fd0b75dbbc5b28a7
   Down 46caf066d852f7dc203dc72e93ebc601
   Game 17d5c2b17b14395f67c84dea6c736871
