@@ -211,117 +211,94 @@ makeRandomTile = do
 --                    else g
 directionStuckHeuristic :: Int -> Grid -> Int
 directionStuckHeuristic n g = case n of
-    1 -> if g == (transpose $ leftGrid $ transpose g) then 0 else 1
-    2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then 0 else 1
-    3 -> if g == (map reverse $ leftGrid (map reverse g)) then 0 else 1
-    4 -> if g == (leftGrid g) then 0 else 1
+    1 -> if g == (transpose $ leftGrid $ transpose g) then (-999999) else 0
+    2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then (-999999) else 0
+    3 -> if g == (map reverse $ leftGrid (map reverse g)) then (-999999) else 0
+    4 -> if g == (leftGrid g) then (-999999) else 0
 
 directionStuckCheck :: Int -> Grid -> Bool
 directionStuckCheck n g = case n of
     1 -> if g == (transpose $ leftGrid $ transpose g) then True else False
     2 -> if g == (transpose $ map reverse $ leftGrid $ map reverse $ transpose g) then True else False
     3 -> if g == (map reverse $ leftGrid (map reverse g)) then True else False
-    4 -> if g == (leftGrid g) then True else False
+    4 -> if g == (leftGrid g) then True else False  
 
-findBestMove :: Grid -> Int
-findBestMove g = do
+optimizeWeight :: Grid -> Int -> Int -> Int -> Int -> Int
+optimizeWeight g x y z i = do
+  -- let g =           [[Just 2, Just 2, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing]]
+  let tempScore = findAverage5Score g x y z
+  case i of 
+    1 -> if (findAverage5Score g (x+1) y z) > (tempScore) then optimizeWeight g (x+1) y z 1
+         else if (findAverage5Score g (x-1) y z) > (tempScore) then optimizeWeight g (x-1) y z 1
+              else x
+    2 -> if (findAverage5Score g x (y+1) z) > (tempScore) then optimizeWeight g x (y+1) z 2
+         else if (findAverage5Score g x (y-1) z) > (tempScore) then optimizeWeight g x (y-1) z 2
+              else y
+    3 -> if (findAverage5Score g x y (z+1)) > (tempScore) then optimizeWeight g x y (z+1) 3
+         else if (findAverage5Score g x y (z-1)) > (tempScore) then optimizeWeight g x y (z-1) 3
+              else z
+
+determineOptimalWeights :: Grid -> Int -> Int -> Int -> (Int, Int, Int)
+determineOptimalWeights g x y z = 
+  -- let g =        [[Just 2, Just 2, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing],
+  --                   [Nothing, Nothing, Nothing, Nothing]]
+  ((optimizeWeight g x y z 1),(optimizeWeight g x y z 2), (optimizeWeight g x y z 3))
+
+findBestMove :: Grid -> (Int, Int, Int) ->  Int
+findBestMove g (x,y,z)= do
    let up = insertRandomTile $ transpose $ leftGrid $ transpose g
    let down = insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
    let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
    let left = insertRandomTile $ leftGrid g
 
-   -- if (up == g) then
+    -- if (up == g) then
       -- let upScore = -9999
    -- else
-   let upScore = (directionStuckHeuristic 1 g) * ((largeEdgeNumberHeuristic up) - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(1000* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))))
+   let upScore =(directionStuckHeuristic 1 g) + (((largeEdgeNumberHeuristic up)*z) + (((monotonicityHeuristic up) + (monotonicityHeuristic $ transpose up))*y) +(x* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))))
    -- if down == g then
    --    let downScore = -9999
    -- else
-   let downScore = (directionStuckHeuristic 2 g) * ((largeEdgeNumberHeuristic down)  - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(1000* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))))
+   let downScore = (directionStuckHeuristic 2 g) + (((largeEdgeNumberHeuristic down)*z)  + (((monotonicityHeuristic down) + (monotonicityHeuristic $ transpose down))*y) +(x* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))))
    -- if right == g then
    -- 	  let rightScore = -9999
    -- else
-   let rightScore =  (directionStuckHeuristic 3 g) * ((largeEdgeNumberHeuristic right) - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(1000* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))))
+   let rightScore =(directionStuckHeuristic 3 g) + (((largeEdgeNumberHeuristic right)*z) + (((monotonicityHeuristic right) + (monotonicityHeuristic $ transpose right))*y) +(x* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))))
    -- if left == g then
    --    let leftScore = -9999
    -- else
-   let leftScore = (directionStuckHeuristic 4 g) *((largeEdgeNumberHeuristic left)- (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (1000*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))))
+   let leftScore =(directionStuckHeuristic 4 g) + (((largeEdgeNumberHeuristic left)*z)+ (((monotonicityHeuristic left) + (monotonicityHeuristic $ transpose left))*y) + (x*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))))
 
-
+   
    -- let upScore = runRandomN up 50
    -- let downScore = runRandomN down 50
    -- let rightScore = runRandomN right 50
    -- let leftScore = runRandomN left 50
 
    let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then 1
+   if maxScore == upScore then 1 
    else if maxScore == downScore then 2
        else if maxScore == rightScore then 3
             else if maxScore == leftScore then 4
             else 4
 
-findBestMove2 :: Grid -> (Int, Int, Int, Int, Int)
-findBestMove2 g = do
-   let up = insertRandomTile $ transpose $ leftGrid $ transpose g
-   let down = insertRandomTile $ transpose $ map reverse $ leftGrid $ map reverse $ transpose g
-   let right = insertRandomTile $ map reverse $ leftGrid (map reverse g)
-   let left = insertRandomTile $ leftGrid g
-
-   -- let upScore = 1000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) + ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up))*3
-   -- let downScore = 1000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) + ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down))*3
-   -- let rightScore = 1000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) + ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right))*3
-   -- let leftScore = 1000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + ((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left))*3
-   -- let upScore = (largeEdgeNumberHeuristic up) + (directionStuckHeuristic 1 g) * 100000 - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(10* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up)))
-   -- -- if down == g then
-   -- --    let downScore = -9999
-   -- -- else
-   -- let downScore = (largeEdgeNumberHeuristic down) + (directionStuckHeuristic 2 g) * 100000 - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(10* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down)))
-   -- -- if right == g then
-   -- --     let rightScore = -9999
-   -- -- else
-   -- let rightScore = (largeEdgeNumberHeuristic right) + (directionStuckHeuristic 3 g) * 100000 - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(10* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right)))
-   -- -- if left == g then
-   -- --    let leftScore = -9999
-   -- -- else
-   -- let leftScore = (largeEdgeNumberHeuristic left) + (directionStuckHeuristic 4 g) *100000 - (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (10*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left)))
-   let upScore = 1000+ (directionStuckHeuristic 1 g) * (largeEdgeNumberHeuristic up) - (monotonicityHeuristic up) - (monotonicityHeuristic $ transpose up) +(10* ((mergesHeuristic up) + (mergesHeuristic $ transpose up) + (openSquareHeuristic up)))
-   -- if down == g then
-   --    let downScore = -9999
-   -- else
-   let downScore = 1000+(directionStuckHeuristic 2 g) * (largeEdgeNumberHeuristic down)  - (monotonicityHeuristic down) - (monotonicityHeuristic $ transpose down) +(10* ((mergesHeuristic down) + (mergesHeuristic $ transpose down) + (openSquareHeuristic down)))
-   -- if right == g then
-   --     let rightScore = -9999
-   -- else
-   let rightScore = 1000+ (directionStuckHeuristic 3 g) * (largeEdgeNumberHeuristic right) - (monotonicityHeuristic right) - (monotonicityHeuristic $ transpose right) +(10* ((mergesHeuristic right) + (mergesHeuristic $ transpose right) + (openSquareHeuristic right)))
-   -- if left == g then
-   --    let leftScore = -9999
-   -- else
-   let leftScore = 1000+(directionStuckHeuristic 4 g) *(largeEdgeNumberHeuristic left)- (monotonicityHeuristic left) - (monotonicityHeuristic $ transpose left) + (10*((mergesHeuristic left) + (mergesHeuristic $ transpose left) + (openSquareHeuristic left)))
-
-
-   -- let upScore = runRandomN up 50
-   -- let downScore = runRandomN down 50
-   -- let rightScore = runRandomN right 50
-   -- let leftScore = runRandomN left 50
-
-   let maxScore = maximum [upScore,downScore,rightScore,leftScore]
-   if maxScore == upScore then (1, upScore, downScore, rightScore, leftScore)
-   else if maxScore == downScore then (2, upScore, downScore, rightScore, leftScore)
-       else if maxScore == rightScore then (3, upScore, downScore, rightScore, leftScore)
-            else if maxScore == leftScore then (4, upScore, downScore, rightScore, leftScore)
-            else (4, upScore, downScore, rightScore, leftScore)
-
 runRandomN :: Grid -> Int -> Int
 runRandomN g n = do
     if n == 0 then randomlyPlayBoard g
     else randomlyPlayBoard g + runRandomN g (n-1)
-
+    
 largeEdgeNumberHeuristic :: Grid -> Int
 largeEdgeNumberHeuristic g = do
-    if (a /= Nothing && tempScore == (fromJust a)) || (b /= Nothing && tempScore == (fromJust b)) || (c /= Nothing && tempScore == (fromJust c)) || (d /= Nothing && tempScore == (fromJust d)) || (e /= Nothing && tempScore == (fromJust e)) || (f /= Nothing && tempScore == (fromJust f)) || (gg /= Nothing && tempScore == (fromJust gg)) || (h /= Nothing && tempScore == (fromJust h)) || (i /= Nothing && tempScore == (fromJust i)) || (j /= Nothing && tempScore == (fromJust j)) || (k /= Nothing && tempScore == (fromJust k)) || (l /= Nothing && tempScore == (fromJust l)) then tempScore else 0
+    if (a /= Nothing && tempScore == (fromJust a)) || (b /= Nothing && tempScore == (fromJust b)) || (c /= Nothing && tempScore == (fromJust c)) || (d /= Nothing && tempScore == (fromJust d)) || (e /= Nothing && tempScore == (fromJust e)) || (f /= Nothing && tempScore == (fromJust f)) || (gg /= Nothing && tempScore == (fromJust gg)) || (h /= Nothing && tempScore == (fromJust h)) || (i /= Nothing && tempScore == (fromJust i)) || (j /= Nothing && tempScore == (fromJust j)) || (k /= Nothing && tempScore == (fromJust k)) || (l /= Nothing && tempScore == (fromJust l)) then (myExp tempScore) else 0
        where
          [[a,b,c,d],[e,_,_,f],[gg,_,_,h],[i,j,k,l]] = g
-         tempScore  = scoreGrid g 0
+         tempScore = scoreGrid g 0
+         
+
 
 -- randomlyPlayBoard g = do
 --    if checkFull g && stuckCheck g then scoreGrid g 0
@@ -387,9 +364,7 @@ monotonicityHeuristic g = case g of
 
 checkRowMonotonicity :: [Tile] -> Int
 checkRowMonotonicity r = do
-    if (checkRowIncreasing r) || (checkRowDecreasing r) then scoreRow r 0 else (-1) * (scoreRow r 0)
-    -- else if x > (head xs) then (fromJust x) - (fromJust $ head xs) + (checkRowMonotonicity xs)
-    --                else (fromJust $ head xs) - (fromJust x)  + (checkRowMonotonicity xs)
+    if (checkRowIncreasing r) || (checkRowDecreasing r) then 1 else 0
 
 checkRowIncreasing :: [Tile] -> Bool
 checkRowIncreasing r = case r of
@@ -428,10 +403,35 @@ oneBestMove g = do
        3 -> insertRandomTile $ map reverse $ leftGrid (map reverse g)
        4 -> insertRandomTile $ leftGrid g
 
-monteCarloPlayBoard :: Grid -> Int -> (Int, Int)
-monteCarloPlayBoard g n = do
-   if (checkFull g && stuckCheck g) then (scoreGrid g 0, n)
-   else monteCarloPlayBoard (oneBestMove g) (n+1)
+findAverage5Score :: Grid -> Int -> Int -> Int -> Int
+findAverage5Score g x y z = do
+   let a = monteCarloPlayBoard g 0 (x,y,z)
+   let b = monteCarloPlayBoard g 0 (x,y,z)
+   let c = monteCarloPlayBoard g 0 (x,y,z)
+   let d = monteCarloPlayBoard g 0 (x,y,z) 
+   let e = monteCarloPlayBoard g 0 (x,y,z)
+   let f = monteCarloPlayBoard g 0 (x,y,z)
+   let gg = monteCarloPlayBoard g 0 (x,y,z)
+   let h = monteCarloPlayBoard g 0 (x,y,z)
+   let i = monteCarloPlayBoard g 0 (x,y,z) 
+   let j = monteCarloPlayBoard g 0 (x,y,z)
+   ((myExp a) + (myExp b) + (myExp c) + (myExp d) + (myExp e) + (myExp f) + (myExp gg) + (myExp h) + (myExp i) + (myExp j))
+
+myExp :: Int -> Int
+myExp a = 
+  let x = fromIntegral a
+  in (floor ( logBase 2 x ))
+
+myDiv :: Int -> Int -> Int
+myDiv a b = 
+      let x = fromIntegral a
+          y = fromIntegral b
+      in quot a b
+
+monteCarloPlayBoard :: Grid -> Int -> (Int, Int, Int) -> Int
+monteCarloPlayBoard g n (x,y,z) = do
+   if (checkFull g && stuckCheck g) then scoreGrid g 0
+   else monteCarloPlayBoard (oneBestMove g (x,y,z)) (n+1) (x,y,z)
 
 randomlyPlayBoard :: Grid -> Int
 randomlyPlayBoard g = do
@@ -519,10 +519,6 @@ primaryLoop g = do
                     "a" -> if (directionStuckCheck 4 g) then primaryLoop g else primaryLoop  $ insertRandomTile $ leftGrid g
                     _   -> return ()
 
-solverIteration :: Grid -> IO ()
-solverIteration g = do
-   if checkFull g && stuckCheck g then colorGrid g
-   else colorGrid (oneBestMove g)
 
 mainLogic ::IO ()
 mainLogic = do
@@ -530,16 +526,10 @@ mainLogic = do
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing],
                     [Nothing, Nothing, Nothing, Nothing]]
-    -- let (x,y) = monteCarloPlayBoard g 0
-    -- print $ stuckCheck g
-    -- colorGrid g
-
-    -- colorGrid generateRandomBoard
-
-    -- if x /= 1024 then main else print (x,y)
-    -- print (x,y)
-    -- print $ randomlyPlayTilWin 0 g
-    -- solverIteration g
-    -- print $ findBestMove2 g
+    -- let (x,y,z) = determineOptimalWeights g 4 1 8
+    -- print (x,y,z)                
+    -- let b = monteCarloPlayBoard g 0 (5,1,8)
+    -- print b
+    
     primaryLoop g
     -- primaryLoop g
