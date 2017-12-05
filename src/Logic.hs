@@ -1,6 +1,9 @@
 {-# LANGUAGE TemplateHaskell #-}
 
-module Logic where
+module Logic (Game(..), Direction(..), Grid, printTile, initGame,
+              insertRandomTile, stuckCheck, leftGrid, checkFull, scoreGrid
+              )
+        where
 
 import Data.Maybe
 import Data.List
@@ -16,8 +19,6 @@ import Data.Maybe (fromMaybe)
 
 import Data.Sequence (Seq, ViewL(..), ViewR(..), (<|))
 import qualified Data.Sequence as S
-import Lens.Micro.TH (makeLenses)
-import Lens.Micro ((&), (.~), (%~), (^.))
 import Linear.V2 (V2(..), _x, _y)
 import System.Random (Random(..), newStdGen)
 
@@ -479,8 +480,6 @@ data Direction
   | Left
   | Right
   deriving (Eq, Show)
-
-makeLenses ''Game
 
 -- add options for bot later
 initGame :: IO Game

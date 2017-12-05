@@ -1,0 +1,453 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-05 02:58:15.591277 UTC
+
+interface main@main:BotGame 8002
+  interface hash: 1bcdac7f51bbf03b7646dffa3241874f
+  ABI hash: 3e960eaa170f839316a259295230554d
+  export-list hash: 8b66986944c554b19d4b1622d8f78251
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f1e02b8e10513cd91f5d59aeb63f6e7b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  BotGame.botPlayer
+module dependencies: HumanGame Logic
+package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      base-orphans-0.6@base-orphans-0.6-AbJ3lKVXygDCG0eeQEv8Iu
+                      bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw
+                      binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
+                      brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3
+                      bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      call-stack-0.1.0@call-stack-0.1.0-FYVrCPXGP9EGAuTW32963O
+                      cereal-0.5.4.0@cereal-0.5.4.0-BsAGxfp8yAs3CiRo2E875e
+                      comonad-5.0.2@comonad-5.0.2-Fq9Xy9jdx6uIyJZn00E6Yc
+                      containers-0.5.7.1@containers-0.5.7.1
+                      contravariant-1.4@contravariant-1.4-29zF0Im431177ovfbHYCGv
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      distributive-0.5.3@distributive-0.5.3-IX4kyVcHAyoH4uFYrsjY1R
+                      dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk
+                      exceptions-0.8.3@exceptions-0.8.3-ADEDRATtUrMK1JW4zMQ9U
+                      filepath-1.4.1.1@filepath-1.4.1.1
+                      free-4.12.4@free-4.12.4-C2gBQV0m8J42HxqSLTFyVx
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol
+                      integer-gmp-1.0.0.1
+                      integer-logarithms-1.0.2@integer-logarithms-1.0.2-92lMiWV9mmYAwfMEYgfQ0D
+                      kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX
+                      lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW
+                      linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p
+                      microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM
+                      microlens-mtl-0.1.11.0@microlens-mtl-0.1.11.0-9MGmPSS1MMRHOvHzdJaq9s
+                      microlens-th-0.4.1.1@microlens-th-0.4.1.1-DWxGvZm1QBXHYYQf0fHp0m
+                      mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      parsec-3.1.11@parsec-3.1.11-1aqiimsgq2dCv7eoaC8WuX
+                      prelude-extras-0.4.0.3@prelude-extras-0.4.0.3-BhL9U5k7NtGJn1itwIHt2Y
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      profunctors-5.2.1@profunctors-5.2.1-Ga89Nyw0d7LBEIoX4AZ6gT
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      reflection-2.1.2@reflection-2.1.2-Bem12O1xFGSHr4C2Hyu1c4
+                      scientific-0.3.5.2@scientific-0.3.5.2-FM2NdrNTcdbCDq9wuNnhIA
+                      semigroupoids-5.2.1@semigroupoids-5.2.1-Db8txM8kTsI6Y49CY6g5Jn
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt
+                      template-haskell-2.11.1.0
+                      terminfo-0.4.1.0@terminfo-0.4.1.0-FNScbjwxa2Y3p4e5RvG3l
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+                      th-abstraction-0.2.6.0@th-abstraction-0.2.6.0-HRFJgpoqs5HJ5LgHnjmMhQ
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-compat-0.5.1.4@transformers-compat-0.5.1.4-IuFogs8HAVUJBWVNMhtssu
+                      unix-2.7.2.1@unix-2.7.2.1
+                      unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC
+                      utf8-string-1.0.1.1@utf8-string-1.0.1.1-1DpjxLeTvGg7ttZZojxJR5
+                      vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ
+                      vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         base-orphans-0.6@base-orphans-0.6-AbJ3lKVXygDCG0eeQEv8Iu:Data.Orphans
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.6.1@hashable-1.2.6.1-2ZLNuHq395GGIHwEHuqZol:Data.Hashable.Generic
+         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.Instances
+         reflection-2.1.2@reflection-2.1.2-Bem12O1xFGSHr4C2Hyu1c4:Data.Reflection
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Fusion.Bundle
+         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+family instance modules: adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp:Data.Functor.Rep
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Compose
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.Functor.Product base-4.9.1.0:Data.Functor.Sum
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Biff
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Clown
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Fix
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Flip
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Join
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Joker
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Product
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Sum
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Tannen
+                         bifunctors-5.4.2@bifunctors-5.4.2-KcF2f75KyQm5BjgJ8WkHCw:Data.Bifunctor.Wrapped
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.Get
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.Signed
+                         bytes-0.15.3@bytes-0.15.3-JnJk9rvpCHsKPq5vbMmKHS:Data.Bytes.VarInt
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.3@dlist-0.8.0.3-BHFBNaw8k6n9WiaUNzoXpk:Data.DList
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX:Data.Functor.Day
+                         kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX:Data.Functor.Yoneda
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.At
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Internal.Indexed
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Reified
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Tuple
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Wrapped
+                         lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW:Control.Lens.Zoom
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V1
+                         linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2
+                         microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro.Internal
+                         microlens-mtl-0.1.11.0@microlens-mtl-0.1.11.0-9MGmPSS1MMRHOvHzdJaq9s:Lens.Micro.Mtl.Internal
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Data.Primitive.Array
+                         profunctors-5.2.1@profunctors-5.2.1-Ga89Nyw0d7LBEIoX4AZ6gT:Data.Profunctor.Rep
+                         tagged-0.8.5@tagged-0.8.5-1mTloBSoUxv8dqUr8XBGBt:Data.Tagged
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+                         th-abstraction-0.2.6.0@th-abstraction-0.2.6.0-HRFJgpoqs5HJ5LgHnjmMhQ:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashMap.Base
+                         unordered-containers-0.2.8.0@unordered-containers-0.2.8.0-Bp9XgxjuHxcI4tFehVMDGC:Data.HashSet
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Primitive
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Storable
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
+                         vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed.Base
+                         vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Image.Internal
+                         vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Input.Events
+import  -/  base-4.9.1.0:Control.Concurrent 2ee6a0a58489520b9a96d8fef10380fa
+import  -/  base-4.9.1.0:Control.Monad a6784c5dab0d75c63dabec5a37843f98
+import  -/  base-4.9.1.0:Control.Monad.IO.Class 1a4384f66ee999caf5366398edb6ca7b
+import  -/  base-4.9.1.0:Data.Functor 5ab1dc703df5b482e77efb697833ca3c
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Conc.IO def2d34849634fa07308965605821da6
+import  -/  base-4.9.1.0:GHC.Conc.Sync 8d0a228e5fc4d8c110495066f4d52ea1
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick e2a3fb09c74a952e5abacbc620ec0b00
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.BChan 87ea65aaf0d42481dc99bd669150c58b
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Main d0d9d5e5942ff9efa2fbd0787bd03cd7
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types 5650510519c2681f9a04cee798296505
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types.Internal 8114ee83adccb2849ccde566e37363d3
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Util 68dcfbfa78970336e5e7c2114aedbfec
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border a0f69eada82d2170e87954912f42b1ba
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border.Style c0e1d5581c0fbadb737040de9c33e315
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Center 6d8547033b34549a1b43dfa188c8c741
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b534e87988fc642948
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
+import  -/  HumanGame 18a6c1b3992ad414cb9f5484ce2dd646
+  exports: 18f3938ba77c9bd14cafbce22eb2d9ca
+  Name 47d4e5177cf290cc67268e3697519e69
+  drawUI 2b05fc28c75a5cc90217e8e7734af76f
+  move f5218bb463d807f981d38642f47e544c
+  theMap dafc71cf78f3e56a9af2a6ef6344351e
+import  -/  Logic e13c92c9a90b0eec340e4badfcd1609f
+  exports: e11d42f43d6dc810c654525157e10c4d
+  Game f53c7afdbd9180b7afc48f24388921a0
+  Up 5159f944a11a100d737c8cc4409d1321
+  initGame 022d7755d273b161bf4138a1129d576d
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty d09911cf98d07946a5d45e866f2393bc
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Config df9722e311759b0528a283358d7d0ca7
+25054d0b2304c819555c09e111abec45
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   BotGame.$trModule2
+                   BotGame.$trModule1) -}
+cafd5db617a4afbeb42885e2f237400e
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "BotGame"#) -}
+670c34955ffc797032dc60e3eccb8b58
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+be4ed8e69968840a7e4b526223ec9920
+  $wbotPlayer ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.atomically#
+                        @ (Brick.BChan.BChan GHC.Base.String)
+                        BotGame.botPlayer6
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.Prim.fork#
+                        @ (GHC.Types.IO ())
+                        (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                         GHC.Prim.catch#
+                           @ ()
+                           @ GHC.Exception.SomeException
+                           (\ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                            letrec {
+                              a' :: GHC.Prim.State# GHC.Prim.RealWorld
+                                    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                                {- Arity: 1, Strictness: <S,U> -}
+                              = \ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                case ipv1 of wild { Brick.BChan.BChan q ->
+                                case GHC.Prim.atomically#
+                                       @ ()
+                                       (Control.Concurrent.STM.TBQueue.writeTBQueue1
+                                          @ GHC.Base.String
+                                          q
+                                          BotGame.botPlayer5)
+                                       s of ds2 { (#,#) ipv2 ipv3 ->
+                                case {__pkg_ccall base-4.9.1.0 rtsSupportsBoundThreads GHC.Prim.State#
+                                                                                         GHC.Prim.RealWorld
+                                                                                       -> (# GHC.Prim.State#
+                                                                                               GHC.Prim.RealWorld,
+                                                                                             GHC.Prim.Int# #)}
+                                       GHC.Prim.realWorld# of wild1 { (#,#) ds ds3 ->
+                                case ds3 of wild2 {
+                                  DEFAULT
+                                  -> case GHC.Event.Thread.$wthreadDelay
+                                            100000#
+                                            ipv2 of ds4 { (#,#) ipv4 ipv5 ->
+                                     a' ipv4 }
+                                  0#
+                                  -> case GHC.Prim.delay#
+                                            @ GHC.Prim.RealWorld
+                                            100000#
+                                            ipv2 of s' { DEFAULT ->
+                                     a' s' } } } } }
+                            } in
+                            a' eta1)
+                           GHC.Conc.Sync.childHandler1
+                           eta)
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <()>_R))
+                        ipv of ds { (#,#) ipv2 ipv3 ->
+                 case Brick.Main.$wcustomMain
+                        @ HumanGame.Name
+                        @ GHC.Base.String
+                        @ Logic.Game
+                        GHC.Classes.$fOrd()
+                        BotGame.botPlayer4
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <Graphics.Vty.Vty>_R))
+                        (GHC.Base.Just @ (Brick.BChan.BChan GHC.Base.String) ipv1)
+                        HumanGame.drawUI
+                        (Brick.Main.neverShowCursor @ Logic.Game @ HumanGame.Name)
+                        BotGame.botEvent
+                        (Brick.Types.$fApplicativeEventM4 @ Logic.Game @ ())
+                          `cast`
+                        (<Logic.Game>_R
+                         ->_R Trans
+                                  (<Brick.Types.Internal.EventRO ()>_R
+                                   ->_R Trans
+                                            (<Brick.Types.Internal.EventState ()>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Logic.Game,
+                                                             Brick.Types.Internal.EventState
+                                                               ())>_R))
+                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                      <Brick.Types.Internal.EventState ()>_N
+                                                      <GHC.Types.IO>_R
+                                                      <Logic.Game>_N)))
+                                  (Trans
+                                       (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                 <*>_N
+                                                 <Brick.Types.Internal.EventRO ()>_R
+                                                 <Control.Monad.Trans.State.Lazy.StateT
+                                                    (Brick.Types.Internal.EventState ())
+                                                    GHC.Types.IO>_R
+                                                 <Logic.Game>_N))
+                                       (Sym (Brick.Types.N:EventM[0] <()>_N) <Logic.Game>_N)))
+                        BotGame.botPlayer2
+                        Logic.initGame2
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 (# ipv4, GHC.Tuple.() #) } } }) -}
+048f8230445cd1dc1abb2a6f54f43a12
+  botEvent ::
+    Logic.Game
+    -> Brick.Types.Internal.BrickEvent HumanGame.Name GHC.Base.String
+    -> Brick.Types.EventM
+         HumanGame.Name (Brick.Types.Internal.Next Logic.Game)
+  {- Arity: 2, Strictness: <L,1*U(1*U,A,A)><S,1*U>,
+     Unfolding: (\ (g :: Logic.Game)
+                   (ds :: Brick.Types.Internal.BrickEvent
+                            HumanGame.Name GHC.Base.String) ->
+                 case ds of wild {
+                   DEFAULT -> BotGame.botPlayer3
+                   Brick.Types.Internal.AppEvent s
+                   -> let {
+                        newGrid :: Logic.Grid
+                        = case g of wild1 { Logic.Game ds1 ds2 ds3 ->
+                          case Logic.$winsertRandomTile
+                                 (Data.OldList.transpose
+                                    @ Logic.Tile
+                                    (GHC.Base.map
+                                       @ [Logic.Tile]
+                                       @ [Logic.Tile]
+                                       Logic.leftRow
+                                       (Data.OldList.transpose
+                                          @ Logic.Tile
+                                          ds1))) of ww { (#,#) ww1 ww2 ->
+                          GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
+                      } in
+                      let {
+                        x :: GHC.Types.Int
+                        = case Logic.$wscoreGrid newGrid 0# of ww2 { DEFAULT ->
+                          GHC.Types.I# ww2 }
+                      } in
+                      let {
+                        x1 :: GHC.Types.Bool
+                        = case Logic.checkFull newGrid of wild1 {
+                            GHC.Types.False -> GHC.Types.False
+                            GHC.Types.True -> Logic.stuckCheck newGrid }
+                      } in
+                      let {
+                        x2 :: Logic.Game {- Strictness: m -} = Logic.Game newGrid x x1
+                      } in
+                      let {
+                        lvl :: Brick.Types.Internal.Next Logic.Game
+                        = Brick.Types.Internal.Continue @ Logic.Game x2
+                      } in
+                      (\ (eta :: Brick.Types.Internal.EventRO HumanGame.Name)
+                         (eta1 :: Brick.Types.Internal.EventState HumanGame.Name)
+                         (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                       (# eta2, (lvl, eta1) #))
+                        `cast`
+                      (Trans
+                           (<Brick.Types.Internal.EventRO HumanGame.Name>_R
+                            ->_R Trans
+                                     (<Brick.Types.Internal.EventState HumanGame.Name>_R
+                                      ->_R Sym (GHC.Types.N:IO[0]
+                                                    <(Brick.Types.Internal.Next Logic.Game,
+                                                      Brick.Types.Internal.EventState
+                                                        HumanGame.Name)>_R))
+                                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                               <Brick.Types.Internal.EventState HumanGame.Name>_N
+                                               <GHC.Types.IO>_R
+                                               <Brick.Types.Internal.Next Logic.Game>_N)))
+                           (Trans
+                                (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                          <*>_N
+                                          <Brick.Types.Internal.EventRO HumanGame.Name>_R
+                                          <Control.Monad.Trans.State.Lazy.StateT
+                                             (Brick.Types.Internal.EventState HumanGame.Name)
+                                             GHC.Types.IO>_R
+                                          <Brick.Types.Internal.Next Logic.Game>_N))
+                                (Sym (Brick.Types.N:EventM[0]
+                                          <HumanGame.Name>_N) <Brick.Types.Internal.Next
+                                                                 Logic.Game>_N))) }) -}
+894645b809d2038e509096224f9199cc
+  botPlayer :: GHC.Types.Int -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                BotGame.botPlayer1
+                  `cast`
+                (<GHC.Types.Int>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+f3b4556753cd19f7d406828b158bd191
+  botPlayer1 ::
+    GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,A><S,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 BotGame.$wbotPlayer w1) -}
+49ec3eda581997163ef134b07810cd14
+  botPlayer2 :: Logic.Game -> Brick.AttrMap.AttrMap
+  {- Arity: 1, Strictness: <L,A>m1,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Logic.Game) -> HumanGame.theMap) -}
+d692a389b1ae7fa05d24b321f1d6efc3
+  botPlayer3 ::
+    Brick.Types.EventM
+      HumanGame.Name (Brick.Types.Internal.Next Logic.Game)
+  {- Strictness: x -}
+be85faf17b11aad57b680a8142dcd88b
+  botPlayer4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Graphics.Vty.Vty #)
+  {- Arity: 1,
+     Unfolding: (Graphics.Vty.mkVty1
+                   Graphics.Vty.Config.defaultConfig) -}
+9156c02e3030768dd8a0535030fb51a1
+  botPlayer5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Up"#) -}
+b912ac81fffd3ac960a2d50f59e4f2dd
+  botPlayer6 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Brick.BChan.BChan GHC.Base.String #)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ (eta1 :: GHC.Prim.State#
+                              GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newTVar#
+                        @ [GHC.Base.String]
+                        @ GHC.Prim.RealWorld
+                        (GHC.Types.[] @ GHC.Base.String)
+                        eta1 of ds { (#,#) ipv ipv1 ->
+                 case GHC.Prim.newTVar#
+                        @ [GHC.Base.String]
+                        @ GHC.Prim.RealWorld
+                        (GHC.Types.[] @ GHC.Base.String)
+                        ipv of ds1 { (#,#) ipv2 ipv3 ->
+                 case GHC.Prim.newTVar#
+                        @ GHC.Types.Int
+                        @ GHC.Prim.RealWorld
+                        Control.Concurrent.STM.TBQueue.newTBQueue2
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 case GHC.Prim.newTVar#
+                        @ GHC.Types.Int
+                        @ GHC.Prim.RealWorld
+                        BotGame.botPlayer7
+                        ipv4 of ds3 { (#,#) ipv6 ipv7 ->
+                 (# ipv6,
+                    Brick.BChan.BChan
+                      @ GHC.Base.String
+                      (Control.Concurrent.STM.TBQueue.TBQueue
+                         @ GHC.Base.String
+                         ipv5
+                         ipv1
+                         ipv7
+                         ipv3) #) } } } }) -}
+4a498d70bfa428e548620dee727e0a04
+  botPlayer7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,60 +1,27 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 22:31:24.124656 UTC
+2017-12-05 02:32:44.434633 UTC
 
 interface main@main:Logic 8002
-  interface hash: feafd7769ec9617ddabb73c49ffa46ec
-  ABI hash: 649e0f6f397e7940c6a8eeadd4b2d33d
-  export-list hash: f4197bae19c0657ba6cd777f66397ab8
+  interface hash: f1ca5e3159b30388229218aef7de89f1
+  ABI hash: e13c92c9a90b0eec340e4badfcd1609f
+  export-list hash: e11d42f43d6dc810c654525157e10c4d
   orphan hash: 5c6afa542ca157feb54eeb37258af508
   flag hash: db8b3dba68660d93bea9bec96c028028
   sig of: Nothing
-  used TH splices: True
+  used TH splices: False
   where
 exports:
   Logic.checkFull
-  Logic.checkRowDecreasing
-  Logic.checkRowFull
-  Logic.checkRowIncreasing
-  Logic.checkRowMonotonicity
-  Logic.checkTileExists
-  Logic.colorGrid
-  Logic.colorRow
-  Logic.countMergesInRow
-  Logic.countNothingInRow
-  Logic.directionStuckCheck
-  Logic.directionStuckHeuristic
-  Logic.done
-  Logic.findBestMove
-  Logic.findBestMove2
-  Logic.grid
   Logic.initGame
   Logic.insertRandomTile
-  Logic.insertRandomTileInRow
-  Logic.largeEdgeNumberHeuristic
   Logic.leftGrid
-  Logic.leftRow
-  Logic.makeRandomTile
-  Logic.mergeRow
-  Logic.mergesHeuristic
-  Logic.monotonicityHeuristic
-  Logic.monteCarloPlayBoard
-  Logic.oneBestMove
-  Logic.oneMove
-  Logic.openSquareHeuristic
   Logic.printTile
-  Logic.randomlyPlayBoard
-  Logic.randomlyPlayTilWin
-  Logic.removeNothings
-  Logic.runRandomN
-  Logic.score
   Logic.scoreGrid
-  Logic.scoreRow
   Logic.stuckCheck
   Logic.Direction{Logic.Down Logic.Left Logic.Right Logic.Up}
   Logic.Game{Logic.Game _done _grid _score}
   Logic.Grid
-  Logic.Tile
 module dependencies:
 package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
                       adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp
@@ -80,8 +47,6 @@ package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
                       kan-extensions-5.0.2@kan-extensions-5.0.2-8LTJJ1zQJWB7SfewWXUuqX
                       lens-4.15.4@lens-4.15.4-Km66e7WFRbEC7HnDdV2JDW
                       linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p
-                      microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM
-                      microlens-th-0.4.1.1@microlens-th-0.4.1.1-DWxGvZm1QBXHYYQf0fHp0m
                       mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
                       prelude-extras-0.4.0.3@prelude-extras-0.4.0.3-BhL9U5k7NtGJn1itwIHt2Y
                       pretty-1.1.3.3@pretty-1.1.3.3
@@ -157,7 +122,6 @@ family instance modules: adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp:
                          linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V
                          linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V1
                          linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2
-                         microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro.Internal
                          pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
                          pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
                          primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
@@ -194,11 +158,8 @@ import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b5
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
-import  -/  microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro 17ccad91e2fea7d0a9e5062fed73ea61
-import  -/  microlens-0.4.8.1@microlens-0.4.8.1-BVhsezHoPw9Ez18LAXVtpM:Lens.Micro.Type fee04ed92cecdc88f8c4117ad9a626c5
-import  -/  microlens-th-0.4.1.1@microlens-th-0.4.1.1-DWxGvZm1QBXHYYQf0fHp0m:Lens.Micro.TH 97d57810f7a9c6c0bfab58de69e959f2
 import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c669b194cf9fe94db6f2430f
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fEqDirection :: GHC.Classes.Eq Logic.Direction
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -206,7 +167,7 @@ import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c
                   @ Logic.Direction
                   Logic.$fEqDirection_$c==
                   Logic.$fEqDirection_$c/= -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fEqDirection_$c/= ::
     Logic.Direction -> Logic.Direction -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -224,7 +185,7 @@ import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c
                    Logic.Right
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True Logic.Right -> GHC.Types.False } }) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fEqDirection_$c== ::
     Logic.Direction -> Logic.Direction -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -242,7 +203,7 @@ import  -/  random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog:System.Random cc3ef358c
                    Logic.Right
                    -> case ds1 of wild1 {
                         DEFAULT -> GHC.Types.False Logic.Right -> GHC.Types.True } }) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fEqGame :: GHC.Classes.Eq Logic.Game
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -252,7 +213,7 @@ bfd637cdd5c6a5d1cf101b16087e9397
   $fEqGame1 :: GHC.Classes.Eq Logic.Tile
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True) Logic.$fEqGame_$s$fEqMaybe -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fEqGame_$c/= :: Logic.Game -> Logic.Game -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(SLL),1*U(1*U,1*U(U),1*U)><S(SLL),1*U(1*U,1*U(U),1*U)>,
@@ -261,15 +222,15 @@ f8fdb6d9549dc40d8ac3963099c4e7cc
                  case Logic.$fEqGame_$c== a b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fEqGame_$c== :: Logic.Game -> Logic.Game -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(SLL),1*U(1*U,1*U(U),1*U)><S(SLL),1*U(1*U,1*U(U),1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Game) (w1 :: Logic.Game) ->
+                (\ (w :: Logic.Game) (w4 :: Logic.Game) ->
                  case w of ww { Logic.Game ww1 ww2 ww3 ->
-                 case w1 of ww4 { Logic.Game ww5 ww6 ww7 ->
+                 case w4 of ww4 { Logic.Game ww5 ww6 ww7 ->
                  Logic.$w$c== ww1 ww2 ww3 ww5 ww6 ww7 } }) -}
 6cef739d76fabb977d4636ecdbe054ed
   $fEqGame_$s$fEqMaybe ::
@@ -320,7 +281,7 @@ d337e540e0912987a271f8fbec23bd43
                       Logic.$fEqGame1
                       x
                       y)) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fShowDirection :: GHC.Show.Show Logic.Direction
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -341,7 +302,7 @@ d337e540e0912987a271f8fbec23bd43
 e4d53faf9d6c39b50bea299353442e90
   $fShowDirection4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Up"#) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fShowDirection_$cshow :: Logic.Direction -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -350,22 +311,22 @@ e4d53faf9d6c39b50bea299353442e90
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fShowDirection_$cshowList :: [Logic.Direction] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Logic.Direction
                    Logic.$w$cshowsPrec) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $fShowDirection_$cshowsPrec ::
     GHC.Types.Int -> Logic.Direction -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
      Unfolding: InlineRule (3, True, True)
                 (\ (w :: GHC.Types.Int)
-                   (w1 :: Logic.Direction)
-                   (w2 :: GHC.Base.String) ->
-                 Logic.$w$cshowsPrec w1 w2) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+                   (w4 :: Logic.Direction)
+                   (w5 :: GHC.Base.String) ->
+                 Logic.$w$cshowsPrec w4 w5) -}
+f53c7afdbd9180b7afc48f24388921a0
   $fShowGame :: GHC.Show.Show Logic.Game
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -374,13 +335,13 @@ f8fdb6d9549dc40d8ac3963099c4e7cc
                   Logic.$fShowGame_$cshowsPrec
                   Logic.$fShowGame_$cshow
                   Logic.$fShowGame_$cshowList -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fShowGame1 :: Logic.Game -> GHC.Show.ShowS
   {- Arity: 2,
-     Unfolding: (\ (w :: Logic.Game) (w1 :: GHC.Base.String) ->
+     Unfolding: (\ (w :: Logic.Game) (w4 :: GHC.Base.String) ->
                  case w of ww { Logic.Game ww1 ww2 ww3 ->
-                 Logic.$w$cshowsPrec1 0# ww1 ww2 ww3 w1 }) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+                 Logic.$w$cshowsPrec1 0# ww1 ww2 ww3 w4 }) -}
+f53c7afdbd9180b7afc48f24388921a0
   $fShowGame_$cshow :: Logic.Game -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U,1*U(U),1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -389,22 +350,22 @@ f8fdb6d9549dc40d8ac3963099c4e7cc
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fShowGame_$cshowList :: [Logic.Game] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__ @ Logic.Game Logic.$fShowGame1) -}
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   $fShowGame_$cshowsPrec ::
     GHC.Types.Int -> Logic.Game -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U(U),1*U)><L,U>,
      Inline: INLINE[0],
      Unfolding: InlineRule (3, True, False)
                 (\ (w :: GHC.Types.Int)
-                   (w1 :: Logic.Game)
-                   (w2 :: GHC.Base.String) ->
+                   (w4 :: Logic.Game)
+                   (w5 :: GHC.Base.String) ->
                  case w of ww { GHC.Types.I# ww1 ->
-                 case w1 of ww2 { Logic.Game ww3 ww4 ww5 ->
-                 Logic.$w$cshowsPrec1 ww1 ww3 ww4 ww5 w2 } }) -}
+                 case w4 of ww2 { Logic.Game ww3 ww4 ww5 ->
+                 Logic.$w$cshowsPrec1 ww1 ww3 ww4 ww5 w5 } }) -}
 4fa20e1d7791eb45ef87dba3660bd24e
   $tc'Down :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -533,19 +494,19 @@ ca6564237fa0081dd05fb2c7d5fe07ca
                              (GHC.Prim.==# x y) of wild3 {
                         GHC.Types.False -> GHC.Types.False
                         GHC.Types.True -> GHC.Classes.$fEqBool_$c== ww2 ww5 } } } }) -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   $w$cshowsPrec ::
     Logic.Direction -> GHC.Base.String -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
-     Unfolding: (\ (w :: Logic.Direction) (w1 :: GHC.Base.String) ->
+     Unfolding: (\ (w :: Logic.Direction) (w4 :: GHC.Base.String) ->
                  case w of wild {
-                   Logic.Up -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection4 w1
+                   Logic.Up -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection4 w4
                    Logic.Down
-                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection3 w1
+                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection3 w4
                    Logic.Left
-                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection2 w1
+                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection2 w4
                    Logic.Right
-                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection1 w1 }) -}
+                   -> GHC.Base.++ @ GHC.Types.Char Logic.$fShowDirection1 w4 }) -}
 21f527c769792422661503d928f2e324
   $w$cshowsPrec1 ::
     GHC.Prim.Int#
@@ -556,217 +517,19 @@ ca6564237fa0081dd05fb2c7d5fe07ca
     -> GHC.Base.String
   {- Arity: 5, Strictness: <S,U><L,1*U><L,1*U(U)><L,1*U><L,U>,
      Inline: [0] -}
-df25d59db7fbe45a67b370ef61c9b97c
-  $wcheckRowMonotonicity :: [Logic.Tile] -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>, Inline: [0],
-     Unfolding: (\ (w :: [Logic.Tile]) ->
-                 case Logic.checkRowIncreasing w of wild {
-                   GHC.Types.False
-                   -> case Logic.checkRowDecreasing w of wild1 {
-                        GHC.Types.False
-                        -> case Logic.$wscoreRow w 0# of ww { DEFAULT ->
-                           GHC.Prim.*# -1# ww }
-                        GHC.Types.True -> Logic.$wscoreRow w 0# }
-                   GHC.Types.True -> Logic.$wscoreRow w 0# }) -}
-737f2dd061c406b2d849f1420be382de
-  $wcountMergesInRow :: [Logic.Tile] -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-4178d278464efbc4f1a424eab987c5f6
-  $wcountNothingInRow :: [Logic.Tile] -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-53e9f2a9955bd07d15ca3cbc96c39371
-  $wdirectionStuckCheck ::
-    GHC.Prim.Int# -> Logic.Grid -> GHC.Types.Bool
-  {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0],
-     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Logic.Grid) ->
-                 case ww of ds {
-                   DEFAULT -> Logic.directionStuckCheck2
-                   1#
-                   -> GHC.Classes.$fEq[]_$c==
-                        @ [Logic.Tile]
-                        Logic.$fEqGame_$s$fEq[]
-                        w
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Logic.leftRow
-                              (Data.OldList.transpose @ Logic.Tile w)))
-                   2#
-                   -> GHC.Classes.$fEq[]_$c==
-                        @ [Logic.Tile]
-                        Logic.$fEqGame_$s$fEq[]
-                        w
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Logic.directionStuckCheck1
-                              (Data.OldList.transpose @ Logic.Tile w)))
-                   3#
-                   -> GHC.Classes.$fEq[]_$c==
-                        @ [Logic.Tile]
-                        Logic.$fEqGame_$s$fEq[]
-                        w
-                        (GHC.Base.map
-                           @ [Logic.Tile]
-                           @ [Logic.Tile]
-                           Logic.directionStuckCheck1
-                           w)
-                   4#
-                   -> GHC.Classes.$fEq[]_$c==
-                        @ [Logic.Tile]
-                        Logic.$fEqGame_$s$fEq[]
-                        w
-                        (GHC.Base.map @ [Logic.Tile] @ [Logic.Tile] Logic.leftRow w) }) -}
-22925244671758d673efa05324ccd8be
-  $wdirectionStuckHeuristic ::
-    GHC.Prim.Int# -> Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0],
-     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: Logic.Grid) ->
-                 case ww of ds {
-                   DEFAULT
-                   -> case Logic.directionStuckHeuristic1 ret_ty GHC.Prim.Int# of {}
-                   1#
-                   -> case GHC.Classes.$fEq[]_$c==
-                             @ [Logic.Tile]
-                             Logic.$fEqGame_$s$fEq[]
-                             w
-                             (Data.OldList.transpose
-                                @ Logic.Tile
-                                (GHC.Base.map
-                                   @ [Logic.Tile]
-                                   @ [Logic.Tile]
-                                   Logic.leftRow
-                                   (Data.OldList.transpose @ Logic.Tile w))) of wild {
-                        GHC.Types.False -> 1# GHC.Types.True -> 0# }
-                   2#
-                   -> case GHC.Classes.$fEq[]_$c==
-                             @ [Logic.Tile]
-                             Logic.$fEqGame_$s$fEq[]
-                             w
-                             (Data.OldList.transpose
-                                @ Logic.Tile
-                                (GHC.Base.map
-                                   @ [Logic.Tile]
-                                   @ [Logic.Tile]
-                                   Logic.directionStuckCheck1
-                                   (Data.OldList.transpose @ Logic.Tile w))) of wild {
-                        GHC.Types.False -> 1# GHC.Types.True -> 0# }
-                   3#
-                   -> case GHC.Classes.$fEq[]_$c==
-                             @ [Logic.Tile]
-                             Logic.$fEqGame_$s$fEq[]
-                             w
-                             (GHC.Base.map
-                                @ [Logic.Tile]
-                                @ [Logic.Tile]
-                                Logic.directionStuckCheck1
-                                w) of wild {
-                        GHC.Types.False -> 1# GHC.Types.True -> 0# }
-                   4#
-                   -> case GHC.Classes.$fEq[]_$c==
-                             @ [Logic.Tile]
-                             Logic.$fEqGame_$s$fEq[]
-                             w
-                             (GHC.Base.map
-                                @ [Logic.Tile]
-                                @ [Logic.Tile]
-                                Logic.leftRow
-                                w) of wild {
-                        GHC.Types.False -> 1# GHC.Types.True -> 0# } }) -}
-903d26354eb6d3efa040ce8d564e6168
-  $wfindBestMove :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-6c17b56128392870d5063a78bed2a1ce
-  $wfindBestMove2 ::
-    Logic.Grid
-    -> (# GHC.Types.Int, GHC.Types.Int, GHC.Types.Int, GHC.Types.Int,
-          GHC.Types.Int #)
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
 b16f01439147c027a6c0c30bb76bbca8
   $winsertRandomTile ::
     Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-6e923c16eabe7afe03662ba469784bf1
-  $winsertRandomTileInRow ::
-    [Logic.Tile] -> (# Logic.Tile, [Logic.Tile] #)
-  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-a601bbf8002e2f7b9dc34e2e35ebd038
-  $wlargeEdgeNumberHeuristic :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-f07385e2bf2e56eed0bd9fe8b9487a1a
-  $wmergesHeuristic :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-7950b8eae9c1c2802767a0026e7985d8
-  $wmonotonicityHeuristic :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-9641d1710bf471567bfa02352cf76068
-  $wmonteCarloPlayBoard ::
-    Logic.Grid -> GHC.Types.Int -> (# GHC.Types.Int, GHC.Types.Int #)
-  {- Arity: 2, Strictness: <S,U><L,U(U)>, Inline: [0] -}
-2bce29d1d89713404bc2b6b280e0e753
-  $woneBestMove :: Logic.Grid -> (# [Logic.Tile], [[Logic.Tile]] #)
-  {- Arity: 1, Strictness: <S,U>, Inline: [0],
-     Unfolding: (\ (w :: Logic.Grid) ->
-                 case Logic.$wfindBestMove w of ww {
-                   DEFAULT
-                   -> case Logic.oneBestMove1
-                      ret_ty (# [Logic.Tile], [[Logic.Tile]] #)
-                      of {}
-                   1#
-                   -> Logic.$winsertRandomTile
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Logic.leftRow
-                              (Data.OldList.transpose @ Logic.Tile w)))
-                   2#
-                   -> Logic.$winsertRandomTile
-                        (Data.OldList.transpose
-                           @ Logic.Tile
-                           (GHC.Base.map
-                              @ [Logic.Tile]
-                              @ [Logic.Tile]
-                              Logic.directionStuckCheck1
-                              (Data.OldList.transpose @ Logic.Tile w)))
-                   3#
-                   -> Logic.$winsertRandomTile
-                        (GHC.Base.map
-                           @ [Logic.Tile]
-                           @ [Logic.Tile]
-                           Logic.directionStuckCheck1
-                           w)
-                   4# -> Logic.$winsertRandomTile (Logic.leftGrid w) }) -}
-28967ae815fc8e393ed4427aba5e5195
-  $wopenSquareHeuristic :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-a7ba70fce30c84cf63a53d9ebd2c8645
-  $wrandomlyPlayBoard :: Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-fab76fea211f91879c8dc3f28e73f27e
-  $wrandomlyPlayTilWin ::
-    GHC.Prim.Int# -> Logic.Grid -> GHC.Prim.Int#
-  {- Arity: 2, Strictness: <L,U><S,U>, Inline: [0] -}
-aff643c0d607763c4bff2780f57911b2
-  $wrunRandomN :: Logic.Grid -> GHC.Prim.Int# -> GHC.Prim.Int#
-  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
 e0dc0fa867d3e64f6a30feeb7f240e58
   $wscoreGrid :: Logic.Grid -> GHC.Prim.Int# -> GHC.Prim.Int#
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
-4b7842fe96fc5aaf3a08a92da78beeb3
-  $wscoreRow :: [Logic.Tile] -> GHC.Prim.Int# -> GHC.Prim.Int#
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
 4be22c53e08d1c9cb9ea1e3c8678227e
   $wxs :: GHC.Prim.Int# -> [GHC.Base.Maybe GHC.Types.Int]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-8d4b988266ab87805c94d9bc03d5ebc3
+6756fcb55eb22a13fd0b75dbbc5b28a7
   data Direction = Up | Down | Left | Right
-f8fdb6d9549dc40d8ac3963099c4e7cc
+f53c7afdbd9180b7afc48f24388921a0
   data Game
     = Game {_grid :: Logic.Grid,
             _score :: GHC.Types.Int,
@@ -775,21 +538,21 @@ f8fdb6d9549dc40d8ac3963099c4e7cc
   type Grid = [[Logic.Tile]]
 1a9892b7b8d21dece8bc89c897c777a2
   type Tile = GHC.Base.Maybe GHC.Types.Int
-f094b15d85ebbe619187740131cacc4c
+8f14b8e2a4258fd32a75d18c8b202502
   _done :: Logic.Game -> GHC.Types.Bool
   RecSel Left Logic.Game
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Logic.Game) ->
                  case ds of wild { Logic.Game ds1 ds2 ds3 -> ds3 }) -}
-fe2b3cf42dd925e656f03729bfb1ee01
+4edf69933585003cc5785b8704154727
   _grid :: Logic.Game -> Logic.Grid
   RecSel Left Logic.Game
   {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Logic.Game) ->
                  case ds of wild { Logic.Game ds1 ds2 ds3 -> ds1 }) -}
-1b3a2e89fff8d270af45cc204639f487
+9d55f1f6aee1b148392705395dec5940
   _score :: Logic.Game -> GHC.Types.Int
   RecSel Left Logic.Game
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U(U),A)>m,
@@ -799,203 +562,54 @@ fe2b3cf42dd925e656f03729bfb1ee01
 d964473dc4d99ec6d05d51a2bb1a826f
   checkFull :: Logic.Grid -> GHC.Types.Bool
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-f4400e774b5606dfc578f905b87437b5
-  checkRowDecreasing :: [Logic.Tile] -> GHC.Types.Bool
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-ebc1df722d269f61abfe68f28ec9003a
-  checkRowFull :: [Logic.Tile] -> GHC.Types.Bool
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-25a8d656cdc42a4eacc2369e053a165d
-  checkRowIncreasing :: [Logic.Tile] -> GHC.Types.Bool
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-f8bbd167455c34a9ddb076d66d208a78
-  checkRowMonotonicity :: [Logic.Tile] -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: [Logic.Tile]) ->
-                 case Logic.$wcheckRowMonotonicity w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-a4bd4cccff6fd80e51ebf8cbb22ef407
-  checkTileExists :: Logic.Tile -> GHC.Types.Bool
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
-     Unfolding: InlineRule (1, True, False)
-                (\ (t :: Logic.Tile) ->
-                 case t of wild {
-                   GHC.Base.Nothing -> GHC.Types.False
-                   GHC.Base.Just ipv -> GHC.Types.True }) -}
-698b3b6e2eebc7c9c3c674431897a3d2
-  colorGrid :: Logic.Grid -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <S,1*U><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Logic.colorGrid1
-                  `cast`
-                (<Logic.Grid>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-739937dbf19f2213175b482505cea22c
-  colorGrid1 ::
-    Logic.Grid
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <S,1*U><S,U> -}
-1e222ec8027f401467e5c811cdc33a83
-  colorRow :: [Logic.Tile] -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <S,1*U><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Logic.colorRow1
-                  `cast`
-                (<[Logic.Tile]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-e362db7d46967c187ab534e8c8c97dc8
-  colorRow1 ::
-    [Logic.Tile]
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <S,1*U><S,U> -}
-bcdd5ca811590f58832c33ef575a0306
-  countMergesInRow :: [Logic.Tile] -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: [Logic.Tile]) ->
-                 case Logic.$wcountMergesInRow w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-0aa0bb67736f7317873841bd99cfe836
-  countNothingInRow :: [Logic.Tile] -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: [Logic.Tile]) ->
-                 case Logic.$wcountNothingInRow w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-2e11ef9ee962b28010bade3d39ceed34
-  directionStuckCheck ::
-    GHC.Types.Int -> Logic.Grid -> GHC.Types.Bool
-  {- Arity: 2, Strictness: <S(S),1*U(1*U)><S,U>, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: GHC.Types.Int) (w1 :: Logic.Grid) ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 Logic.$wdirectionStuckCheck ww1 w1 }) -}
-7edcf371f177892ba3007abf7252ede6
-  directionStuckCheck1 :: [Logic.Tile] -> [Logic.Tile]
-  {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ (x :: [Logic.Tile]) ->
-                 GHC.List.reverse1
-                   @ Logic.Tile
-                   (Logic.leftRow (GHC.List.reverse @ Logic.Tile x))
-                   (GHC.Types.[] @ Logic.Tile)) -}
-e260ac92588fe605f0e637e0129490cb
-  directionStuckCheck2 :: GHC.Types.Bool
-  {- Strictness: x -}
-4a5d9e6d1ad114d6604eb3fcb157d206
-  directionStuckHeuristic ::
-    GHC.Types.Int -> Logic.Grid -> GHC.Types.Int
-  {- Arity: 2, Strictness: <S(S),1*U(1*U)><S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: GHC.Types.Int) (w1 :: Logic.Grid) ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 case Logic.$wdirectionStuckHeuristic ww1 w1 of ww2 { DEFAULT ->
-                 GHC.Types.I# ww2 } }) -}
-e900a806d0f20a6ca6b630b54e05f16a
-  directionStuckHeuristic1 :: GHC.Types.Int
-  {- Strictness: x -}
-9c1c68ce7bbdfcbbfe1b1c6aeb3d76a1
-  done :: Lens.Micro.Type.Lens' Logic.Game GHC.Types.Bool
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
-     Inline: INLINE (sat-args=2),
-     Unfolding: InlineRule (3, False, False)
-                (\ @ (f :: * -> *)
-                   ($dFunctor :: GHC.Base.Functor f)
-                   (f1 :: GHC.Types.Bool -> f GHC.Types.Bool)
-                   (ds :: Logic.Game) ->
-                 case ds of wild { Logic.Game x x1 x2 ->
-                 GHC.Base.fmap
-                   @ f
-                   $dFunctor
-                   @ GHC.Types.Bool
-                   @ Logic.Game
-                   (\ (y :: GHC.Types.Bool) -> Logic.Game x x1 y)
-                   (f1 x2) }) -}
-e510f6d7c945152898120296476f9b8a
-  findBestMove :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wfindBestMove w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-b7fd4693aa77c2e33e984e5c54daaaf1
-  findBestMove2 ::
-    Logic.Grid
-    -> (GHC.Types.Int, GHC.Types.Int, GHC.Types.Int, GHC.Types.Int,
-        GHC.Types.Int)
-  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wfindBestMove2
-                        w of ww { (#,,,,#) ww1 ww2 ww3 ww4 ww5 ->
-                 (ww1, ww2, ww3, ww4, ww5) }) -}
-d6fda91056afc97efd4307d3e5af7f5f
-  grid :: Lens.Micro.Type.Lens' Logic.Game Logic.Grid
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
-     Inline: INLINE (sat-args=2),
-     Unfolding: InlineRule (3, False, False)
-                (\ @ (f :: * -> *)
-                   ($dFunctor :: GHC.Base.Functor f)
-                   (f1 :: Logic.Grid -> f Logic.Grid)
-                   (ds :: Logic.Game) ->
-                 case ds of wild { Logic.Game x x1 x2 ->
-                 GHC.Base.fmap
-                   @ f
-                   $dFunctor
-                   @ Logic.Grid
-                   @ Logic.Game
-                   (\ (y :: Logic.Grid) -> Logic.Game y x1 x2)
-                   (f1 x) }) -}
-0ee2a09c993dd1a2be59fc05ab7ab589
+022d7755d273b161bf4138a1129d576d
   initGame :: GHC.Types.IO Logic.Game
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Logic.initGame1 `cast` (Sym (GHC.Types.N:IO[0] <Logic.Game>_R)) -}
-a78d1ebb119fd6f52cfa80fc1108a176
+7b8a0f551ff79562110e8b28c8dbdee1
   initGame1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Logic.Game #)
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
      Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  (# s, Logic.initGame2 #)) -}
-64fc88862fc532a77e35a57c6ab648d9
+9ad00beaafee5fe001c9b6f9884af2a1
   initGame10 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ Logic.Tile
                    (GHC.Base.Nothing @ GHC.Types.Int)
                    Logic.initGame11) -}
-4da3380e669090987b17f3b094098ef7
-  initGame11 :: [GHC.Base.Maybe GHC.Types.Int]
+5e17ee3b56eef86523441db13cd9c410
+  initGame11 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
-                   @ (GHC.Base.Maybe GHC.Types.Int)
+                   @ Logic.Tile
                    (GHC.Base.Nothing @ GHC.Types.Int)
-                   (GHC.Types.[] @ (GHC.Base.Maybe GHC.Types.Int))) -}
-ba1a9a0c180d4f397cee87394d3bf84a
+                   (GHC.Types.[] @ Logic.Tile)) -}
+38d4ca0500dee6635ad0cc6c86185775
   initGame12 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ Logic.Tile
                    Logic.initGame14
                    Logic.initGame13) -}
-c83b553cb30c454ec2fbea2c2230db5d
+ec8d863d0f99b1380f2424903fa7fb83
   initGame13 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ Logic.Tile
                    Logic.initGame14
                    Logic.initGame10) -}
-c786341bd387e9e3f81f9f1c0359b7df
+24604d71969cd0c98f288f801d479d8b
   initGame14 :: GHC.Base.Maybe GHC.Types.Int
   {- HasNoCafRefs,
      Unfolding: (GHC.Base.Just @ GHC.Types.Int Logic.initGame15) -}
-30bf587d7b9e60c1f4ad30c7d8ba66df
+d041aac980826da930776a4f36f9426f
   initGame15 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
-221922c8285a7e09a71af8ef0497313e
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 2#) -}
+bda744575e30ec69b44223d6a815bd9a
   initGame2 :: Logic.Game
   {- HasNoCafRefs,
      Unfolding: (Logic.Game
@@ -1005,42 +619,42 @@ c786341bd387e9e3f81f9f1c0359b7df
 d0f005f76eaf44cf639e93995b04ad20
   initGame3 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
-3842e399c2bad9f5d200a84a72869be1
+2a8eff4869dce9c903065f78fc91b325
   initGame4 :: [[Logic.Tile]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [Logic.Tile]
                    Logic.initGame12
                    Logic.initGame5) -}
-e3298141d756248d792e880d7e55d86f
+f1ab9b927e5a24485b339c6fa4fca1d9
   initGame5 :: [[Logic.Tile]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [Logic.Tile]
                    Logic.initGame8
                    Logic.initGame6) -}
-123e33a53cecb4d6e2be93210a0bb652
+2fcf454c2810c2502d06ee4fbcc55956
   initGame6 :: [[Logic.Tile]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [Logic.Tile]
                    Logic.initGame8
                    Logic.initGame7) -}
-5de5f0d184e836c399ee97d828c582d0
+e3bdedcc0ba6c8c290fd8b8f7405385d
   initGame7 :: [[Logic.Tile]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [Logic.Tile]
                    Logic.initGame8
                    (GHC.Types.[] @ [Logic.Tile])) -}
-0a19c1b3be8b3908cb275241194ad9f9
+2259c1887d2b90daaac06c93160758e6
   initGame8 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ Logic.Tile
                    (GHC.Base.Nothing @ GHC.Types.Int)
                    Logic.initGame9) -}
-55ef38da7d8be8a765bde3b9d42631db
+77795a7ad3578d6ba5860750b712f86d
   initGame9 :: [Logic.Tile]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
@@ -1054,20 +668,6 @@ e3298141d756248d792e880d7e55d86f
                 (\ (w :: Logic.Grid) ->
                  case Logic.$winsertRandomTile w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ [Logic.Tile] ww1 ww2 }) -}
-ed5d7660b82c2266b0ca96a23a4dc1e2
-  insertRandomTileInRow :: [Logic.Tile] -> [Logic.Tile]
-  {- Arity: 1, Strictness: <S,1*U>m2, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: [Logic.Tile]) ->
-                 case Logic.$winsertRandomTileInRow w of ww { (#,#) ww1 ww2 ->
-                 GHC.Types.: @ Logic.Tile ww1 ww2 }) -}
-3e6f6804737d2f4bbad83b5e6ef29438
-  largeEdgeNumberHeuristic :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wlargeEdgeNumberHeuristic w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
 3734304773ada79feddf8dc8ba2281b4
   leftGrid :: Logic.Grid -> Logic.Grid
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
@@ -1106,217 +706,9 @@ ed5d7660b82c2266b0ca96a23a4dc1e2
                            (GHC.Prim.<# 0# y) of wild {
                       GHC.Types.False -> GHC.Types.[] @ (GHC.Base.Maybe GHC.Types.Int)
                       GHC.Types.True -> Logic.$wxs y } })) -}
-5859c3d52e51a3d069c36d0cb9517147
-  makeRandomTile :: Logic.Tile
-  {- Unfolding: (case GHC.Magic.runRW#
-                        @ 'GHC.Types.PtrRepLifted
-                        @ GHC.Types.Int
-                        Logic.makeRandomTile2 of ds { (#,#) ipv ipv1 ->
-                 case ipv1 of wild { GHC.Types.I# x ->
-                 case GHC.Prim.tagToEnum#
-                        @ GHC.Types.Bool
-                        (GHC.Prim.<# x 10#) of wild1 {
-                   GHC.Types.False
-                   -> GHC.Base.Just @ GHC.Types.Int Logic.makeRandomTile1
-                   GHC.Types.True
-                   -> GHC.Base.Just @ GHC.Types.Int Logic.initGame15 } } }) -}
-87d8ca62b94297ad46b5c5790671f254
-  makeRandomTile1 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
-dadf17d8e477b14bae37c15d4db53c13
-  makeRandomTile2 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
-  {- Arity: 1,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case GHC.Prim.noDuplicate# s of s' { DEFAULT ->
-                 case System.Random.theStdGen
-                        `cast`
-                      (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
-                 case GHC.Prim.atomicModifyMutVar#
-                        @ GHC.Prim.RealWorld
-                        @ System.Random.StdGen
-                        @ (System.Random.StdGen, GHC.Types.Int)
-                        @ GHC.Types.Int
-                        r#
-                        Logic.makeRandomTile3
-                        s' of ds1 { (#,#) ipv ipv1 ->
-                 case ipv1 of b1 { GHC.Types.I# ipv2 -> ds1 } } } }) -}
-c3fe829fd4a2e1894e2c832c2284e6f3
-  makeRandomTile3 ::
-    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
-  {- Arity: 1,
-     Unfolding: (\ (a1 :: System.Random.StdGen) ->
-                 case System.Random.$wrandomIvalInteger
-                        @ System.Random.StdGen
-                        @ GHC.Types.Int
-                        System.Random.$fRandomGenStdGen
-                        GHC.Num.$fNumInt
-                        Logic.makeRandomTile_w2
-                        Logic.makeRandomTile_w1
-                        a1 of ww2 { (#,#) ww3 ww4 ->
-                 case ww4 of a'1 { System.Random.StdGen ipv ipv1 ->
-                 (a'1, ww3) } }) -}
-f098519c43186b1151bdd81781f48789
-  makeRandomTile_w1 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (10) -}
-eb48e1af819ef5f462574dc86f9ffa39
-  makeRandomTile_w2 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (1) -}
 3025f437873ef6b6ba40f3dcb97ccb10
   mergeRow :: [Logic.Tile] -> [Logic.Tile]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-a94cbbfde72011aa047e49a12c6e9447
-  mergesHeuristic :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wmergesHeuristic w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-6e2ac24cb8d32b2a4917c62f934b7455
-  monotonicityHeuristic :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wmonotonicityHeuristic w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-b1fe62a1fc9eafe2c83c8f7dba40b6cb
-  monteCarloPlayBoard ::
-    Logic.Grid -> GHC.Types.Int -> (GHC.Types.Int, GHC.Types.Int)
-  {- Arity: 2, Strictness: <S,U><L,U(U)>m, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Grid) (w1 :: GHC.Types.Int) ->
-                 case Logic.$wmonteCarloPlayBoard w w1 of ww { (#,#) ww1 ww2 ->
-                 (ww1, ww2) }) -}
-255ac1fdcd437589fe85cb16fca8a8ab
-  oneBestMove :: Logic.Grid -> Logic.Grid
-  {- Arity: 1, Strictness: <S,U>m2, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$woneBestMove w of ww { (#,#) ww1 ww2 ->
-                 GHC.Types.: @ [Logic.Tile] ww1 ww2 }) -}
-0d298bd7dc5c6e6e16858786fe3a95d2
-  oneBestMove1 :: Logic.Grid
-  {- Strictness: x -}
-883e3341ff440edba61f84b339da5b2e
-  oneMove :: Logic.Grid -> Logic.Grid
-  {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ (g :: Logic.Grid) ->
-                 case Logic.oneMove6 of wild {
-                   GHC.Types.False
-                   -> case Logic.oneMove5 of wild1 {
-                        GHC.Types.False
-                        -> case Logic.oneMove4 of wild2 {
-                             GHC.Types.False
-                             -> case Logic.oneMove1 of wild3 {
-                                  GHC.Types.False -> g
-                                  GHC.Types.True
-                                  -> case Logic.$winsertRandomTile
-                                            (Logic.leftGrid g) of ww { (#,#) ww1 ww2 ->
-                                     GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
-                             GHC.Types.True
-                             -> case Logic.$winsertRandomTile
-                                       (GHC.Base.map
-                                          @ [Logic.Tile]
-                                          @ [Logic.Tile]
-                                          Logic.directionStuckCheck1
-                                          g) of ww { (#,#) ww1 ww2 ->
-                                GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
-                        GHC.Types.True
-                        -> case Logic.$winsertRandomTile
-                                  (Data.OldList.transpose
-                                     @ Logic.Tile
-                                     (GHC.Base.map
-                                        @ [Logic.Tile]
-                                        @ [Logic.Tile]
-                                        Logic.directionStuckCheck1
-                                        (Data.OldList.transpose
-                                           @ Logic.Tile
-                                           g))) of ww { (#,#) ww1 ww2 ->
-                           GHC.Types.: @ [Logic.Tile] ww1 ww2 } }
-                   GHC.Types.True
-                   -> case Logic.$winsertRandomTile
-                             (Data.OldList.transpose
-                                @ Logic.Tile
-                                (GHC.Base.map
-                                   @ [Logic.Tile]
-                                   @ [Logic.Tile]
-                                   Logic.leftRow
-                                   (Data.OldList.transpose
-                                      @ Logic.Tile
-                                      g))) of ww { (#,#) ww1 ww2 ->
-                      GHC.Types.: @ [Logic.Tile] ww1 ww2 } }) -}
-952d30034ca093bb1a55334354cd0ce7
-  oneMove1 :: GHC.Types.Bool
-  {- Unfolding: (case Logic.oneMove_randomDirection of wild { GHC.Types.I# x ->
-                 case x of wild1 {
-                   DEFAULT -> GHC.Types.False 4# -> GHC.Types.True } }) -}
-7660ac20fa872fced9c8feb3b17271ca
-  oneMove2 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
-  {- Arity: 1,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case GHC.Prim.noDuplicate# s of s' { DEFAULT ->
-                 case System.Random.theStdGen
-                        `cast`
-                      (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
-                 case GHC.Prim.atomicModifyMutVar#
-                        @ GHC.Prim.RealWorld
-                        @ System.Random.StdGen
-                        @ (System.Random.StdGen, GHC.Types.Int)
-                        @ GHC.Types.Int
-                        r#
-                        Logic.oneMove3
-                        s' of ds1 { (#,#) ipv ipv1 ->
-                 case ipv1 of b1 { GHC.Types.I# ipv2 -> ds1 } } } }) -}
-258a81aaec53a7c91f1439728b67dfa1
-  oneMove3 ::
-    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
-  {- Arity: 1,
-     Unfolding: (\ (a1 :: System.Random.StdGen) ->
-                 case System.Random.$wrandomIvalInteger
-                        @ System.Random.StdGen
-                        @ GHC.Types.Int
-                        System.Random.$fRandomGenStdGen
-                        GHC.Num.$fNumInt
-                        Logic.makeRandomTile_w2
-                        Logic.oneMove_w1
-                        a1 of ww2 { (#,#) ww3 ww4 ->
-                 case ww4 of a'1 { System.Random.StdGen ipv ipv1 ->
-                 (a'1, ww3) } }) -}
-5854b4de3bab05341fec1f1223cf8c46
-  oneMove4 :: GHC.Types.Bool
-  {- Unfolding: (case Logic.oneMove_randomDirection of wild { GHC.Types.I# x ->
-                 case x of wild1 {
-                   DEFAULT -> GHC.Types.False 3# -> GHC.Types.True } }) -}
-0291cd1e781c87381bd89e753bb49293
-  oneMove5 :: GHC.Types.Bool
-  {- Unfolding: (case Logic.oneMove_randomDirection of wild { GHC.Types.I# x ->
-                 case x of wild1 {
-                   DEFAULT -> GHC.Types.False 2# -> GHC.Types.True } }) -}
-bd87ce0037b762736a3f354a4be7842a
-  oneMove6 :: GHC.Types.Bool
-  {- Unfolding: (case Logic.oneMove_randomDirection of wild { GHC.Types.I# x ->
-                 case x of wild1 {
-                   DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } }) -}
-d601a9b78dea61e52396d25cb980508e
-  oneMove_randomDirection :: GHC.Types.Int
-  {- Unfolding: (case GHC.Magic.runRW#
-                        @ 'GHC.Types.PtrRepLifted
-                        @ GHC.Types.Int
-                        Logic.oneMove2 of ds { (#,#) ipv ipv1 ->
-                 ipv1 }) -}
-2da10947461cda1cd3fe0414c81b919b
-  oneMove_w1 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (4) -}
-2305b330d991a8ab55ffa499224d5c68
-  openSquareHeuristic :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wopenSquareHeuristic w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
 71e75dfb3012d2685417b2b7b6d73c4f
   printTile :: Logic.Tile -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -1328,67 +720,14 @@ d601a9b78dea61e52396d25cb980508e
 17e36ac47eecbe220e8ee61793bda53a
   printTile1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# " "#) -}
-092210df5277d37350dfc1ee144e000e
-  randomlyPlayBoard :: Logic.Grid -> GHC.Types.Int
-  {- Arity: 1, Strictness: <S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: Logic.Grid) ->
-                 case Logic.$wrandomlyPlayBoard w of ww { DEFAULT ->
-                 GHC.Types.I# ww }) -}
-31d2a79df4e0fb312664b5dc5bd84e55
-  randomlyPlayTilWin :: GHC.Types.Int -> Logic.Grid -> GHC.Types.Int
-  {- Arity: 2, Strictness: <S,1*U(U)><S,U>m, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: GHC.Types.Int) (w1 :: Logic.Grid) ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 case Logic.$wrandomlyPlayTilWin ww1 w1 of ww2 { DEFAULT ->
-                 GHC.Types.I# ww2 } }) -}
-0a374efe638d64db85fcd0050bc660fe
-  removeNothings :: [Logic.Tile] -> [Logic.Tile]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-5e8e2c9c81b164e814e73a2e3ed24a77
-  runRandomN :: Logic.Grid -> GHC.Types.Int -> GHC.Types.Int
-  {- Arity: 2, Strictness: <S,U><S(S),1*U(1*U)>m, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Grid) (w1 :: GHC.Types.Int) ->
-                 case w1 of ww { GHC.Types.I# ww1 ->
-                 case Logic.$wrunRandomN w ww1 of ww2 { DEFAULT ->
-                 GHC.Types.I# ww2 } }) -}
-b962a82045d7fd1c1fc4c37eba5644d7
-  score :: Lens.Micro.Type.Lens' Logic.Game GHC.Types.Int
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
-     Inline: INLINE (sat-args=2),
-     Unfolding: InlineRule (3, False, False)
-                (\ @ (f :: * -> *)
-                   ($dFunctor :: GHC.Base.Functor f)
-                   (f1 :: GHC.Types.Int -> f GHC.Types.Int)
-                   (ds :: Logic.Game) ->
-                 case ds of wild { Logic.Game x x1 x2 ->
-                 GHC.Base.fmap
-                   @ f
-                   $dFunctor
-                   @ GHC.Types.Int
-                   @ Logic.Game
-                   (\ (y :: GHC.Types.Int) -> Logic.Game x y x2)
-                   (f1 x1) }) -}
-7b61f6e894d197317893065fabb1cab0
+6fead0056c18d6c79551afd450d53405
   scoreGrid :: Logic.Grid -> GHC.Types.Int -> GHC.Types.Int
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U(U)>m,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
-                (\ (w :: Logic.Grid) (w1 :: GHC.Types.Int) ->
-                 case w1 of ww { GHC.Types.I# ww1 ->
+                (\ (w :: Logic.Grid) (w4 :: GHC.Types.Int) ->
+                 case w4 of ww { GHC.Types.I# ww1 ->
                  case Logic.$wscoreGrid w ww1 of ww2 { DEFAULT ->
-                 GHC.Types.I# ww2 } }) -}
-b130594941bec29406cdb52175f8d9d9
-  scoreRow :: [Logic.Tile] -> GHC.Types.Int -> GHC.Types.Int
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U(U)>m,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: [Logic.Tile]) (w1 :: GHC.Types.Int) ->
-                 case w1 of ww { GHC.Types.I# ww1 ->
-                 case Logic.$wscoreRow w ww1 of ww2 { DEFAULT ->
                  GHC.Types.I# ww2 } }) -}
 ba27a4dfa6e644b687c49a6bd2e0fe9b
   stuckCheck :: Logic.Grid -> GHC.Types.Bool

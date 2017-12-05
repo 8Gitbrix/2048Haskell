@@ -1,19 +1,21 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-04 22:45:51.556355 UTC
+2017-12-05 02:58:15.765778 UTC
 
 interface main@main:Main 8002
-  interface hash: a58ef15e36c961e3db5e124614889f34
-  ABI hash: 4c08fe776e57fdd0b67ddafc01ee6bf3
-  export-list hash: f6403b79105d3000351cb0005268eb8f
+  interface hash: bf9c61b236e8d637efc780f3e321e2ed
+  ABI hash: 163bf8306b9f2573c1e450a6d6a3efac
+  export-list hash: 9f4b9e82bb672c2becbfeb959cc2fc3d
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: 61e10ee8e4665cf8a8f983c666d4729f
+  flag hash: 86d59ad8491de169841277d18f2a299e
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Game.main
-module dependencies: Game Logic
+  Main.drawInfo
+  Main.main
+  Main.processLine
+module dependencies: BotGame HumanGame Logic
 package dependencies: StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
                       adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp
                       array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
@@ -148,10 +150,29 @@ family instance modules: adjunctions-4.3@adjunctions-4.3-A5jfd1yrmaY4DRMJuiquBp:
                          vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed.Base
                          vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Image.Internal
                          vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty.Input.Events
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
-import  -/  Game 5f4718282dbd1cca67765c0bb736aacf
-  exports: 445316c2217125c6b9218727abeb0775
-  main ac044c1dfff2c1aa688da9184c6b9493
+import  -/  base-4.9.1.0:System.IO c9de64c5f5407c4cf1c52500c4d15200
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick e2a3fb09c74a952e5abacbc620ec0b00
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.BChan 87ea65aaf0d42481dc99bd669150c58b
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Main d0d9d5e5942ff9efa2fbd0787bd03cd7
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Types 5650510519c2681f9a04cee798296505
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Util 68dcfbfa78970336e5e7c2114aedbfec
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border a0f69eada82d2170e87954912f42b1ba
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Border.Style c0e1d5581c0fbadb737040de9c33e315
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Center 6d8547033b34549a1b43dfa188c8c741
+import  -/  brick-0.18@brick-0.18-KYaaVCw63PhDYonvtgldK3:Brick.Widgets.Core 23b4767a9d80fef5513700535a0d852b
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Sequence c9764451c7ea31b534e87988fc642948
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  linear-1.20.7@linear-1.20.7-Hm7B9kQS5iJ4TZVBdSCC2p:Linear.V2 84a63a6b3f6e8f8486d121e776ecbcc6
+import  -/  BotGame 3e960eaa170f839316a259295230554d
+  exports: 8b66986944c554b19d4b1622d8f78251
+  botPlayer 894645b809d2038e509096224f9199cc
+import  -/  HumanGame 18a6c1b3992ad414cb9f5484ce2dd646
+  exports: 18f3938ba77c9bd14cafbce22eb2d9ca
+  humanPlayer 83df45acf9c3347b513aaa61d1d2a787
+import  -/  vty-5.16@vty-5.16-GzR0fw55Xlq9AKUx6PSwHv:Graphics.Vty d09911cf98d07946a5d45e866f2393bc
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -164,14 +185,347 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-c6bc3e995e111c6721d78051090d9881
+0bdb8a55c6abfceaa1ff8f65fd3a909e
+  $wc ::
+    (GHC.Base.String, GHC.Base.String)
+    -> (# Brick.Types.Size, Brick.Types.Size,
+          Brick.Types.RenderM () (Brick.Types.Internal.Result ()) #)
+  {- Arity: 1, Strictness: <L,U(1*U,1*U)>, Inline: [0],
+     Unfolding: (\ (w :: (GHC.Base.String, GHC.Base.String)) ->
+                 Brick.Widgets.Core.$wrenderBox
+                   @ ()
+                   (Brick.Widgets.Core.hBoxRenderer @ ())
+                   (GHC.Types.:
+                      @ (Brick.Types.Widget ())
+                      (case Brick.Widgets.Core.$wpadRight
+                              @ ()
+                              Brick.Types.Max
+                              (case Brick.Widgets.Core.$wpadLeft
+                                      @ ()
+                                      Main.drawInfo11
+                                      (case Brick.Widgets.Core.$wstr
+                                              @ ()
+                                              (case w of wild { (,) x ds ->
+                                               x }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                       Brick.Types.Widget
+                                         @ ()
+                                         ww1
+                                         ww2
+                                         ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                               Brick.Types.Widget
+                                 @ ()
+                                 ww1
+                                 ww2
+                                 ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                       Brick.Types.Widget @ () ww1 ww2 ww3 })
+                      (GHC.Types.:
+                         @ (Brick.Types.Widget ())
+                         (case Brick.Widgets.Core.$wpadLeft
+                                 @ ()
+                                 Brick.Types.Max
+                                 (case Brick.Widgets.Core.$wpadRight
+                                         @ ()
+                                         Main.drawInfo11
+                                         (case Brick.Widgets.Core.$wstr
+                                                 @ ()
+                                                 (case w of wild { (,) ds y ->
+                                                  y }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                          Brick.Types.Widget
+                                            @ ()
+                                            ww1
+                                            ww2
+                                            ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                                  Brick.Types.Widget
+                                    @ ()
+                                    ww1
+                                    ww2
+                                    ww3 }) of ww { (#,,#) ww1 ww2 ww3 ->
+                          Brick.Types.Widget @ () ww1 ww2 ww3 })
+                         (GHC.Types.[] @ (Brick.Types.Widget ()))))) -}
+90ccf7216d660e9f46ef72a3f6cbf379
+  drawInfo :: Brick.Types.Widget ()
+  {- Strictness: m,
+     Unfolding: (Brick.Types.Widget
+                   @ ()
+                   Main.drawInfo25
+                   Main.drawInfo24
+                   Main.drawInfo1
+                     `cast`
+                   (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <*>_N
+                             <Brick.Types.Internal.Context>_R
+                             <Control.Monad.Trans.State.Lazy.State
+                                (Brick.Types.Internal.RenderState ())>_R
+                             <Brick.Types.Internal.Result ()>_N))) -}
+c45588a287b1742fb13600ef575775ef
+  drawInfo1 ::
+    Brick.Types.Internal.Context
+    -> Control.Monad.Trans.State.Lazy.State
+         (Brick.Types.Internal.RenderState ())
+         (Brick.Types.Internal.Result ())
+  {- Arity: 1, Strictness: <L,1*U(U,U,U,A,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Brick.Types.Internal.Context) ->
+                 case Main.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds3
+                   `cast`
+                 (Control.Monad.Trans.Reader.N:ReaderT[0]
+                      <*>_N
+                      <Brick.Types.Internal.Context>_R
+                      <Control.Monad.Trans.State.Lazy.State
+                         (Brick.Types.Internal.RenderState ())>_R
+                      <Brick.Types.Internal.Result ()>_N)
+                   (case x of wild1 { Brick.Types.Internal.Context x1 x2 x3 x4 x5 ->
+                    Brick.Types.Internal.Context
+                      x1
+                      x2
+                      x3
+                      Brick.Widgets.Border.Style.unicodeBold
+                      x5 }) }) -}
+5533b52957b57d5f7e01a3ab4e02e0d6
+  drawInfo10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "q"#) -}
+f4ee34ac015d0cb724fe57f09e876f95
+  drawInfo11 :: Brick.Types.Padding
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Brick.Types.Pad Main.drawInfo12) -}
+469c6685c5d381ae68054d9617e239ae
+  drawInfo12 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+59a98af3bd101877a65f786b4cae82c6
+  drawInfo13 :: Brick.Types.Widget ()
+  {- Unfolding: (case Main.$wc
+                        Main.drawInfo14 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+782f42f944087b9b4c33ab79e35cc44a
+  drawInfo14 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Main.drawInfo16, Main.drawInfo15)) -}
+68c10c3a66f327dc0aeed7f18e881a2f
+  drawInfo15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Random Bot"#) -}
+d6c711fa4bd86211ae8c40652fc7f3b6
+  drawInfo16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "random"#) -}
+de6e890fa06e225ad8b86886e7620e1d
+  drawInfo17 :: Brick.Types.Widget ()
+  {- Unfolding: (case Main.$wc
+                        Main.drawInfo18 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+e5d67316af4e0d23119b23e709468b3e
+  drawInfo18 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Main.drawInfo20, Main.drawInfo19)) -}
+d305c8775fde927659b080921484a11e
+  drawInfo19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Human Player (YOU!)"#) -}
+bc8cf615df3daa9ee09a9a59fb1bc4ba
+  drawInfo2 :: Brick.Types.Widget ()
+  {- Unfolding: (case Brick.Widgets.Border.$wborder_
+                        @ ()
+                        Main.drawInfo21
+                        Main.drawInfo3 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+2d5871507cb8719a88366f54c004fdc2
+  drawInfo20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "human"#) -}
+4885ad2a78c7792445fb3a07790e8f36
+  drawInfo21 :: GHC.Base.Maybe (Brick.Types.Widget ())
+  {- Unfolding: (GHC.Base.Just
+                   @ (Brick.Types.Widget ())
+                   Main.drawInfo22) -}
+f653d553c1e4460ced71516ff7bf36db
+  drawInfo22 :: Brick.Types.Widget ()
+  {- Unfolding: (case Brick.Widgets.Core.$wstr
+                        @ ()
+                        Main.drawInfo23 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+e53bef96e23e8b0c49e24a0516d9a4f7
+  drawInfo23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Type character of choice on the keyboard"#) -}
+efd860f3478c313713f3b778ca277242
+  drawInfo24 :: Brick.Types.Size
+  {- Unfolding: (case Main.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds2 }) -}
+7d8569f7ad783289ba41c512860884fc
+  drawInfo25 :: Brick.Types.Size
+  {- Unfolding: (case Main.drawInfo_w1 of wild { Brick.Types.Widget ds1 ds2 ds3 ->
+                 ds1 }) -}
+ef4e63688e5e1617ac1a6955816851b7
+  drawInfo3 :: Brick.Types.Widget ()
+  {- Unfolding: (case Brick.Widgets.Core.$wrenderBox
+                        @ ()
+                        (Brick.Widgets.Core.vBoxRenderer @ ())
+                        Main.drawInfo4 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+6de6b95602d6b10ed1118e861cc19aaa
+  drawInfo4 :: [Brick.Types.Widget ()]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget ())
+                   Main.drawInfo17
+                   Main.drawInfo5) -}
+cd3e355b89f39c880dc2e7f62d203355
+  drawInfo5 :: [Brick.Types.Widget ()]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget ())
+                   Main.drawInfo13
+                   Main.drawInfo6) -}
+35ce85aeb26efd3db7305976356cfa7e
+  drawInfo6 :: [Brick.Types.Widget ()]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget ())
+                   Main.drawInfo7
+                   (GHC.Types.[] @ (Brick.Types.Widget ()))) -}
+ea7d057f20e7746e01e132512d3e3d88
+  drawInfo7 :: Brick.Types.Widget ()
+  {- Unfolding: (case Main.$wc
+                        Main.drawInfo8 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+8192d88ec19c27df521e4da909e7d1ea
+  drawInfo8 :: ([GHC.Types.Char], [GHC.Types.Char])
+  {- Unfolding: ((Main.drawInfo10, Main.drawInfo9)) -}
+b07cdf84f7a34ee7d70ce815acc033c3
+  drawInfo9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Quit"#) -}
+0fa8f4a74919da1fa80874a489a5bd3f
+  drawInfo_w1 :: Brick.Types.Widget ()
+  {- Unfolding: (case Brick.Widgets.Center.$whCenterWith
+                        @ ()
+                        (GHC.Base.Nothing @ GHC.Types.Char)
+                        Main.drawInfo2 of ww { (#,,#) ww1 ww2 ww3 ->
+                 Brick.Types.Widget @ () ww1 ww2 ww3 }) -}
+3261f40958f2a70d168ed24ba279b3e9
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+76dd50b3ab545975850fa4028bfe5dc6
   main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Brick.Main.$wcustomMain
+                        @ ()
+                        @ GHC.Prim.Any
+                        @ ()
+                        GHC.Classes.$fOrd()
+                        Brick.Main.defaultMain2
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <Graphics.Vty.Vty>_R))
+                        (GHC.Base.Nothing @ (Brick.BChan.BChan GHC.Prim.Any))
+                        Main.main5
+                        (Brick.Main.neverShowCursor @ () @ ())
+                        (Brick.Main.resizeOrQuit1 @ () @ () @ GHC.Prim.Any)
+                          `cast`
+                        (<()>_R
+                         ->_R <Brick.Types.Internal.BrickEvent () GHC.Prim.Any>_R
+                         ->_R Trans
+                                  (<Brick.Types.Internal.EventRO ()>_R
+                                   ->_R Trans
+                                            (<Brick.Types.Internal.EventState ()>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Brick.Types.Internal.Next (),
+                                                             Brick.Types.Internal.EventState
+                                                               ())>_R))
+                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                      <Brick.Types.Internal.EventState ()>_N
+                                                      <GHC.Types.IO>_R
+                                                      <Brick.Types.Internal.Next ()>_N)))
+                                  (Trans
+                                       (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                 <*>_N
+                                                 <Brick.Types.Internal.EventRO ()>_R
+                                                 <Control.Monad.Trans.State.Lazy.StateT
+                                                    (Brick.Types.Internal.EventState ())
+                                                    GHC.Types.IO>_R
+                                                 <Brick.Types.Internal.Next ()>_N))
+                                       (Sym (Brick.Types.N:EventM[0]
+                                                 <()>_N) <Brick.Types.Internal.Next ()>_N)))
+                        (Brick.Types.$fApplicativeEventM4 @ () @ ())
+                          `cast`
+                        (<()>_R
+                         ->_R Trans
+                                  (<Brick.Types.Internal.EventRO ()>_R
+                                   ->_R Trans
+                                            (<Brick.Types.Internal.EventState ()>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <((),
+                                                             Brick.Types.Internal.EventState
+                                                               ())>_R))
+                                            (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                      <Brick.Types.Internal.EventState ()>_N
+                                                      <GHC.Types.IO>_R
+                                                      <()>_N)))
+                                  (Trans
+                                       (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                 <*>_N
+                                                 <Brick.Types.Internal.EventRO ()>_R
+                                                 <Control.Monad.Trans.State.Lazy.StateT
+                                                    (Brick.Types.Internal.EventState ())
+                                                    GHC.Types.IO>_R
+                                                 <()>_N))
+                                       (Sym (Brick.Types.N:EventM[0] <()>_N) <()>_N)))
+                        Brick.Main.simpleMain2
+                        GHC.Tuple.()
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Base.String
+                        GHC.IO.Handle.Text.hGetLine4
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetLine2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 Main.main2 ipv3 ipv2 } }) -}
+3e01bbdd356f5beb42d9d68faf12301b
+  main2 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: (\ (s :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Base.eqString s Main.drawInfo20 of wild {
+                   GHC.Types.False
+                   -> case GHC.Base.eqString s Main.main4 of wild1 {
+                        GHC.Types.False
+                        -> case Main.main3
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                           of {}
+                        GHC.Types.True -> BotGame.$wbotPlayer eta }
+                   GHC.Types.True -> HumanGame.humanPlayer1 eta }) -}
+709a8f61e410f203f5e01d6146c2f0f8
+  main3 :: GHC.Types.IO ()
+  {- Strictness: x -}
+33926b2728b62e76bc03219ffbee229e
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "random bot"#) -}
+fd1153b3146f3709e8ddf78912f2967d
+  main5 :: () -> [Brick.Types.Widget ()]
+  {- Arity: 1, Unfolding: (\ (ds :: ()) -> Main.main_x) -}
+1a54416025e14f5721c46684afb249bb
+  main6 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
-                   Game.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+815ced04aeb99526792ccdd2e3807474
+  main_x :: [Brick.Types.Widget ()]
+  {- Unfolding: (GHC.Types.:
+                   @ (Brick.Types.Widget ())
+                   Main.drawInfo
+                   (GHC.Types.[] @ (Brick.Types.Widget ()))) -}
+7b5eebcdfe89adb46f7d2b54ebee69fc
+  processLine :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main2
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
